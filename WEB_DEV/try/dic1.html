@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikkim District Industries | Premium Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        :root {
+            --gangtok: #FFD700;  /* Gold */
+            --namchi: #E74C3C;   /* Ruby Red */
+            --gyalshing: #3498DB; /* Sapphire Blue */
+            --mangan: #2ECC71;    /* Emerald Green */
+            --soreng: #9B59B6;   /* Amethyst Purple */
+            --pakyong: #1ABC9C;  /* Turquoise */
+            --text-dark: #2C3E50;
+            --text-light: #ECF0F1;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header with logos */
+        .logo-container {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 0;
+        }
+        
+        .logo-container .container {
+            padding: 0 20px;
+        }
+        
+        .logo-container img {
+            height: 60px;
+            max-width: 100%;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            padding: 10px 0;
+            margin-top: 0;
+            background: linear-gradient(to right, #2C3E50, #4A5568);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .navbar ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .navbar li {
+            position: relative;
+        }
+        
+        .navbar a, 
+        .navbar a:focus {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-light);
+            white-space: nowrap;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        
+        .navbar a i, 
+        .navbar a:focus i {
+            font-size: 12px;
+            line-height: 0;
+            margin-left: 5px;
+        }
+        
+        .navbar a:hover, 
+        .navbar .active, 
+        .navbar .active:focus, 
+        .navbar li:hover > a {
+            color: var(--gangtok);
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        }
+        
+        .navbar .dropdown ul {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: calc(100% + 30px);
+            margin: 0;
+            padding: 10px 0;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            background: linear-gradient(to bottom, #2C3E50, #1E2A3A);
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+            border-radius: 8px;
+            min-width: 250px;
+            flex-direction: column;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .navbar .dropdown ul li {
+            min-width: 200px;
+        }
+        
+        .navbar .dropdown ul a {
+            padding: 10px 20px;
+            font-size: 14px;
+            text-transform: none;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+        
+        .navbar .dropdown ul a:hover, 
+        .navbar .dropdown ul .active:hover, 
+        .navbar .dropdown ul li:hover > a {
+            color: var(--gangtok);
+            background-color: rgba(255, 215, 0, 0.05);
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        }
+        
+        .navbar .dropdown:hover > ul {
+            opacity: 1;
+            top: 100%;
+            visibility: visible;
+        }
+        
+        .navbar .dropdown .dropdown ul {
+            top: 0;
+            left: calc(100% - 30px);
+            visibility: hidden;
+        }
+        
+        .navbar .dropdown .dropdown:hover > ul {
+            opacity: 1;
+            top: 0;
+            left: 100%;
+            visibility: visible;
+        }
+        
+        .mobile-nav-toggle {
+            display: none;
+            color: var(--text-light);
+            font-size: 28px;
+            cursor: pointer;
+            line-height: 0;
+            transition: 0.5s;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+        
+        .mobile-nav-toggle.bi-x {
+            color: var(--gangtok);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Directory/Breadcrumb Section */
+        .directory-section {
+            background: linear-gradient(to right, rgba(44, 62, 80, 0.95), rgba(74, 85, 104, 0.95));
+            padding: 0;
+            color: var(--text-light);
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            height: 56px; /* Match navbar height */
+            display: flex;
+            align-items: center;
+        }
+        
+        .directory-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+            color: var(--text-light);
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .directory-breadcrumb {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .breadcrumb {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            display: flex;
+            align-items: center;
+        }
+        
+        .breadcrumb-item {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .breadcrumb-item a {
+            color: var(--gangtok);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .breadcrumb-item a:hover {
+            color: var(--gangtok);
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--text-light);
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: "/";
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            text-align: center;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #E74C3C, #3498DB, #2ECC71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            background: rgba(255, 255, 255, 0.9);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
+                              url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f0f0f0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+            padding: 28px 45px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--gangtok);
+        }
+        
+        .info-container p {
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            text-align: justify;
+            letter-spacing: 0.01em;
+        }
+        
+        .info-container p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .info-container .lead-paragraph {
+            border-left: 3px solid var(--gangtok);
+            padding-left: 15px;
+            margin-left: -18px;
+            position: relative;
+        }
+        
+        .info-container .lead-paragraph::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFD700' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'%3E%3C/path%3E%3Cpolyline points='3.27 6.96 12 12.01 20.73 6.96'%3E%3C/polyline%3E%3Cline x1='12' y1='22.08' x2='12' y2='12'%3E%3C/line%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .info-container strong {
+            color: #2C3E50;
+        }
+
+        /* ===== DISTRICTS GRID ===== */
+        .districts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            grid-auto-flow: row;
+        }
+
+        /* ===== DISTRICT CARD ===== */
+        .district-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            break-inside: avoid;
+        }
+
+        .district-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* District Preview Image */
+        .district-preview {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .district-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .district-card:hover .district-preview img {
+            transform: scale(1.05);
+        }
+
+        /* District Color Overlay */
+        .district-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .district-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* District Summary */
+        .district-summary {
+            padding: 25px;
+        }
+
+        .district-summary p {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Expand Button */
+        .expand-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .expand-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .district-card.active .expand-btn i {
+            transform: rotate(180deg);
+        }
+
+        /* District Info (Hidden by Default) */
+        .district-info {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.6s ease;
+            background: #f9f9f9;
+            opacity: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Full-width expanded info */
+        .expanded-info-container {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: none;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .expanded-info-container.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .expanded-info-content {
+            display: flex;
+            width: 100%;
+            padding: 30px;
+        }
+
+        .expanded-info-image {
+            flex: 0 0 40%;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-right: 30px;
+        }
+
+        .expanded-info-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .expanded-info-details {
+            flex: 1;
+        }
+
+        .expanded-info-details h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .expanded-info-details h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            border-radius: 4px;
+        }
+
+        .expanded-info-details h3 {
+            margin: 20px 0 10px;
+            font-size: 1.3rem;
+        }
+
+        .expanded-info-details ul {
+            margin: 15px 0 20px;
+            padding-left: 20px;
+        }
+
+        .expanded-info-details ul li {
+            margin-bottom: 10px;
+        }
+
+        .close-expanded-info {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .close-expanded-info:hover {
+            transform: rotate(90deg);
+            background: white;
+        }
+
+        .district-info-content {
+            padding: 0 25px 25px;
+        }
+
+        .district-info h3 {
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .district-info h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            border-radius: 3px;
+        }
+
+        .district-info ul {
+            margin: 15px 0 20px;
+            padding-left: 20px;
+        }
+
+        .district-info ul li {
+            margin-bottom: 8px;
+        }
+
+        /* ===== DISTRICT-SPECIFIC COLORS ===== */
+        /* Gangtok */
+        .gangtok .expand-btn {
+            background: var(--gangtok);
+            color: var(--text-dark);
+        }
+        .gangtok .district-info h3:after,
+        .gangtok-expanded .expanded-info-details h2:after {
+            background: var(--gangtok);
+        }
+
+        /* Namchi */
+        .namchi .expand-btn {
+            background: var(--namchi);
+            color: white;
+        }
+        .namchi .district-info h3:after,
+        .namchi-expanded .expanded-info-details h2:after {
+            background: var(--namchi);
+        }
+
+        /* Gyalshing */
+        .gyalshing .expand-btn {
+            background: var(--gyalshing);
+            color: white;
+        }
+        .gyalshing .district-info h3:after,
+        .gyalshing-expanded .expanded-info-details h2:after {
+            background: var(--gyalshing);
+        }
+
+        /* Mangan */
+        .mangan .expand-btn {
+            background: var(--mangan);
+            color: white;
+        }
+        .mangan .district-info h3:after,
+        .mangan-expanded .expanded-info-details h2:after {
+            background: var(--mangan);
+        }
+
+        /* Soreng */
+        .soreng .expand-btn {
+            background: var(--soreng);
+            color: white;
+        }
+        .soreng .district-info h3:after,
+        .soreng-expanded .expanded-info-details h2:after {
+            background: var(--soreng);
+        }
+
+        /* Pakyong */
+        .pakyong .expand-btn {
+            background: var(--pakyong);
+            color: white;
+        }
+        .pakyong .district-info h3:after,
+        .pakyong-expanded .expanded-info-details h2:after {
+            background: var(--pakyong);
+        }
+
+        /* Active State */
+        .district-card.active .district-info {
+            max-height: 500px;
+            opacity: 1;
+        }
+        
+        /* Ensure proper spacing between cards */
+        .district-card {
+            margin-bottom: 10px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        #footer .footer-top {
+            padding: 20px 0;
+            background-color: #f8f9fa;
+        }
+        
+        #footer .row2 {
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        #footer .imagegroup2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 15px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        #footer .imagegroup2 img {
+            height: 50px;
+            max-width: 100%;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        #footer .imagegroup2 img:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #footer .container {
+            padding: 20px;
+            background-color: var(--text-dark);
+            color: white;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        #footer .copyright {
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        #footer .copyright strong {
+            font-weight: 600;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .districts-grid {
+                grid-template-columns: 1fr;
+            }
+            #footer .imagegroup2 {
+                gap: 15px;
+            }
+            #footer .imagegroup2 img {
+                height: 40px;
+            }
+            
+            /* Directory/Breadcrumb Section Responsive */
+            .directory-section {
+                height: auto;
+                padding: 10px 0;
+            }
+            
+            .directory-section .row {
+                flex-direction: column;
+            }
+            
+            .directory-title {
+                text-align: center;
+                margin-bottom: 5px;
+                font-size: 1.3rem;
+            }
+            
+            .directory-breadcrumb {
+                justify-content: center;
+            }
+            
+            .info-container {
+                padding: 22px 25px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                max-width: 100%;
+            }
+            
+            /* Mobile Navigation */
+            .mobile-nav-toggle {
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 15px;
+            }
+            
+            .navbar ul {
+                display: none;
+                position: absolute;
+                top: 55px;
+                right: 15px;
+                left: 15px;
+                padding: 10px 0;
+                border-radius: 10px;
+                background: linear-gradient(to bottom, #2C3E50, #1E2A3A);
+                box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
+                overflow-y: auto;
+                transition: 0.3s;
+                z-index: 9999;
+                flex-direction: column;
+                align-items: flex-start;
+                border: 1px solid rgba(255, 215, 0, 0.1);
+            }
+            
+            .navbar ul.navbar-mobile {
+                display: block;
+            }
+            
+            .navbar ul li {
+                width: 100%;
+            }
+            
+            .navbar ul a, 
+            .navbar ul a:focus {
+                padding: 10px 20px;
+                font-size: 15px;
+                color: var(--text-dark);
+            }
+            
+            .navbar ul a:hover, 
+            .navbar ul .active, 
+            .navbar ul .active:focus, 
+            .navbar ul li:hover > a {
+                color: var(--gangtok);
+            }
+            
+            .navbar .dropdown ul {
+                position: static;
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                background: rgba(0, 0, 0, 0.2);
+                box-shadow: none;
+                padding-left: 20px;
+                border: none;
+                border-left: 2px solid rgba(255, 215, 0, 0.2);
+            }
+            
+            .navbar .dropdown ul.dropdown-active {
+                display: block;
+            }
+            
+            .navbar .dropdown > .dropdown-active {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            #footer .imagegroup2 img {
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Header -->
+    <div class="logo-container">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="#" class="logo"><img src="https://industries.sikkim.gov.in/assets/img/logo.png" alt="" class="img-fluid"></a>
+            <a href="#" class="logo"><img src="https://industries.sikkim.gov.in/assets/img/logoline.png" alt="" class="img-fluid"></a>
+            <a href="#" class="logo"><img src="https://industries.sikkim.gov.in/assets/img/logo-golden.png" alt="" class="img-fluid"></a>
+        </div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <div class="container position-relative" style="padding-top: 0; padding-bottom: 0;">
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/orgview">Organizational Setup</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/dics">District Industries Center</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/officesofdept">Offices under Department</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/officerdirectories">Officer Directory</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/industriesandcompanies">Industries and Companies</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/psus">Public Sector Undertaking</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown"><a href="#">Schemes and Guidelines <i class="bi bi-chevron-down"></i></a>
+                    <ul class="sub-menu text-muted font-small">
+                        <li><a href="https://industries.sikkim.gov.in/visitors/odop">ODOP</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/schemes?8">SC-ST Hub Scheme Guidelines</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/schemes?9">MSE-CDP Guidelines</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/schemes?17">APPLICATION/RENEWAL OF INDUSTRIAL LICENCE</a></li>
+                        <li><a class="nav-link" href="https://industries.sikkim.gov.in/visitors/schemes">View More</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="/visitors#contact">Grievances</a></li>
+                <li><a class="nav-link scrollto" href="https://industries.sikkim.gov.in/visitors/rtis">RTI</a></li>
+                <li><a class="nav-link scrollto" href="https://industries.sikkim.gov.in/visitors/events">Events</a></li>
+                <li><a class="nav-link scrollto" href="https://industries.sikkim.gov.in/visitors/awards">Awards &amp; Achievements</a></li>
+                <li><a class="nav-link scrollto" href="https://industries.sikkim.gov.in/visitors/gallery">Gallery</a></li>
+                <li class="dropdown"><a href="#"><span>Invest In Sikkim</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul class="sub-menu text-muted font-small">
+                        <li><a href="https://industries.sikkim.gov.in/investsik/aboutus.pdf" target="_blank">About Us</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/investsik/projects.pdf" target="_blank">Investable Projects</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/investsik/greeninvest.pdf" target="_blank">The Green Investment Destination</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/investsik/contactus.pdf" target="_blank">Contact Us </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Important Links</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul class="sub-menu text-muted font-small">
+                        <li><a href="https://sikkimdesignweek.com/">Sikkim Design Week</a></li>
+                        <li><a href="https://www.facebook.com/share/18ikrxFjYz/">Sikkim Design Week 2025 and District Design Connect</a></li>
+                        <li><a href="https://www.facebook.com/share/v/16S2NhTqFC/">District Industries Centre (DIC) inaugurated at Soreng, West Sikkim</a></li>
+                        <li><a href="https://www.facebook.com/share/p/169Tzrmyas/">Sikkim Design Week 2025,Soreng District</a></li>
+                        <li><a href="https://www.facebook.com/share/12HFRyfWrJK/">Sikkim start up shines at startup Mahakumbh 2025, New Delhi</a></li>
+                        <li><a href="https://m.facebook.com/story.php?story_fbid=pfbid02AnT8oykaoQwoaafFwQf42KkpV3gewGqRypqPUpvLiaLEQvYfXqcPakmuhT7RvKHfl&amp;id=100063652316394">Soft Skills and Employability Training, CCCT Chisopani</a></li>
+                        <li><a href="https://www.facebook.com/share/p/1B9eUsk1iw/?mibextid=wwXIfr">District Level Workshop on ONDC at Soreng District</a></li>
+                        <li><a href="https://www.facebook.com/share/p/1HQSoRocQH/">District-Level Workshop on ONDC held in Gangtok</a></li>
+                        <li><a href="https://www.facebook.com/share/p/16Avv27KzJ/">District Level Workshop on ONDC Platform conducted in Pakyong</a></li>
+                        <li><a href="https://www.sikkimexpress.com/news-details/five-from-sikkim-attendsletsventure-conclave-for-startup-investors">Delegation of founders from five startups of the State lead by the Commerce and Industries Department</a></li>
+                        <li><a href="https://pib.gov.in/PressReleasePage.aspx?PRID=2080518">Sikkim Hosts UNNATI 2024 Awareness Programme to Boost Entrepreneurship</a></li>
+                        <li><a href="https://pib.gov.in/PressReleasePage.aspx?PRID=2078551">Sikkim Delegates Explore TNRTP Best Practices to Empower Rural Communities</a></li>
+                        <li><a href="https://www.facebook.com/share/p/Uo7cver7didrhJGJ/">Sikkim Delegates explore TNRTP best Industries Department</a></li>
+                        <li><a href="https://www.facebook.com/share/p/17KWZhPsvb/">Promotion of UNNATI Scheme in Sikkim</a></li>
+                        <li><a href="https://www.theweek.in/wire-updates/business/2024/09/09/ces18-sk-nid-pact.html">Sikkim Govt. inks pact with NID Ahmedabad to promote creative Economy</a></li>
+                        <li><a href="https://www.republicworld.com/india/sikkim-govt-inks-mou-with-nid-ahmedabad-focus-on-promoting-creative-economy">Sikkim Govt. Inks MoU with NID Ahmedabad, Focus on Promoting Creative Economy</a></li>
+                        <li><a href="https://www.facebook.com/story.php?story_fbid=pfbid035pgnru5xnQ9bHzWHP4NPER8KprRuupuW1uHiyUjdVLPaVLiQYihXporVaRc7e68Sl&amp;id=100066819786172&amp;mibextid=Nif5oz&amp;_rdr">Press release for transition Sikkim into a "Green Hydrogen State" with the support of Republic Korea</a></li>
+                        <li><a href="https://pib.gov.in/PressReleasePage.aspx?PRID=1931008">Awareness Campaign for the ODOP initiative in Sikkim</a></li>
+                        <li><a href="https://www.asiancommunitynews.com/sikkim-frontrunner-in-setting-up-green-hydrogen-smart-city-picks-up-greater-gangtok-city-for-it/">Sikkim frontrunner in setting up Green Hydrogen Smart City; picks up Greater Gangtok City</a></li>
+                        <li><a href="https://www.nsws.gov.in/">National Single Window System</a></li>
+                        <li><a href="https://www.eastmojo.com/northeast-news/2023/12/17/sikkim-tripura-arunachal-and-nagaland-improving-logistics-performance-says-centre/">Sikkim has moved to achievers status from Fast movers under Logistics Sector</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
+    
+    <!-- Directory/Breadcrumb Section -->
+    <div class="directory-section">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-md-6 h-100">
+                    <h2 class="directory-title">District Industries Centre</h2>
+                </div>
+                <div class="col-md-6 h-100">
+                    <nav aria-label="breadcrumb" class="directory-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">District Industries Center</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" style="padding-top: 40px;">
+        <header>
+            <h1>Sikkim District Industries</h1>
+            <div class="info-container">
+                <p class="lead-paragraph"><strong>The District Industries Centre</strong> was set up with an aim of effective promotion and development of small village and cottage industries in all the four districts of the State. The Centre is a wing of the Department of Commerce & Industries and its single roof all around support and services are rendered for rural transformation and generation of industrial growth and self-employment ventures.</p>
+                <p>The District Industries Centers along with KVIC and KVIB have also implemented the <strong>Prime Minister's Employment Generation Programme (PMEGP)</strong> in the State to generate sustainable employment opportunities through establishment of micro enterprises in urban as well as rural areas.</p>
+                <p>The centre also organizes and conducts <strong>Entrepreneurship Development Programmes</strong> or EDPs for grooming new and prospective entrepreneur to establish small industries to generate employment opportunities.</p>
+            </div>
+        </header>
+
+        <div class="districts-grid">
+            <!-- Gangtok -->
+            <div class="district-card gangtok">
+                <div class="district-preview">
+                    <img src=https://plus.unsplash.com/premium_photo-1697730418140-064a5b6c2e17?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2FuZ3Rva3xlbnwwfHwwfHx8MA%3D%3D alt="Gangtok">
+                    <div class="district-overlay">
+                        <h2 class="district-name">Gangtok</h2>
+                    </div>
+                </div>
+                <div class="district-summary">
+                    <p>The capital city known for its tourism, handicrafts, and growing IT sector. Hub of economic activities in Sikkim.</p>
+                    <button class="expand-btn" onclick="toggleCard(this)">
+                        <span>Explore District</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="district-info">
+                    <div class="district-info-content">
+                        <h3>Key Industries</h3>
+                        <ul>
+                            <li>Tourism & Hospitality (45% of economy)</li>
+                            <li>Handicrafts & Handloom</li>
+                            <li>Information Technology</li>
+                            <li>Education & Training</li>
+                        </ul>
+                        <h3>Government Schemes</h3>
+                        <p>Special subsidies for eco-tourism projects (up to ₹25 lakhs), IT startup incubation center with 2-year tax holiday.</p>
+                        <h3>Investment Potential</h3>
+                        <p>₹1,200 crore tourism projects underway. 25% capital subsidy for premium hotels.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Namchi -->
+            <div class="district-card namchi">
+                <div class="district-preview">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Temi_tea_garden.jpg" alt="Namchi">
+                    <div class="district-overlay">
+                        <h2 class="district-name">Namchi</h2>
+                    </div>
+                </div>
+                <div class="district-summary">
+                    <p>Sikkim's tea capital with sprawling plantations and spiritual tourism sites. Major spice producer.</p>
+                    <button class="expand-btn" onclick="toggleCard(this)">
+                        <span>Explore District</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="district-info">
+                    <div class="district-info-content">
+                        <h3>Key Industries</h3>
+                        <ul>
+                            <li>Tea Plantations (200+ estates)</li>
+                            <li>Spice Production (cardamom, ginger)</li>
+                            <li>Religious Tourism</li>
+                            <li>Floriculture</li>
+                        </ul>
+                        <h3>Government Schemes</h3>
+                        <p>30% subsidy on organic certification. ₹10 lakhs grant for tea processing units.</p>
+                        <h3>Investment Potential</h3>
+                        <p>500 acres available for spice parks. 15% export incentive for tea.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gyalshing -->
+            <div class="district-card gyalshing">
+                <div class="district-preview">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnb04KqYZompAtDtf4gi64sN06zEx4FM6Fig&s alt="Gyalshing">
+                    <div class="district-overlay">
+                        <h2 class="district-name">Gyalshing</h2>
+                    </div>
+                </div>
+                <div class="district-summary">
+                    <p>Agricultural heartland with organic farms and dairy cooperatives. Emerging ecotourism destination.</p>
+                    <button class="expand-btn" onclick="toggleCard(this)">
+                        <span>Explore District</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="district-info">
+                    <div class="district-info-content">
+                        <h3>Key Industries</h3>
+                        <ul>
+                            <li>Organic Farming (100% organic status)</li>
+                            <li>Dairy Products</li>
+                            <li>Apple Orchards</li>
+                            <li>Eco-Tourism</li>
+                        </ul>
+                        <h3>Government Schemes</h3>
+                        <p>50% subsidy on cold storage. Free organic training programs.</p>
+                        <h3>Investment Potential</h3>
+                        <p>300+ hectares available for contract farming. Milk processing plant incentives.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mangan -->
+            <div class="district-card mangan">
+                <div class="district-preview">
+                    <img src="https://images.unsplash.com/photo-1600402808924-9c591a6dace8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2lra2ltfGVufDB8fDB8fHww alt="Mangan">
+                    <div class="district-overlay">
+                        <h2 class="district-name">Mangan</h2>
+                    </div>
+                </div>
+                <div class="district-summary">
+                    <p>Northern district with hydropower projects and adventure tourism. Rich in minerals.</p>
+                    <button class="expand-btn" onclick="toggleCard(this)">
+                        <span>Explore District</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="district-info">
+                    <div class="district-info-content">
+                        <h3>Key Industries</h3>
+                        <ul>
+                            <li>Hydropower (300MW capacity)</li>
+                            <li>Adventure Tourism</li>
+                            <li>Horticulture (kiwi, oranges)</li>
+                            <li>Mineral Mining</li>
+                        </ul>
+                        <h3>Government Schemes</h3>
+                        <p>Tax holiday for power projects. 25% subsidy on ropeways.</p>
+                        <h3>Investment Potential</h3>
+                        <p>4 new hydropower projects tendered. Adventure resort land available.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soreng -->
+            <div class="district-card soreng">
+                <div class="district-preview">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoLyK4q9gQxUPA2Cat1cozi06cZ90xaMivoQ&s alt="Soreng">
+                    <div class="district-overlay">
+                        <h2 class="district-name">Soreng</h2>
+                    </div>
+                </div>
+                <div class="district-summary">
+                    <p>Newest district with bamboo forests and emerging rural tourism. Traditional crafts hub.</p>
+                    <button class="expand-btn" onclick="toggleCard(this)">
+                        <span>Explore District</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="district-info">
+                    <div class="district-info-content">
+                        <h3>Key Industries</h3>
+                        <ul>
+                            <li>Bamboo Crafts</li>
+                            <li>Rural Tourism</li>
+                            <li>Poultry Farming</li>
+                            <li>Apiculture</li>
+                        </ul>
+                        <h3>Government Schemes</h3>
+                        <p>40% subsidy on bamboo processing units. Homestay development grants.</p>
+                        <h3>Investment Potential</h3>
+                        <p>Bamboo industrial park planned. 200+ rural tourism sites identified.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pakyong -->
+            <div class="district-card pakyong">
+                <div class="district-preview">
+                    <img src="https://assets.vogue.com/photos/5bac08d30068ad2e144a6a00/16:9/w_2580,c_limit/01-new-pakyong-airport-in-india-himalayan-mountains.jpg alt="Pakyong">
+                    <div class="district-overlay">
+                        <h2 class="district-name">Pakyong</h2>
+                    </div>
+                </div>
+                <div class="district-summary">
+                    <p>Gateway district with international airport. Logistics and ginger farming center.</p>
+                    <button class="expand-btn" onclick="toggleCard(this)">
+                        <span>Explore District</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="district-info">
+                    <div class="district-info-content">
+                        <h3>Key Industries</h3>
+                        <ul>
+                            <li>Aviation Services</li>
+                            <li>Logistics & Warehousing</li>
+                            <li>Ginger Farming</li>
+                            <li>Food Processing</li>
+                        </ul>
+                        <h3>Government Schemes</h3>
+                        <p>30% subsidy on cold chains. Airport-linked industrial incentives.</p>
+                        <h3>Investment Potential</h3>
+                        <p>500-acre logistics park planned. 100% FDI allowed in aviation services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expanded Info Containers -->
+        <div id="gangtok-expanded" class="expanded-info-container gangtok-expanded">
+            <div class="expanded-info-content">
+                <div class="expanded-info-image">
+                    <img src="https://plus.unsplash.com/premium_photo-1697730418140-064a5b6c2e17?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2FuZ3Rva3xlbnwwfHwwfHx8MA%3D%3D" alt="Gangtok">
+                </div>
+                <div class="expanded-info-details">
+                    <h2>Gangtok</h2>
+                    <p>The capital city known for its tourism, handicrafts, and growing IT sector. Hub of economic activities in Sikkim.</p>
+                    
+                    <h3>Key Industries</h3>
+                    <ul>
+                        <li>Tourism & Hospitality (45% of economy)</li>
+                        <li>Handicrafts & Handloom</li>
+                        <li>Information Technology</li>
+                        <li>Education & Training</li>
+                    </ul>
+                    
+                    <h3>Government Schemes</h3>
+                    <p>Special subsidies for eco-tourism projects (up to ₹25 lakhs), IT startup incubation center with 2-year tax holiday.</p>
+                    
+                    <h3>Investment Potential</h3>
+                    <p>₹1,200 crore tourism projects underway. 25% capital subsidy for premium hotels.</p>
+                </div>
+                <button class="close-expanded-info" onclick="closeExpandedInfo('gangtok')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="namchi-expanded" class="expanded-info-container namchi-expanded">
+            <div class="expanded-info-content">
+                <div class="expanded-info-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Temi_tea_garden.jpg" alt="Namchi">
+                </div>
+                <div class="expanded-info-details">
+                    <h2>Namchi</h2>
+                    <p>Sikkim's tea capital with sprawling plantations and spiritual tourism sites. Major spice producer.</p>
+                    
+                    <h3>Key Industries</h3>
+                    <ul>
+                        <li>Tea Plantations (200+ estates)</li>
+                        <li>Spice Production (cardamom, ginger)</li>
+                        <li>Religious Tourism</li>
+                        <li>Floriculture</li>
+                    </ul>
+                    
+                    <h3>Government Schemes</h3>
+                    <p>30% subsidy on organic certification. ₹10 lakhs grant for tea processing units.</p>
+                    
+                    <h3>Investment Potential</h3>
+                    <p>500 acres available for spice parks. 15% export incentive for tea.</p>
+                </div>
+                <button class="close-expanded-info" onclick="closeExpandedInfo()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="gyalshing-expanded" class="expanded-info-container gyalshing-expanded">
+            <div class="expanded-info-content">
+                <div class="expanded-info-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnb04KqYZompAtDtf4gi64sN06zEx4FM6Fig&s" alt="Gyalshing">
+                </div>
+                <div class="expanded-info-details">
+                    <h2>Gyalshing</h2>
+                    <p>Agricultural heartland with organic farms and dairy cooperatives. Emerging ecotourism destination.</p>
+                    
+                    <h3>Key Industries</h3>
+                    <ul>
+                        <li>Organic Farming (100% organic status)</li>
+                        <li>Dairy Products</li>
+                        <li>Apple Orchards</li>
+                        <li>Eco-Tourism</li>
+                    </ul>
+                    
+                    <h3>Government Schemes</h3>
+                    <p>50% subsidy on cold storage. Free organic training programs.</p>
+                    
+                    <h3>Investment Potential</h3>
+                    <p>300+ hectares available for contract farming. Milk processing plant incentives.</p>
+                </div>
+                <button class="close-expanded-info" onclick="closeExpandedInfo()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mangan-expanded" class="expanded-info-container mangan-expanded">
+            <div class="expanded-info-content">
+                <div class="expanded-info-image">
+                    <img src="https://images.unsplash.com/photo-1600402808924-9c591a6dace8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2lra2ltfGVufDB8fDB8fHww" alt="Mangan">
+                </div>
+                <div class="expanded-info-details">
+                    <h2>Mangan</h2>
+                    <p>Northern district with hydropower projects and adventure tourism. Known for cardamom cultivation.</p>
+                    
+                    <h3>Key Industries</h3>
+                    <ul>
+                        <li>Hydroelectric Power</li>
+                        <li>Adventure Tourism</li>
+                        <li>Cardamom Cultivation</li>
+                        <li>Medicinal Plants</li>
+                    </ul>
+                    
+                    <h3>Government Schemes</h3>
+                    <p>40% subsidy on adventure tourism equipment. Hydropower investment incentives.</p>
+                    
+                    <h3>Investment Potential</h3>
+                    <p>3 hydropower projects seeking PPP. Adventure tourism zones with tax benefits.</p>
+                </div>
+                <button class="close-expanded-info" onclick="closeExpandedInfo()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="soreng-expanded" class="expanded-info-container soreng-expanded">
+            <div class="expanded-info-content">
+                <div class="expanded-info-image">
+                    <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2lra2ltfGVufDB8fDB8fHww" alt="Soreng">
+                </div>
+                <div class="expanded-info-details">
+                    <h2>Soreng</h2>
+                    <p>Newest district with focus on dairy farming and organic vegetables. Developing handicraft sector.</p>
+                    
+                    <h3>Key Industries</h3>
+                    <ul>
+                        <li>Dairy Farming</li>
+                        <li>Organic Vegetables</li>
+                        <li>Handicrafts</li>
+                        <li>Rural Tourism</li>
+                    </ul>
+                    
+                    <h3>Government Schemes</h3>
+                    <p>35% subsidy on dairy equipment. Organic certification support.</p>
+                    
+                    <h3>Investment Potential</h3>
+                    <p>Dairy processing units with 5-year tax benefits. Handicraft export zones.</p>
+                </div>
+                <button class="close-expanded-info" onclick="closeExpandedInfo()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="pakyong-expanded" class="expanded-info-container pakyong-expanded">
+            <div class="expanded-info-content">
+                <div class="expanded-info-image">
+                    <img src="https://assets.vogue.com/photos/5bac08d30068ad2e144a6a00/16:9/w_2580,c_limit/01-new-pakyong-airport-in-india-himalayan-mountains.jpg" alt="Pakyong">
+                </div>
+                <div class="expanded-info-details">
+                    <h2>Pakyong</h2>
+                    <p>Gateway district with international airport. Logistics and ginger farming center.</p>
+                    
+                    <h3>Key Industries</h3>
+                    <ul>
+                        <li>Aviation Services</li>
+                        <li>Logistics & Warehousing</li>
+                        <li>Ginger Farming</li>
+                        <li>Food Processing</li>
+                    </ul>
+                    
+                    <h3>Government Schemes</h3>
+                    <p>30% subsidy on cold chains. Airport-linked industrial incentives.</p>
+                    
+                    <h3>Investment Potential</h3>
+                    <p>500-acre logistics park planned. 100% FDI allowed in aviation services.</p>
+                </div>
+                <button class="close-expanded-info" onclick="closeExpandedInfo()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-top">
+        
+      </div>
+      <div class="row2 small" style="background-color:white">
+        <div class="imagegroup2" style="animation-delay: 1s; ">
+            <a href="https://www.sikkim.gov.in" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/sikkgov.png" alt=""></a>
+            <a href="https://pmfme.mofpi.gov.in/pmfme/#/Home-Page" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/pmfme.png" alt=""></a>
+            <a href="https://unnati.dpiit.gov.in//" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/unnati.png" alt=""></a>
+            <a href="https://pmvishwakarma.gov.in/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/pfme.png" alt=""></a>
+            <a href="https://scsthub.in/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/nssh.png" alt=""></a>
+            <a href="https://sfurti.msme.gov.in/SFURTI/Home.aspx" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/sfurti.jfif" alt=""></a>
+            <a href="https://msme.gov.in/prime-minister-employment-generation-programme-and-other-credit-support-schemes" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/pmegp.png" alt=""></a>
+            <a href="https://inspires.sikkim.gov.in/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/inspireslogo.png" alt=""></a>
+         </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          © Copyright <strong><span>DIT</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Mobile Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navbar = document.querySelector('#navbar ul');
+            
+            if (mobileNavToggle) {
+                mobileNavToggle.addEventListener('click', function(e) {
+                    navbar.classList.toggle('navbar-mobile');
+                    mobileNavToggle.classList.toggle('bi-list');
+                    mobileNavToggle.classList.toggle('bi-x');
+                });
+                
+                // Handle dropdowns in mobile view
+                document.querySelectorAll('#navbar .dropdown > a').forEach(function(dropdown) {
+                    dropdown.addEventListener('click', function(e) {
+                        if (navbar.classList.contains('navbar-mobile')) {
+                            e.preventDefault();
+                            this.nextElementSibling.classList.toggle('dropdown-active');
+                        }
+                    });
+                });
+            }
+        });
+        
+        // Close all expanded info containers
+        function closeAllExpandedInfo() {
+            document.querySelectorAll('.expanded-info-container').forEach(container => {
+                container.classList.remove('active');
+            });
+        }
+        
+        // Close specific expanded info container
+        function closeExpandedInfo() {
+            // Get the active expanded container
+            const activeContainer = document.querySelector('.expanded-info-container.active');
+            if (activeContainer) {
+                // Extract the district class from the container ID
+                const containerId = activeContainer.id;
+                const districtClass = containerId.replace('-expanded', '');
+                
+                // Find the corresponding district card
+                const card = document.querySelector('.district-card.' + districtClass);
+                if (card) {
+                    card.classList.remove('active');
+                    const button = card.querySelector('.expand-btn span');
+                    if (button) {
+                        button.textContent = 'Explore District';
+                    }
+                }
+            }
+            
+            // Close all expanded containers
+            closeAllExpandedInfo();
+            
+            // Reset all cards that might still be active
+            document.querySelectorAll('.district-card.active').forEach(card => {
+                card.classList.remove('active');
+                const button = card.querySelector('.expand-btn span');
+                if (button) {
+                    button.textContent = 'Explore District';
+                }
+            });
+        }
+        
+        // Toggle card function
+        function toggleCard(button) {
+            const card = button.closest('.district-card');
+            const districtClass = Array.from(card.classList).find(cls => 
+                ['gangtok', 'namchi', 'gyalshing', 'mangan', 'soreng', 'pakyong'].includes(cls)
+            );
+            
+            // Close all expanded info containers
+            closeAllExpandedInfo();
+            
+            // If we're closing this card, just return
+            if (card.classList.contains('active')) {
+                card.classList.remove('active');
+                button.querySelector('span').textContent = 'Explore District';
+                return;
+            }
+            
+            // Close all other cards
+            document.querySelectorAll('.district-card.active').forEach(activeCard => {
+                activeCard.classList.remove('active');
+                activeCard.querySelector('.expand-btn span').textContent = 'Explore District';
+            });
+            
+            // Show the expanded info container for this district
+            const expandedInfoContainer = document.getElementById(districtClass + '-expanded');
+            if (expandedInfoContainer) {
+                expandedInfoContainer.classList.add('active');
+                
+                // Scroll to the expanded info container
+                setTimeout(() => {
+                    expandedInfoContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+            }
+            
+            // Update button text
+            button.querySelector('span').textContent = 'Collapse';
+            
+            // Force grid layout recalculation
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 50);
+        }
+    </script>
+</body>
+</html>

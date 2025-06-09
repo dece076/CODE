@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/dece/Documents/CODE/C++ DSA/hi'
+relocations:     []
+...

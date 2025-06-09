@@ -1,0 +1,269 @@
+.price{
+    font-weight:bold;
+    color: rgb(6, 191, 15);
+}
+.title{
+    font-size:25px;
+    font-weight:bold;
+}
+.atc-button{
+    background-color:rgba(250, 209, 27, 0.936);
+    border:none;
+    border-radius:17px;
+    width:107px;
+    height:25px;
+}  
+.bn-button{
+    background-color:rgba(250, 161, 27, 0.936);
+    border:none;
+    border-radius:17px;
+    width:107px;
+    height:25px;
+} 
+.back{
+    padding-top:8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius:3px ;
+    background-color: white;
+    border-color:black;
+    border-width:1px;
+    
+
+    
+}
+.next{
+    padding-top:8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius:3px ;
+    background-color: white;
+    border-color:black;
+    border-width:1px;
+}
+.stretch{
+    background-color:green;
+    color:white;
+    border:none;
+    transition:0.5s;
+}
+.stretch:hover{
+    cursor: pointer;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:7px;
+    padding-top:7px;
+}
+.shadow{
+    background-color:green;
+    border:none;
+    color:white;
+    box-shadow:  5px 5px 5px rgb(0, 0, 0, 0.15);
+}
+.shadow:hover{
+    cursor:pointer;
+}
+.shadow:active{
+    box-shadow:none;
+    margin-left:3px;
+    margin-top:3px;
+}
+.one{
+    background-color: green;
+    color:white;
+    border:none;
+    margin-left:4px;
+    margin-right:4px;
+    transition:0.15s;
+}
+.one:hover{
+    padding-left:10px;
+    margin-left:0px;
+    margin-right:0px;
+    padding-right:10px;
+    cursor:pointer;
+}
+.two{
+    background-color: green;
+    color:white;
+    border:none;
+    margin-left:4px;
+    margin-right:4px;
+    margin-right:4px;
+    transition:0.15s;
+}
+.two:hover{
+    padding-left:10px;
+    margin-left:0px;
+    margin-right:0px;
+    padding-right:10px;
+    cursor:pointer;
+}
+.three{
+    background-color: green;
+    color:white;
+    border:none;
+    margin-left:4px;
+    margin-right:4px;
+    transition:0.15s;
+}
+.three:hover{
+    padding-left:10px;
+    margin-left:0px;
+    margin-right:0px;
+    padding-right:10px;
+    cursor:pointer;
+}
+.fivea{
+    font-family:Tahoma;
+    font-size: 20px;
+    font-weight:bold;
+}
+.fiveb1{
+    font-family:arial;
+    font-weight:bold;
+    font-size:20px;
+    margin-bottom:2px;
+}
+.fiveb2{
+    font-family:arial;
+    font-size:15px;
+    font-style:italic;
+    color:red;
+    margin-top:0px;
+}
+.first{
+    font-family:verdana;
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:3px;
+}
+.second{
+    font-family:verdana;
+    color:grey;
+    font-size:11px;
+    margin-top:3px;
+}
+.third{
+    font-family:verdana;
+    width:230px;
+    font-size:13px;
+}
+.fivecb{
+    background-color:green;
+    border-radius:4px;
+    color:white;
+    border:none;
+
+}
+.fived1{
+    font-family:arial;
+    font-weight:bold;
+    font-size:14px;
+    text-align:center;
+    margin-bottom:10px;
+}
+.fived2{
+    font-family:arial;
+    font-size:8px;
+    text-align:center;
+    margin-top:10px;
+
+}
+.fived3{
+    font-family:arial;
+    font-size:8px;
+    text-align:center;
+    color:rgb(30, 150, 249);
+}
+.fivee1{
+    font-family:Arial;
+    text-align:center;
+    color:rgb(244, 155, 1);
+    font-size:10px;
+    font-weight:bold;
+    margin-bottom:2px;
+}
+.fivee2{
+    font-family:Arial;
+    text-align:center;
+    font-weight:bold;
+    margin-top:2px;
+    margin-bottom:1px;
+}
+.fivee3{
+    font-family:Arial;
+    text-align:center;
+    font-weight:bold;
+    margin-top:0px;
+    margin-bottom:1px;
+    font-size:30px;
+}
+.fivee4{
+    font-family:Arial;
+    text-align:center;
+    font-size:11px;
+    margin-top:8px;
+    color:grey;
+    margin-bottom:4px;
+}
+.fivee5{
+    font-family:Arial;
+    margin-left:710px;
+    background-color:rgb(0, 119, 255);
+    border:none;
+    color:white;
+    font-weight:bold;
+    border-radius:8px;
+    margin-top:4px;
+}
+.fivef1{
+    font-family:arial;
+    font-size:20px;
+    margin-bottom:4px;
+}
+.fivef2{
+    font-family:arial;
+    font-size:11px;
+    color:green;
+    margin-top:4px;
+    margin-bottom:4px;
+}
+.fivef3{
+    font-family:arial;
+    font-size:11px;
+    color:grey;
+    margin-top:4px;
+    margin-bottom:4px;
+}
+.f1{
+    font-family:arial;
+    font-size:11px;
+    color:grey;
+}
+.f2{
+    font-family:arial;
+    color:red;
+}
+.fiveg1{
+    font-family:arial;
+    font-weight:bold;
+    margin-bottom:2px;
+}
+.fiveg2{
+    font-family:arial;
+    margin-top:2px;
+    width:550px;
+    
+}
+.fiveg3{
+    font-family:arial;
+}
+.fiveg11{
+    color:grey;
+}
+.fiveg31{
+    color:rgb(0, 136, 255);
+}

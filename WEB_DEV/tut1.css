@@ -1,0 +1,10 @@
+p{
+    color: blue;
+    background-color: red;
+    font-size: 15px;
+} 
+div{
+    height: 20px;
+    width: 100px;
+    background-color: aqua;
+}
