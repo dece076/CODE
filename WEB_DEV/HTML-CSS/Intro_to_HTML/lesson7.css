@@ -1,0 +1,19 @@
+.a7{
+    width:300px;
+    border-radius:10px;
+    margin-left:5px;
+    margin-right: 5px;
+}
+.b7{
+    width: 200px;
+    height: 200px;
+    object-fit:cover;
+    object-position:centre;
+}
+.c7{
+    width:200px;
+    height: 200px;
+    object-fit:cover;
+    border-radius:100px;
+    margin-left:10px;
+}
