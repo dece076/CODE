@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soreng District | Sikkim District Industries</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        :root {
+            --gangtok: #FFD700;  /* Gold */
+            --namchi: #E74C3C;   /* Ruby Red */
+            --gyalshing: #3498DB; /* Sapphire Blue */
+            --mangan: #2ECC71;    /* Emerald Green */
+            --soreng: #9B59B6;   /* Amethyst Purple */
+            --pakyong: #1ABC9C;  /* Turquoise */
+            --text-dark: #2C3E50;
+            --text-light: #ECF0F1;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header with logos */
+        .logo-container {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 0;
+        }
+        
+        .logo-container .container {
+            padding: 0 20px;
+        }
+        
+        .logo-container img {
+            height: 60px;
+            max-width: 100%;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            padding: 10px 0;
+            margin-top: 0;
+            background: linear-gradient(to right, #2C3E50, #4A5568);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .navbar ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .navbar li {
+            position: relative;
+        }
+        
+        .navbar a, 
+        .navbar a:focus {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-light);
+            white-space: nowrap;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        
+        .navbar a i, 
+        .navbar a:focus i {
+            font-size: 12px;
+            line-height: 0;
+            margin-left: 5px;
+        }
+        
+        .navbar a:hover, 
+        .navbar .active, 
+        .navbar .active:focus, 
+        .navbar li:hover > a {
+            color: var(--soreng);
+            text-shadow: 0 0 5px rgba(155, 89, 182, 0.3);
+        }
+        
+        .navbar .dropdown ul {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: calc(100% + 30px);
+            margin: 0;
+            padding: 10px 0;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            background: linear-gradient(to bottom, #2C3E50, #1E2A3A);
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+            border-radius: 8px;
+            min-width: 250px;
+            flex-direction: column;
+            border: 1px solid rgba(155, 89, 182, 0.1);
+        }
+        
+        .navbar .dropdown ul li {
+            min-width: 200px;
+        }
+        
+        .navbar .dropdown ul a {
+            padding: 10px 20px;
+            font-size: 14px;
+            text-transform: none;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+        
+        .navbar .dropdown ul a:hover, 
+        .navbar .dropdown ul .active:hover, 
+        .navbar .dropdown ul li:hover > a {
+            color: var(--soreng);
+            background-color: rgba(155, 89, 182, 0.05);
+            text-shadow: 0 0 5px rgba(155, 89, 182, 0.3);
+        }
+        
+        .navbar .dropdown:hover > ul {
+            opacity: 1;
+            top: 100%;
+            visibility: visible;
+        }
+        
+        .navbar .dropdown .dropdown ul {
+            top: 0;
+            left: calc(100% - 30px);
+            visibility: hidden;
+        }
+        
+        .navbar .dropdown .dropdown:hover > ul {
+            opacity: 1;
+            top: 0;
+            left: 100%;
+            visibility: visible;
+        }
+        
+        .mobile-nav-toggle {
+            display: none;
+            color: var(--text-light);
+            font-size: 28px;
+            cursor: pointer;
+            line-height: 0;
+            transition: 0.5s;
+            background: rgba(155, 89, 182, 0.1);
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(155, 89, 182, 0.2);
+        }
+        
+        .mobile-nav-toggle.bi-x {
+            color: var(--soreng);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Directory/Breadcrumb Section */
+        .directory-section {
+            background: linear-gradient(to right, rgba(44, 62, 80, 0.95), rgba(74, 85, 104, 0.95));
+            padding: 0;
+            color: var(--text-light);
+            border-top: 1px solid rgba(155, 89, 182, 0.2);
+            border-bottom: 1px solid rgba(155, 89, 182, 0.2);
+            height: 56px; /* Match navbar height */
+            display: flex;
+            align-items: center;
+        }
+        
+        .directory-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+            color: var(--text-light);
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .directory-breadcrumb {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .breadcrumb {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            display: flex;
+            align-items: center;
+        }
+        
+        .breadcrumb-item {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .breadcrumb-item a {
+            color: var(--soreng);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .breadcrumb-item a:hover {
+            color: var(--soreng);
+            text-shadow: 0 0 5px rgba(155, 89, 182, 0.3);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--text-light);
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: "/";
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* District Detail Styles */
+        .district-header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .district-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .district-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+        }
+
+        .district-header-title {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .district-content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .district-content h2 {
+            color: var(--soreng);
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--soreng);
+            padding-bottom: 10px;
+        }
+
+        .district-content h3 {
+            color: var(--text-dark);
+            margin: 25px 0 15px;
+            font-weight: 600;
+        }
+
+        .district-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .district-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .district-content li {
+            margin-bottom: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: var(--soreng);
+            color: var(--text-light);
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: var(--text-light);
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+        /* Footer Styles */
+        #footer {
+            font-size: 14px;
+            background-color: #1c1f23;
+        }
+
+        #footer .footer-links {
+            margin-bottom: 30px;
+        }
+
+        #footer .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #footer .footer-links ul li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #footer .footer-links ul li:first-child {
+            padding-top: 0;
+        }
+
+        #footer .footer-links ul a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: 0.3s;
+            display: inline-block;
+            line-height: 1;
+            text-decoration: none;
+        }
+
+        #footer .footer-links ul a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        #footer .social-links a {
+            font-size: 18px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            line-height: 1;
+            padding: 9px 0;
+            margin-right: 4px;
+            border-radius: 50%;
+            text-align: center;
+            width: 36px;
+            height: 36px;
+            transition: 0.3s;
+        }
+
+        #footer .social-links a:hover {
+            background: var(--soreng);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #footer .imagegroup2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        #footer .imagegroup2 img {
+            height: 45px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        #footer .imagegroup2 img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .district-header {
+                height: 300px;
+            }
+            
+            .district-header-title {
+                font-size: 2.5rem;
+            }
+            
+            .district-content {
+                padding: 30px;
+            }
+            
+            #footer .imagegroup2 img {
+                height: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .district-header {
+                height: 250px;
+            }
+            
+            .district-header-title {
+                font-size: 2rem;
+            }
+            
+            .district-content {
+                padding: 20px;
+            }
+            
+            #footer .imagegroup2 img {
+                height: 35px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            #footer .imagegroup2 img {
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Header -->
+    <div class="logo-container">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="#" class="logo"><img src="https://industries.sikkim.gov.in/assets/img/logo.png" alt="" class="img-fluid"></a>
+            <a href="#" class="logo"><img src="https://industries.sikkim.gov.in/assets/img/logoline.png" alt="" class="img-fluid"></a>
+            <a href="#" class="logo"><img src="https://industries.sikkim.gov.in/assets/img/logo-golden.png" alt="" class="img-fluid"></a>
+        </div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <div class="container position-relative" style="padding-top: 0; padding-bottom: 0;">
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="dic1.html">Home</a></li>
+                <li class="dropdown"><a href="#" class="active"><span>Districts</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="gangtok.html">Gangtok</a></li>
+                        <li><a href="namchi.html">Namchi</a></li>
+                        <li><a href="gyalshing.html">Gyalshing</a></li>
+                        <li><a href="mangan.html">Mangan</a></li>
+                        <li><a href="soreng.html" class="active">Soreng</a></li>
+                        <li><a href="pakyong.html">Pakyong</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/orgview">Organizational Setup</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/dics">District Industries Center</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/officesofdept">Offices under Department</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/officerdirectories">Officer Directory</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/industriesandcompanies">Industries and Companies</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/psus">Public Sector Undertaking</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Schemes and Guidelines <i class="bi bi-chevron-down"></i></a>
+                    <ul class="sub-menu text-muted font-small">
+                        <li><a href="https://industries.sikkim.gov.in/visitors/odop">ODOP</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/schemes?8">SC-ST Hub Scheme Guidelines</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/schemes?9">MSE-CDP Guidelines</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/visitors/schemes?17">APPLICATION/RENEWAL OF INDUSTRIAL LICENCE</a></li>
+                        <li><a class="nav-link" href="https://industries.sikkim.gov.in/visitors/schemes">View More</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="/visitors#contact">Grievances</a></li>
+                <li><a class="nav-link scrollto" href="https://industries.sikkim.gov.in/visitors/rtis">RTI</a></li>
+                <li><a class="nav-link scrollto" href="https://industries.sikkim.gov.in/visitors/events">Events</a></li>
+                <li><a class="nav-link scrollto" href="https://industries.sikkim.gov.in/visitors/awards">Awards &amp; Achievements</a></li>
+                <li><a class="nav-link scrollto" href="https://industries.sikkim.gov.in/visitors/gallery">Gallery</a></li>
+                <li class="dropdown"><a href="#"><span>Invest In Sikkim</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul class="sub-menu text-muted font-small">
+                        <li><a href="https://industries.sikkim.gov.in/investsik/aboutus.pdf" target="_blank">About Us</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/investsik/projects.pdf" target="_blank">Investable Projects</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/investsik/greeninvest.pdf" target="_blank">The Green Investment Destination</a></li>
+                        <li><a href="https://industries.sikkim.gov.in/investsik/contactus.pdf" target="_blank">Contact Us </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Important Links</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul class="sub-menu text-muted font-small">
+                        <li><a href="https://sikkimdesignweek.com/">Sikkim Design Week</a></li>
+                        <li><a href="https://www.facebook.com/share/18ikrxFjYz/">Sikkim Design Week 2025 and District Design Connect</a></li>
+                        <li><a href="https://www.facebook.com/share/v/16S2NhTqFC/">District Industries Centre (DIC) inaugurated at Soreng, West Sikkim</a></li>
+                        <li><a href="https://www.facebook.com/share/p/169Tzrmyas/">Sikkim Design Week 2025,Soreng District</a></li>
+                        <li><a href="https://www.facebook.com/share/12HFRyfWrJK/">Sikkim start up shines at startup Mahakumbh 2025, New Delhi</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
+
+    <!-- Directory/Breadcrumb Section -->
+    <div class="directory-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="directory-title">District Profile</h1>
+                </div>
+                <div class="col-md-6">
+                    <nav class="directory-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="dic1.html">Home</a></li>
+                            <li class="breadcrumb-item active">Soreng</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- District Header -->
+    <div class="district-header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoLyK4q9gQxUPA2Cat1cozi06cZ90xaMivoQ&s" alt="Soreng">
+        <div class="district-header-overlay">
+            <h1 class="district-header-title">Soreng</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- District Content -->
+        <div class="district-content">
+            <h2>District Overview</h2>
+            <p>Newest district with bamboo forests and emerging rural tourism. Traditional crafts hub. Soreng is one of the newest districts in Sikkim, formed in 2021. It is known for its lush bamboo forests, traditional crafts, and emerging rural tourism opportunities.</p>
+            
+            <h3>Key Industries</h3>
+            <ul>
+                <li>Bamboo Crafts</li>
+                <li>Rural Tourism</li>
+                <li>Traditional Textiles</li>
+                <li>Organic Farming</li>
+                <li>Cottage Industries</li>
+            </ul>
+            
+            <h3>Major Initiatives</h3>
+            <ul>
+                <li>Bamboo Resource Development Program</li>
+                <li>Rural Tourism Circuit Development</li>
+                <li>Traditional Craft Preservation Project</li>
+                <li>Organic Farming Certification</li>
+            </ul>
+            
+            <h3>Investment Opportunities</h3>
+            <ul>
+                <li>Bamboo Processing Units</li>
+                <li>Rural Homestay Development</li>
+                <li>Traditional Craft Centers</li>
+                <li>Organic Food Processing</li>
+                <li>Eco-friendly Construction Materials</li>
+            </ul>
+            
+            <h3>Success Stories</h3>
+            <p>The Soreng Bamboo Artisans Collective has successfully exported bamboo products to five countries, generating over ₹50 lakh in annual revenue. The district's rural tourism initiative has created employment for over 200 local families through homestay programs and guided tours.</p>
+            
+            <h3>Contact Information</h3>
+            <p>District Industries Center<br>
+            Soreng, Sikkim - 737121<br>
+            Phone: +91-3595-253421<br>
+            Email: dic-soreng@sikkim.gov.in</p>
+            
+            <a href="dic1.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Districts</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-dark text-light">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Department of Commerce & Industries<br>
+              Government of Sikkim<br>
+              Gangtok, Sikkim - 737101<br><br>
+              <strong>Phone:</strong> +91-3592-284708<br>
+              <strong>Email:</strong> industries-sk@nic.in<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="dic1.html">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Industrial Licensing</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Entrepreneurship Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Investment Facilitation</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Skill Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Export Promotion</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Connect with us on social media for updates and announcements</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container-fluid py-4 bg-dark border-top border-secondary">
+         <div class="imagegroup2 text-center">
+            <a href="https://www.india.gov.in/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/indiagovlogo.png" alt=""></a>
+            <a href="https://www.mygov.in/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/mygovlogo.png" alt=""></a>
+            <a href="https://www.digitalindia.gov.in/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/digitalindialogo.png" alt=""></a>
+            <a href="https://data.gov.in/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/datagov.png" alt=""></a>
+            <a href="https://www.meity.gov.in/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/meitylogo.png" alt=""></a>
+            <a href="https://www.pmindia.gov.in/en/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/pmindialogo.png" alt=""></a>
+            <a href="https://eci.gov.in/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/ecilogo.png" alt=""></a>
+            <a href="https://inspires.sikkim.gov.in/" target="_blank"> <img src="https://industries.sikkim.gov.in/logos/inspireslogo.png" alt=""></a>
+         </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          © Copyright <strong><span>DIT</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Mobile Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navbar = document.querySelector('#navbar ul');
+            
+            if (mobileNavToggle) {
+                mobileNavToggle.addEventListener('click', function(e) {
+                    navbar.classList.toggle('navbar-mobile');
+                    mobileNavToggle.classList.toggle('bi-list');
+                    mobileNavToggle.classList.toggle('bi-x');
+                });
+                
+                // Handle dropdowns in mobile view
+                document.querySelectorAll('#navbar .dropdown > a').forEach(function(dropdown) {
+                    dropdown.addEventListener('click', function(e) {
+                        if (navbar.classList.contains('navbar-mobile')) {
+                            e.preventDefault();
+                            this.nextElementSibling.classList.toggle('dropdown-active');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
