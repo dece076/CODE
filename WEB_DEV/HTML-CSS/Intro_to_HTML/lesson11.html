@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lesson11</title>
+        <style>
+            .a11{
+                display:grid;
+                grid-template-columns:200px 75px;
+                margin-bottom:16px;
+            }
+            .b11{
+                display:grid;
+                grid-template-columns:50px 1fr 75px;
+            }
+            .c11{
+                margin-top:10px;
+                display:grid;
+                grid-template-columns:1fr 1fr 1fr 1fr;
+                row-gap:10px;
+                column-gap:20px;
+            }
+            .d11{
+                width:660px;
+                height:280px;
+                display:grid;
+                grid-template-columns:1fr 1fr 1fr;
+                column-gap:15px;
+            }
+            .profile{
+                box-shadow:0px 0px 5px grey;
+            }
+            .f91{
+                width:210px;
+                height:200px;
+                object-fit:cover;
+                margin-bottom:3px;
+                
+                
+            }
+            .f92{
+                font-family:arial;
+                font-weight:bold;
+                margin-top:5px;
+                margin-left:5px;
+                margin-bottom:3px;
+            }
+            .f93{
+                font-family:arial;
+                color:grey;
+                margin-left:5px;
+                margin-top:3px;
+                margin-bottom:5px;
+            }
+            .f94{
+                background-color:rgb(0, 123, 255);
+                width:100px;
+                height:30px;
+                border-radius:2px;
+                border-width:0px;
+                margin-left:5px;
+                color:white;
+                font-family:arial;
+                margin-bottom:5px;
+                margin-top:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="a11">
+            <div style="background-color:lightblue"><p>200px</p></div>
+            <div style="background-color:lightpink"><p>75px</p></div>
+        </div>
+
+        <div class="b11">
+            <div style="background-color:lightblue"><p>col1</p></div>
+            <div style="background-color:lightpink"><p>col2</p></div>
+            <div style="background-color:lightblue"><p>col3</p></div>
+
+        </div>
+
+        <div class="c11">
+            <div style="background-color:lightpink"><p>col1</p></div>
+            <div style="background-color:lightpink"><p>col2</p></div>
+            <div style="background-color:lightpink"><p>col3</p></div>
+            <div style="background-color:lightpink"><p>col4</p></div>
+            <div style="background-color:lightpink"><p>col1</p></div>
+            <div style="background-color:lightpink"><p>col2</p></div>
+            <div style="background-color:lightpink"><p>col3</p></div>
+            <div style="background-color:lightpink"><p>col4</p></div>
+        </div>
+
+        <div class="d11">
+            <div class="profile">
+                <img class="f91" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiE26ff46aKpfHCPy88HJkziodR9zd2jFhlg&s">
+                <p class="f92">Oliver</p>
+                <p class="f93">2 mutual friends</p>
+                <button class="f94">Add Friend</button>
+            </div>
+            <div class="profile">
+                <img class="f91" src="https://wildcatridgesanctuary.org/wp-content/uploads/leo-hybrid-02-e1548204735636.jpg">
+                <p class="f92">Mimi</p>
+                <p class="f93">3 mutual friends</p>
+                <button class="f94">Add Friend</button>
+            </div>
+            <div class="profile">
+                <img class="f91" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfYoU1VX_8GxjU0-qq2DJUt07OgvLx78M-BQ&s">
+                <p class="f92">Rexx</p>
+                <p class="f93">4 mutual friends</p>
+                <button class="f94">Add Friend</button>
+            </div>
+        </div>
+    </body>
+</html>
