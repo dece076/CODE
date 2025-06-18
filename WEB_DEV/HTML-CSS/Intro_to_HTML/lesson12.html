@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lesson12</title>
+        <style>
+            .a11{
+                display:flex;
+                flex-direction:row;
+            }
+            .b11{
+                margin-top:30px;
+                display:flex;
+                flex-direction:row;
+            }
+            .c12{
+                margin-top:30px;
+                display:flex;
+                justify-content:space-between;
+            }
+            .d12{
+                margin-top:30px;
+                height:50px;
+                width:500px;
+                border-style:solid;
+                border-color:gray;
+                border-width:1px;
+                display:flex;
+                flex-direction: row;
+                justify-content:space-between;
+                align-items:center;
+            }
+            .container{
+                padding:15px;
+                margin-top:30px;
+                width:500px;
+                height:150px;
+                border-style:solid;
+                border-color:gray;
+                border-width:1px;
+                border-radius:5px;
+
+            }
+            .flex{
+                display:flex;
+                flex-direction:row;
+                justify-content:space-between;
+               
+                margin-top:13px;
+                margin-bottom:13px;
+
+            }
+
+            .container1{
+                margin-top:50px;
+                width:400px;
+            }
+            .flex1{
+                display:flex;
+                flex-direction:row;
+                padding-top:6px;
+                padding-left:12px;
+                padding-right:12px;
+                padding-bottom:6px;
+                align-items:center;
+                gap:15px;
+            }
+            .img{
+                width:55px;
+                height:55px;
+                border-radius:150px;
+                object-fit:cover;
+            }
+            .info{
+                font-family:arial;
+                flex:1;
+                display:flex;
+                flex-direction:column;
+            }
+            .button1{
+                width:75px;
+                height:30px;
+                border-radius:5px;
+                background-color:rgb(0, 166, 255);
+                border-width:0px;
+                color:white;
+                font-size:15px;
+
+            }
+            .button1:active{
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="a11">
+            <div style="background-color:lightblue;width:200px;">200px</div>
+            <div style="background-color:lightpink;width:75px;">75px</div>
+        </div>
+
+        <div class="b11">
+            <div style="background-color:lightblue;
+            width:50px;">col1</div>
+            <div style="background-color:lightpink;
+            flex:1">col2</div>
+            <div style="background-color:lightblue;
+            width:75px;">col3</div>
+        </div>
+
+        <div class="c12">
+            <div style="background-color:lightpink">item1</div>
+            <div style="background-color:lightpink">item1</div>
+            <div style="background-color:lightpink">item1</div>
+            <div style="background-color:lightpink">item1</div>
+        </div>
+
+        <div class="d12">
+            <div style="background-color:lightpink">item1</div>
+            <div style="background-color:lightpink">item1</div>
+        </div>
+
+        <div class="container">
+            <div class="flex">
+                <div style="font-family:arial; font-size:25px">Home</div>
+                <div style="font-family:arial;width:40px;font-size:20px;background-color:rgb(60, 60, 250);border-radius:13px;padding-left:12px;padding-top:3px;color:white;">14</div>
+            </div>
+            <div class="flex">
+                <div style="font-family:arial; font-size:25px">Notification</div>
+                <div style="font-family:arial;width:40px;font-size:20px;background-color:rgb(60, 60, 250);border-radius:13px;padding-left:12px;padding-top:3px;color:white;">14</div>
+            </div>
+            <div class="flex">
+                <div style="font-family:arial; font-size:25px">Messages</div>
+                <div style="font-family:arial;width:40px;font-size:20px;background-color:rgb(60, 60, 250);border-radius:13px;padding-left:12px;padding-top:3px;color:white;">14</div>
+            </div>
+
+        </div>
+        <div class="container1">
+            <div class="flex1">
+                <img  class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCPucPT3iN9DMtW0b6lWYIleJlW06ANjSdvA&s">
+                <div class="info">
+                    <div style="flex:1;font-size:18px;font-weight:bold;">oliver</div>
+                    <div style="flex:1;color:gray;font-size:18px;">the cat</div>
+                    <div style="flex:1;color:gray;font-size:15px">Popular</div>
+                </div>
+                <button class="button1">Follow</button>
+
+            </div>
+            <div class="flex1">
+                <img  class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCPucPT3iN9DMtW0b6lWYIleJlW06ANjSdvA&s">
+                <div class="info">
+                    <div style="flex:1;font-size:18px;font-weight:bold;">oliver</div>
+                    <div style="flex:1;color:gray;font-size:18px;">the cat</div>
+                    <div style="flex:1;color:gray;font-size:15px">Popular</div>
+                </div>
+                <button class="button1">Follow</button>
+
+            </div>
+            <div class="flex1">
+                <img  class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCPucPT3iN9DMtW0b6lWYIleJlW06ANjSdvA&s">
+                <div class="info">
+                    <div style="flex:1;font-size:18px;font-weight:bold;">oliver</div>
+                    <div style="flex:1;color:gray;font-size:18px;">the cat</div>
+                    <div style="flex:1;color:gray;font-size:15px">Popular</div>
+                </div>
+                <button class="button1">Follow</button>
+
+            </div>
+        </div>
+
+        
+
+    </body>
+</html>
