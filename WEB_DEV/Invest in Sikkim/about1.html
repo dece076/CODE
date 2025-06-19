@@ -10,8 +10,90 @@
   <!-- Additional CSS Files from the new template -->
   <link rel="stylesheet" href="https://industries.sikkim.gov.in/assets/admin/assets/css/backend-plugin.min.css">
   <link rel="stylesheet" href="https://industries.sikkim.gov.in/assets/admin/assets/css/backend.css?v=1.0.0">
-  <link rel="stylesheet" href="https://industries.sikkim.gov.in/assets/admin/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+  <!-- Font Awesome from multiple sources for reliability -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Local fallback for Font Awesome -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="https://industries.sikkim.gov.in/assets/admin/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+  
+  <!-- Fallback for Font Awesome -->
+  <script>
+    // Check if Font Awesome is loaded
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var testIcon = document.createElement('i');
+        testIcon.className = 'fas fa-hotel';
+        testIcon.style.display = 'none';
+        document.body.appendChild(testIcon);
+        
+        var computed = window.getComputedStyle(testIcon);
+        var fontFamily = computed.getPropertyValue('font-family');
+        
+        if (fontFamily.indexOf('Font Awesome') === -1) {
+          // Font Awesome not loaded, use alternative icons
+          var icons = document.querySelectorAll('.thrust-sector-item i');
+          icons.forEach(function(icon) {
+            // Replace Font Awesome classes with emoji or text
+            if (icon.classList.contains('fa-hotel')) {
+              icon.textContent = '🏨';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-pills')) {
+              icon.textContent = '💊';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-water')) {
+              icon.textContent = '💧';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-spa')) {
+              icon.textContent = '🌿';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-gamepad')) {
+              icon.textContent = '🎮';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-leaf')) {
+              icon.textContent = '🌱';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-laptop-code')) {
+              icon.textContent = '💻';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-paint-brush')) {
+              icon.textContent = '🖌️';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-microchip')) {
+              icon.textContent = '🔌';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-atom')) {
+              icon.textContent = '⚛️';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-graduation-cap')) {
+              icon.textContent = '🎓';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-truck')) {
+              icon.textContent = '🚚';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-film')) {
+              icon.textContent = '🎬';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-tshirt')) {
+              icon.textContent = '👕';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-heartbeat')) {
+              icon.textContent = '❤️';
+              icon.className = '';
+            } else if (icon.classList.contains('fa-rocket')) {
+              icon.textContent = '🚀';
+              icon.className = '';
+            } else {
+              icon.textContent = '•';
+              icon.className = '';
+            }
+          });
+        }
+        
+        document.body.removeChild(testIcon);
+      }, 500);
+    });
+  </script>
   <link rel="stylesheet" href="https://industries.sikkim.gov.in/assets/admin/assets/vendor/remixicon/fonts/remixicon.css">
   <link href="https://industries.sikkim.gov.in/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="https://industries.sikkim.gov.in/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
@@ -1354,6 +1436,14 @@
       line-height: 70px;
       border-radius: 50%;
       display: inline-block;
+      font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
+      font-weight: 900;
+    }
+    
+    /* Emoji fallback styling */
+    .thrust-sector-item i:not([class*="fa-"]) {
+      font-family: inherit;
+      font-size: 32px;
     }
 
     .thrust-sector-item:hover i {
@@ -1772,45 +1862,45 @@
                     <div class="thrust-sectors-grid" style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; margin-bottom: 15px;">
                       <!-- Thrust Sector 1 -->
                       <div class="thrust-sector-item" data-thrust-sector="tourism">
-                        <i class="fas fa-hotel"></i>
-                        <p>Tourism & Hospitality</p>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🌿</span>
+                        <p>Green Tourism</p>
                       </div>
                       
                       <!-- Thrust Sector 2 -->
                       <div class="thrust-sector-item" data-thrust-sector="pharma">
-                        <i class="fas fa-pills"></i>
-                        <p>Pharmaceuticals</p>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">💊</span>
+                        <p>Pharmaceuticals & Bio technology</p>
                       </div>
                       
                       <!-- Thrust Sector 3 -->
                       <div class="thrust-sector-item" data-thrust-sector="renewable">
-                        <i class="fas fa-solar-panel"></i>
-                        <p>Renewable Energy</p>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">💧</span>
+                        <p>Clean and Green Energy</p>
                       </div>
                       
                       <!-- Thrust Sector 4 -->
                       <div class="thrust-sector-item" data-thrust-sector="traditional">
-                        <i class="fas fa-spa"></i>
-                        <p>Traditional Medicine</p>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🌱</span>
+                        <p>Traditional Medicine Systems</p>
                       </div>
                       
                       <!-- Thrust Sector 5 -->
                       <div class="thrust-sector-item" data-thrust-sector="avgc">
-                        <i class="fas fa-gamepad"></i>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🎮</span>
                         <p>AVGC-XR</p>
                       </div>
                       
                       <!-- Thrust Sector 6 -->
                       <div class="thrust-sector-item" data-thrust-sector="food">
-                        <i class="fas fa-apple-alt"></i>
-                        <p>Food Processing</p>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🍃</span>
+                        <p>Organic Farming and Processing</p>
                       </div>
                     </div>
                     
                     <!-- View More Button - Enhanced -->
                     <div class="text-center" style="margin-bottom: 20px;">
                       <button id="viewMoreSectorsBtn" style="background: linear-gradient(135deg, #3a8a3f 0%, #2c6e30 100%); border: none; color: white; padding: 10px 24px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2); position: relative; overflow: hidden;">
-                        <span style="position: relative; z-index: 2;"><i class="fas fa-plus-circle" style="margin-right: 8px;"></i> View All 16 Sectors</span>
+                        <span style="position: relative; z-index: 2;">➕ View All 16 Sectors</span>
                         <span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--accent-gold) 0%, #ffb300 100%); opacity: 0; transition: opacity 0.3s ease; z-index: 1;"></span>
                       </button>
                     </div>
@@ -1829,72 +1919,77 @@
                     <div id="additionalSectors" class="thrust-sectors-grid" style="display: none; grid-template-columns: repeat(6, 1fr); gap: 15px; margin-bottom: 15px;">
                       <!-- Thrust Sector 7 -->
                       <div class="thrust-sector-item" data-thrust-sector="it">
-                        <i class="fas fa-laptop-code"></i>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">💻</span>
                         <p>IT & ITeS</p>
                       </div>
                       
                       <!-- Thrust Sector 8 -->
-                      <div class="thrust-sector-item" data-thrust-sector="handicrafts">
-                        <i class="fas fa-paint-brush"></i>
-                        <p>Handicrafts</p>
+                      <div class="thrust-sector-item" data-thrust-sector="climate">
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🌍</span>
+                        <p>Climate Change Mitigation, Management and Studies</p>
                       </div>
                       
                       <!-- Thrust Sector 9 -->
-                      <div class="thrust-sector-item" data-thrust-sector="electronics">
-                        <i class="fas fa-microchip"></i>
-                        <p>Electronics</p>
+                      <div class="thrust-sector-item" data-thrust-sector="biotech">
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">⚛️</span>
+                        <p>Green Hydrogen</p>
                       </div>
                       
                       <!-- Thrust Sector 10 -->
-                      <div class="thrust-sector-item" data-thrust-sector="biotech">
-                        <i class="fas fa-dna"></i>
-                        <p>Biotechnology</p>
+                      <div class="thrust-sector-item" data-thrust-sector="traderoutes">
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🛣️</span>
+                        <p>Trade routes and Pilgrimage</p>
                       </div>
                       
                       <!-- Thrust Sector 11 -->
                       <div class="thrust-sector-item" data-thrust-sector="education">
-                        <i class="fas fa-graduation-cap"></i>
-                        <p>Education & Skill</p>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🎓</span>
+                        <p>Education</p>
                       </div>
                       
                       <!-- Thrust Sector 12 -->
-                      <div class="thrust-sector-item" data-thrust-sector="logistics">
-                        <i class="fas fa-truck"></i>
-                        <p>Logistics</p>
+                      <div class="thrust-sector-item" data-thrust-sector="recreation">
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🎭</span>
+                        <p>Recreation and Entertainment: Sports, Music, and Leisure</p>
                       </div>
                       
                       <!-- Thrust Sector 13 -->
                       <div class="thrust-sector-item" data-thrust-sector="film">
-                        <i class="fas fa-film"></i>
-                        <p>Film & Entertainment</p>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🎬</span>
+                        <p>Films and Media</p>
                       </div>
                       
                       <!-- Thrust Sector 14 -->
                       <div class="thrust-sector-item" data-thrust-sector="textiles">
-                        <i class="fas fa-tshirt"></i>
-                        <p>Textiles</p>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">👕</span>
+                        <p>Textiles and Fashion Design</p>
                       </div>
                       
                       <!-- Thrust Sector 15 -->
                       <div class="thrust-sector-item" data-thrust-sector="wellness">
-                        <i class="fas fa-heartbeat"></i>
-                        <p>Wellness & Healthcare</p>
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">❤️</span>
+                        <p>Health and Wellness</p>
                       </div>
                       
                       <!-- Thrust Sector 16 -->
-                      <div class="thrust-sector-item" data-thrust-sector="startup">
-                        <i class="fas fa-rocket"></i>
-                        <p>Startup Ecosystem</p>
+                      <div class="thrust-sector-item" data-thrust-sector="smartcities">
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🏙️</span>
+                        <p>Smart Cities and Real Estate</p>
+                      </div>
+                      
+                      <!-- Thrust Sector 17 -->
+                      <div class="thrust-sector-item" data-thrust-sector="electronics">
+                        <span style="font-size: 36px; display: inline-block; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); color: var(--primary-green);">🔌</span>
+                        <p>Electronics</p>
                       </div>
                     </div>
-                    
                     <!-- Thrust Sector Details Panel -->
                     <div id="thrustSectorDetails" style="background: rgba(76, 175, 80, 0.05); border-radius: 12px; padding: 25px; margin-top: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: none; border-left: 4px solid var(--primary-green);"></div>
                   </div>
                   
                   <div class="text-center mt-4">
                     <a href="assets/pdf/Sikkim_Industrial_and_Investment_Policy_2024.pdf" target="_blank" class="btn" style="background-color: var(--primary-green); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block;">
-                      <i class="fas fa-download" style="margin-right: 8px;"></i> Download Complete Policy
+                      📥 Download Complete Policy
                     </a>
                   </div>
                 </div>
@@ -2097,23 +2192,7 @@
                   </div>
                   
                   <script>
-                    // View All Policies button functionality
-                    document.addEventListener('DOMContentLoaded', function() {
-                      const viewAllPoliciesBtn = document.getElementById('viewAllPoliciesBtn');
-                      const additionalPolicies = document.getElementById('additionalPolicies');
-                      
-                      viewAllPoliciesBtn.addEventListener('click', function() {
-                        if (additionalPolicies.style.display === 'none') {
-                          // Show additional policies
-                          additionalPolicies.style.display = 'block';
-                          viewAllPoliciesBtn.innerHTML = '<i class="fas fa-minus-circle" style="margin-right: 8px;"></i> Show Less';
-                        } else {
-                          // Hide additional policies
-                          additionalPolicies.style.display = 'none';
-                          viewAllPoliciesBtn.innerHTML = '<i class="fas fa-plus-circle" style="margin-right: 8px;"></i> View All Sectoral Policies';
-                        }
-                      });
-                    });
+                    // View All Policies button functionality moved to the end of the document
                   </script>
                 </div>
                 
@@ -2236,29 +2315,7 @@
         <script>
           // Add tab functionality for policy tabs
           document.addEventListener('DOMContentLoaded', function() {
-            const policyTabBtns = document.querySelectorAll('.policy-tab-btn');
-            const policyTabContents = document.querySelectorAll('.policy-tab-content');
-            
-            policyTabBtns.forEach(btn => {
-              btn.addEventListener('click', function() {
-                // Remove active class from all buttons and contents
-                policyTabBtns.forEach(b => {
-                  b.classList.remove('active');
-                  b.style.color = 'var(--text-medium)';
-                });
-                policyTabContents.forEach(content => {
-                  content.style.display = 'none';
-                });
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-                this.style.color = 'var(--primary-green)';
-                
-                // Show corresponding content
-                const tabId = this.getAttribute('data-policy-tab');
-                document.querySelector(`.policy-tab-content[data-policy-tab="${tabId}"]`).style.display = 'block';
-              });
-            });
+            // Policy tab functionality moved to the end of the document
             
             // View More Sectors Button functionality
             const viewMoreBtn = document.getElementById('viewMoreSectorsBtn');
@@ -2309,90 +2366,80 @@
               }
             });
             
-            // Thrust Sectors functionality
-            const thrustSectorData = {
-              tourism: {
-                title: "Tourism & Hospitality",
-                desc: "Sikkim's tourism sector offers immense potential with its pristine landscapes, rich biodiversity, and cultural heritage.",
+            // Thrust Sectors functionality moved to the end of the document
+            const thrustSectorData = {}; // Empty object to avoid errors
+                desc: "Rich in hydro resources from perennial rivers and streams.",
                 points: [
-                  "Eco-tourism and adventure tourism development",
-                  "Luxury and wellness resorts with sustainable practices",
-                  "Cultural tourism showcasing local traditions and festivals",
-                  "MICE tourism (Meetings, Incentives, Conferences, Exhibitions)",
-                  "Homestay and community-based tourism initiatives",
-                  "Special incentives for tourism infrastructure development"
-                ]
-              },
-              pharma: {
-                title: "Pharmaceuticals",
-                desc: "Sikkim has established itself as a pharmaceutical manufacturing hub with significant growth potential.",
-                points: [
-                  "API (Active Pharmaceutical Ingredients) manufacturing",
-                  "Formulation development and manufacturing",
-                  "Contract research and manufacturing services",
-                  "Herbal and ayurvedic medicine production",
-                  "Pharmaceutical packaging and logistics",
-                  "R&D facilities with special incentives"
-                ]
-              },
-              renewable: {
-                title: "Renewable Energy",
-                desc: "Sikkim's geography and climate make it ideal for various renewable energy projects.",
-                points: [
-                  "Small and micro hydro power projects",
-                  "Solar energy installations in suitable areas",
-                  "Biomass energy from agricultural waste",
-                  "Green hydrogen initiatives",
-                  "Energy storage solutions",
-                  "Smart grid and energy management systems"
+                  "Total hydropower potential: 8000 MW.",
+                  "2300 MW already commissioned through: Independent Power Producers (IPPs), Central PSUs like NHPC, Joint Ventures.",
+                  "1000 MW under construction; expected by 2027.",
+                  "Cross-Border Energy Trade possibility: Power may be exported to neighboring countries under India's 2021 guidelines.",
+                  "🌊 Focus on Small Hydro Projects: Emphasis shifting to small, mini, and micro hydro segments. Policy supports local entrepreneurship: Only local entrepreneurs allowed to develop projects up to 5 MW. Encourages community ownership and private sector participation.",
+                  "🔌 Transmission and Distribution Infrastructure: Current system: 132 kV & 66 kV lines, with 220 MVA transformation capacity. Comprehensive Scheme under implementation (with Govt. of India support): Includes: 220 kV, 132 kV & 66 kV Sub-Stations and Transmission Lines. Expected completion: early 2024.",
+                  "Outcome: 220 kV pooling stations for hydro power. 132 kV Sub-Stations at District HQs. 66 kV Sub-Stations at sub-divisions/load centers.",
+                  "Solar and Other Green Energy Initiatives: Climate-conscious diversification into: Solar energy, Wind energy, Green hydrogen. Solar Potential: 4.94 GWp (Gigawatt-peak). High potential for: Solar parks, Solar clusters, Agrovoltaic farming (farming + solar panel integration)."
                 ]
               },
               traditional: {
-                title: "Traditional Medicine",
-                desc: "Sikkim's rich biodiversity and traditional knowledge offer unique opportunities in traditional medicine.",
+                title: "Traditional Medicine Systems",
+                desc: "Sikkim and the North Eastern Region (NER) are home to many traditional and herbal medicinal resources.",
                 points: [
-                  "Ayurvedic and traditional Sikkimese medicine production",
-                  "Medicinal plant cultivation and processing",
-                  "Research and development of traditional formulations",
-                  "Wellness centers based on traditional healing practices",
-                  "Documentation and preservation of traditional medical knowledge",
-                  "Export-oriented traditional medicine products"
+                  "An Ethnomedicine and Tourism Commission (EMTC) could be autonomously set up at the regional level under PPP mode, aimed at:",
+                  "Commercializing traditional medicines",
+                  "Promoting medical tourism",
+                  "Medical/Wellness Tourism could be built around specific themes to attract high-value tourists for longer stays.",
+                  "Investments in this sector would be:",
+                  "Selective",
+                  "Of high visibility",
+                  "Fully coordinated with private operators",
+                  "With the government providing enabling infrastructure and connectivity",
+                  "Four identified tourism themes for development:",
+                  "Religious",
+                  "Nature / Adventure / Yoga / Wellness",
+                  "Business",
+                  "Recreation",
+                  "The State aims to target higher-end tourists with longer stays, maintaining a moderate annual traffic growth of 10%.",
+                  "With the government's focus on reviving yoga, meditation, and folk healing, Sikkim can play a major role in wellness tourism"
                 ]
               },
               avgc: {
-                title: "AVGC-XR (Animation, Visual Effects, Gaming, Comics & Extended Reality)",
-                desc: "Sikkim is promoting the creative digital economy through AVGC-XR initiatives.",
+                title: "AVGC-XR Sector in Sikkim",
+                desc: "(Animation, VFX, Gaming, Comics & Extended Reality)",
                 points: [
-                  "Animation studios and production houses",
-                  "Visual effects and post-production facilities",
-                  "Gaming development and publishing",
-                  "AR/VR/MR (Extended Reality) content creation",
-                  "Digital art and comics production",
-                  "AVGC-XR education and training centers"
+                  "The AVGC-XR sector is a major emerging growth engine of the Indian economy with the potential to generate powerful content and intellectual property (IP).",
+                  "This sector has seen unprecedented growth, attracting interest from global players looking to outsource services to India.",
+                  "India is becoming a leading global destination for high-end, skill-based AVGC-XR activities.",
+                  "The Media & Entertainment (M&E) industry in India is projected to grow at 8.8% CAGR by 2026.",
+                  "The AVGC-XR sector can help spread Indian culture globally, connect with the diaspora, and boost employment, tourism, and allied industries.",
+                  "In Sikkim, the AVGC sector is still in a nascent stage, with only a few companies currently involved.",
+                  "The sector's current contribution to the State GSDP is minimal, with most creators producing local content.",
+                  "With the right policies and support, the following growth drivers can shape the AVGC-XR sector in Sikkim:",
+                  "Creative Talent: Sikkim has a young and creatively inclined population. Talents span across oral storytelling, music, cinema, theatre, food, fashion, tourism, and sports. Students in the state show a strong interest in creative subjects, making AVGC a promising sector for future employability.",
+                  "Increased Technology Penetration: Rapid growth in smartphone and internet usage post-COVID. Students are increasingly consuming online learning content. Platforms like Facebook, Twitter, and YouTube have seen explosive growth in Sikkim.",
+                  "Local Content Creation: There's a growing demand for digitally created local content. Opportunities exist to develop content based on Sikkim's history, cross-border cultures (Nepal, Bhutan, China, Bangladesh), biodiversity, food, and education. Local youth have already shown excellence at national and international levels.",
+                  "Emergence as an Outsourcing Hub: Sikkim has the potential to become an outsourcing destination for AVGC services. With infrastructure support and investment-friendly policies, global AVGC work can be channeled into the State."
                 ]
               },
               food: {
-                title: "Food Processing",
-                desc: "Leveraging Sikkim's organic agriculture for value-added food processing.",
+                title: "Organic Farming and Processing in Sikkim",
+                desc: "Sikkim became India's first fully organic state in 2016.",
                 points: [
-                  "Organic food processing and packaging",
-                  "Fruit and vegetable processing units",
-                  "Dairy product manufacturing",
-                  "Traditional Sikkimese food products",
-                  "Spice processing and packaging",
-                  "Cold chain infrastructure development"
+                  "The State's organic mission aims at: Long-term soil fertility preservation. Environmental and ecological protection. Promoting healthy lifestyles. Reducing health risks from chemical exposure.",
+                  "Over 75,000 hectares of farmland are certified fully organic.",
+                  "Sikkim's major organic produce includes: Cardamom, ginger, buckwheat, turmeric, oranges, kiwis, and more.",
+                  "Focus is now shifting to: Processing of organic produce. Exporting to domestic and international markets.",
+                  "The State targets US $100 million (₹820 crore) in organic exports by 2030.",
+                  "High investment opportunities in: Organic food production and processing. Introduction of new crop/fruit/vegetable/flower varieties.",
+                  "Sikkimese farmers: Are quick learners, innovation-friendly, and entrepreneurial. Are moving away from traditional small-scale processing to modern, state-of-the-art facilities.",
+                  "Strategic opportunity for investors to: Integrate into value and supply chains. Access regional markets including: Middle East, Bhutan, Nepal, Bangladesh, Myanmar, Vietnam, Thailand, Singapore, and beyond."
                 ]
               },
               it: {
-                title: "IT & ITeS",
-                desc: "Sikkim is developing as an emerging IT destination with focus on sustainable tech parks.",
+                title: "IT and ITeS",
+                desc: "With abundance of talent in Information Technology and colleges and universities churning talent in the sector, Sikkim has high potential for development of niche sectors using IT technology.",
                 points: [
-                  "Software development and IT services",
-                  "Business process outsourcing",
-                  "Data centers with green energy",
-                  "IT training and skill development",
-                  "Digital solutions for local governance",
-                  "Remote work hubs and co-working spaces"
+                  "With the advent of Industry 4.0, new avenues for growth such as Internet of Things, Artificial Intelligence, Robotics, Automation, and Extended Reality are making their mark in the world.",
+                  "The State welcomes companies and startups in this sector to invest, given the resources available in the State."
                 ]
               },
               handicrafts: {
@@ -2405,6 +2452,16 @@
                   "Wood carving and thangka painting",
                   "Carpet weaving and traditional paper making",
                   "Handicraft export promotion and marketing"
+                ]
+              },
+              climate: {
+                title: "Climate Change Mitigation, Management and Studies",
+                desc: "The State Government will build low carbon and resilient cities.",
+                points: [
+                  "It will increase energy efficiency and use renewable energy.",
+                  "It will implement climate-smart agriculture and nurture forest landscapes.",
+                  "The Government aims to strengthen disaster preparedness and mitigation measures.",
+                  "Priority in areas of Research and Development on climate change and disaster mitigation and management will be encouraged."
                 ]
               },
               electronics: {
@@ -2420,27 +2477,37 @@
                 ]
               },
               biotech: {
-                title: "Biotechnology",
-                desc: "Sikkim's biodiversity provides a strong foundation for biotechnology initiatives.",
+                title: "Hydrogen in Sikkim",
+                desc: "The Government of Sikkim has identified Green Hydrogen as a high-potential sector for future investment.",
                 points: [
-                  "Agricultural biotechnology research",
-                  "Biopharmaceutical development",
-                  "Enzyme and bio-product manufacturing",
-                  "Molecular diagnostics and testing",
-                  "Bioinformatics and computational biology",
-                  "Biodiversity conservation through biotechnology"
+                  "Green Hydrogen will be generated using renewable energy, which is abundant in the State.",
+                  "It will play a crucial role in the decarbonization of the transportation sector.",
+                  "The State plans to use this technology to establish micro-grids in remote and disaster-prone areas.",
+                  "Green Hydrogen also has potential applications in the fertilizer industry and other industrial sectors.",
+                  "There is strong potential for exporting Green Hydrogen from Sikkim to other regions.",
+                  "The Sikkim Industrial and Investment Policy 2024 ensures investor-friendly access to resources and government support for major ventures."
                 ]
               },
               education: {
-                title: "Education & Skill Development",
-                desc: "Sikkim is focusing on quality education and skill development to create a future-ready workforce.",
+                title: "Education in Sikkim",
+                desc: "With the advent of the New Education Policy, the State of Sikkim has prioritized quality education and setting up of world-class education institutes in the State.",
                 points: [
-                  "Higher education institutions and universities",
-                  "Vocational training centers",
-                  "Research institutions in specialized fields",
-                  "Skill development for local industries",
-                  "Educational tourism and exchange programs",
-                  "Digital learning platforms and infrastructure"
+                  "The State is inviting inter-disciplinary universities, colleges, schools, and institutions in both tertiary, professional, technical, and training and skill-building sectors to set up their campus in the midst of the salubrious environment of the State.",
+                  "Sikkim has the potential to attract students from the rest of India, neighbouring countries, and the global world for educational purposes that have huge natural, field-based, cross-border, environmental, community, and agricultural heritage exposures.",
+                  "Prime investors in the education sector are already visiting and negotiating with various agencies in the State.",
+                  "Sikkim aspires to be a leader in green technologies and science, and institutes focussing on:",
+                  "Climate change",
+                  "Green technologies",
+                  "Green energy",
+                  "Traditional medicinal systems",
+                  "Disaster management",
+                  "Commercial use of biodiversity with strong emphasis on conservation",
+                  "Water resources management",
+                  "High value tourism",
+                  "The upcoming Netaji Subhash Chandra Bose University of Excellence being established in Chakung in West Sikkim is a priority project of the State Government and is envisaged to become a global hub of learning with local ethos not only of Sikkim and the North East but covering the entire Himalayan region.",
+                  "The Institute will be the first such institute in the entire Himalayan region that will undertake high quality research on the people, flora and fauna, climate change, cultural ecology, water resources, environmental issues of the Himalayan region.",
+                  "This will also give a major boost to the economy of the State by attracting intellectual talent pool of scholars, research centres, and academia.",
+                  "There is a huge scope for investment and collaboration with private sectors and research institutions alike."
                 ]
               },
               logistics: {
@@ -2456,39 +2523,51 @@
                 ]
               },
               film: {
-                title: "Film & Entertainment",
-                desc: "Sikkim offers stunning locations and incentives for film and entertainment production.",
+                title: "Films and Media in Sikkim",
+                desc: "The State has its own brief history of cinema.",
                 points: [
-                  "Film shooting and production facilities",
-                  "Post-production studios",
-                  "Music recording and production",
-                  "Film tourism development",
-                  "Local content creation and distribution",
-                  "Film festivals and cultural events"
+                  "It dates back to the Kingdom of Sikkim when Satyajit Ray, widely regarded as one of the greatest filmmakers, made a documentary titled "Sikkim" in 1971, showcasing the socio-cultural front of the Himalayan kingdom under the Monarchy.",
+                  "It can be said that his work on Sikkim laid the first foundation for a new breed of digital quest and aspiring filmmakers.",
+                  "Actors like Danny Denzongpa and Geetanjali Thapa and other artists have not only brought pride and fame to the state but have strengthened the bond with the film industry and become idols for others with similar passion and dreams.",
+                  "There is a pool of young Sikkimese artistes who are bound to grow in both national and global shows.",
+                  "Over the years, Sikkim has served as a perfect backdrop for movies and filmmakers have used this to their advantage.",
+                  "Classic movies like the Dev Anand starrer Jewel Thief and modern movies like 'Uff Yeh Mohabbat', 'Yaariyan', 'Qarib Qarib Single' have all been shot around Sikkim's picturesque valleys, towns and landscape.",
+                  "Therefore, there is ample scope for investment in film production, post film processing, media studios, films schools etc. in the State of Sikkim."
                 ]
               },
               textiles: {
-                title: "Textiles",
-                desc: "Sikkim is reviving and modernizing its traditional textile industry.",
+                title: "Textiles and Fashion Design",
+                desc: "The State has a rich repository of knowledge in handloom, handicraft, and textiles, deeply woven into the culture of the region.",
                 points: [
-                  "Traditional handloom textile production",
-                  "Modern textile manufacturing",
-                  "Organic textile processing",
-                  "Technical textiles development",
-                  "Garment manufacturing units",
-                  "Textile design and innovation centers"
+                  "The State Government aims to:",
+                  "Create, support, and sustain an enabling environment for the development and growth of the handicrafts sector",
+                  "Generate sustainable livelihood for people engaged in this sector across the state",
+                  "Preserve and evolve traditional craft and artisanal skills, ensuring they remain an integral part of the cultural fabric of Sikkim",
+                  "The government also seeks to remove constraints affecting the sector's growth trajectory through a multi-pronged approach involving:",
+                  "Capacity building",
+                  "Marketing",
+                  "Product development",
+                  "Patenting and trademarking",
+                  "Price support",
+                  "Branding support",
+                  "Packaging"
                 ]
               },
               wellness: {
-                title: "Wellness & Healthcare",
-                desc: "Sikkim's clean environment makes it ideal for wellness and healthcare initiatives.",
+                title: "Health and Wellness in Sikkim",
+                desc: "Given the clean and pollution-free environment and greeneries all around, the State Government is positioning Sikkim as the health and wellness destination.",
                 points: [
-                  "Wellness retreats and spa centers",
-                  "Specialized healthcare facilities",
-                  "Medical tourism development",
-                  "Traditional wellness practices",
-                  "Health tech and telemedicine",
-                  "Preventive healthcare and wellness education"
+                  "Health and Wellness encompass a holistic concept that goes much beyond physical and mental health.",
+                  "Today consumers are more conscientious of the ethical and environmental implications of the goods they buy and are looking for environment-friendly and sustainable products.",
+                  "Sikkim and the North Eastern Region (NER) are home to many traditional and herbal medicinal resources, and investments in commercializing this resource along with promoting medical tourism will have tremendous potential in the State.",
+                  "Given the focus of the government in reviving age-old practices, the State Government also intends to train its manpower into wellness experts, where manpower will be readily available for companies looking to set up their centres in the State.",
+                  "Investments with modern and orthodox technology and management in:",
+                  "Yoga ashrams",
+                  "Meditation centres",
+                  "Folk healing ventures",
+                  "Hot spring and other natural therapies",
+                  "Health walks and treks",
+                  "Organic and slow food and drinks enterprises"
                 ]
               },
               startup: {
@@ -2502,71 +2581,66 @@
                   "Startup-focused policy incentives",
                   "Networking and collaboration platforms"
                 ]
+              },
+              smartcities: {
+                title: "Smart Cities and Real Estate",
+                desc: "Sikkim is the least populous state in the country with an estimated population of 0.60 million and an urban share of 25%.",
+                points: [
+                  "Gangtok, the capital with an area of 19.28 sq km and an estimated population of 0.1 million, attributes to 66% of the urban population share of the State, thus making it a primate city, a characteristic prevalent in most Indian states.",
+                  "In order to promote a sustainable Himalayan urban growth, the State has notified the "Gangtok 2041 – GIS based Master Plan for Gangtok".",
+                  "This perspective plan, developed under the sub-scheme "Formulation of GIS based Master Plan" of the AMRUT mission, covers the capital city spanning 158 sq km.",
+                  "It enables the department to incorporate elements for identifying future economic nodes and unlocking economic potential through a flexible approach to urban planning.",
+                  "The absence of a public transport system in most mountain and hill cities has been an impediment in unlocking the economic potential of lands, which are already in short supply due to spatial and non-spatial attributes.",
+                  "The transit corridors for public transport would emerge as future economic nodes and thus have to be integrated in the master plan.",
+                  "The Techno Economic Feasibility Report of Cable car as Public Transport for Gangtok has already been completed.",
+                  "The proposal includes 14 stations covering a length of 13.43 km within the capital city.",
+                  "Additionally, the State has prepared the Sikkim Aerial Ropeway Bill to regulate the procurement, operations, and maintenance of aerial ropeways in Sikkim.",
+                  "This measure aims to promote public private partnership and ensure quality and safety of all passenger and non-passenger aerial ropeways.",
+                  "As per a recommendation in the report on "Reforms in Urban Planning Capacity in India" by NITI Aayog, the Government of Sikkim has already initiated the revision of the existing Sikkim Urban & Regional Planning and Development Act 1998.",
+                  "The revision aims to provide a suitable and adequate legal framework to promote and regulate planned development in urban, peri-urban, and hinterland areas across the State.",
+                  "The extended area for urban development, with the proposed green transport network in the form of aerial cable cars and the suitable legal framework under revision, would be the crux of master planning considerations for identifying and unlocking the future economic nodes within the existing and future city limits of Gangtok.",
+                  "For a small state like Sikkim, a Strategic Urban Plan (2008) was prepared for the entire state, based on a regional planning approach applicable for larger states.",
+                  "The urban growth is lopsided, with 80% of the urban population residing in the East District, and hence adoption of a "multiple nuclei urban structure" with a projected urban share of 60% in the North & East Districts and 40% in the West & South Districts for a horizon year of 2040 has been proposed.",
+                  "Thereafter, the Structure Plan for Gangtok along with the other district headquarters has been prepared.",
+                  "The State Government now proposes for the sustainable and planned development of cities such as Gangtok, Pakyong, Namchi, Mangan, Soreng, and Gyalshing.",
+                  "These smart cities will be powered by sustainable and green energy and shall be entirely based on green principles of planning.",
+                  "The cities shall be new centres of economic growth and will further help in the development of sectors like tourism and health and wellness.",
+                  "The State Government therefore invites companies and investment focusing on urban development and infrastructure, real estate development, city transport development, etc."
+                ]
+              },
+              traderoutes: {
+                title: "Trade Routes and Pilgrimage",
+                desc: "Sikkim shares three international borders — China, Nepal, and Bhutan — offering vast potential for trade with these nations and BIMSTEC countries, which would boost both economy and tourism.",
+                points: [
+                  "The Indo-China Trade Route at Nathu La (Eastern Sikkim) was a landmark decision by the Government of India and commenced in 2006.",
+                  "The Chewabhanjyang Pass, located in Uttaray village of Western Sikkim, has been identified as a potential trade route between India (Sikkim) and Nepal.",
+                  "The State Government has initiated the setting up of an integrated check post at Chewabhanjyang.",
+                  "Pilgrimage tourism is expected to attract a large number of visitors, helping establish Sikkim as part of the Buddhist / Pilgrimage circuit alongside Nepal, Bhutan, and China.",
+                  "Heritage tourism like the Younghusband Expedition and Pilgrimage tourism is anticipated to draw interest from:",
+                  "Scholars",
+                  "Mountaineers",
+                  "Expedition experts",
+                  "Pilgrims",
+                  "Students"
+                ]
+              },
+              recreation: {
+                title: "Recreation and Entertainment: Sports, Music, and Leisure",
+                desc: "The leisure industry is a business segment focused on recreation, entertainment, sports, music, and tourism.",
+                points: [
+                  "Recreation and entertainment are increasingly vital in today's environment where work-life balance plays a key role in the physical and mental well-being of individuals and society.",
+                  "As per data from Statista Market Insights, World Bank, IMF, UN, Eurostat:",
+                  "In 2024, the estimated consumer spending per capita on culture and recreation in India is US$12.49.",
+                  "The consumer spending per capita in the hospitality and restaurants sector in India is forecasted to be US$22.15.",
+                  "Sikkim can become the next hub of recreation and entertainment, taking advantage of:",
+                  "Its salubrious climate",
+                  "Safe environment",
+                  "Hospitable people"
+                ]
               }
             };
             
-            let currentlySelectedThrustSector = null;
-            const thrustSectorItems = document.querySelectorAll('.thrust-sector-item');
-            const thrustSectorDetailsPanel = document.getElementById('thrustSectorDetails');
-            
-            thrustSectorItems.forEach(item => {
-              item.addEventListener('click', function() {
-                const sector = this.getAttribute('data-thrust-sector');
-                const data = thrustSectorData[sector];
-                
-                // If clicking the same sector that's already open, close it
-                if (currentlySelectedThrustSector === sector && thrustSectorDetailsPanel.style.display === 'block') {
-                  thrustSectorDetailsPanel.style.display = 'none';
-                  thrustSectorItems.forEach(i => {
-                    i.style.borderColor = 'rgba(76, 175, 80, 0.3)';
-                    i.style.transform = 'none';
-                  });
-                  currentlySelectedThrustSector = null;
-                  return;
-                }
-                
-                // Reset all items
-                thrustSectorItems.forEach(i => {
-                  i.style.borderColor = 'rgba(76, 175, 80, 0.3)';
-                  i.style.transform = 'none';
-                });
-                
-                // Highlight selected item
-                this.style.borderColor = 'var(--primary-green)';
-                this.style.transform = 'translateY(-5px)';
-                currentlySelectedThrustSector = sector;
-                
-                if (data) {
-                  // Create points list
-                  const pointsList = data.points.map(point => 
-                    `<li style="margin-bottom: 12px; position: relative; padding-left: 25px;">
-                       <span style="position: absolute; left: 0; color: var(--primary-green);">➤</span>
-                       ${point}
-                     </li>`
-                  ).join('');
-                  
-                  // Update content
-                  thrustSectorDetailsPanel.innerHTML = `
-                    <div style="padding: 10px;">
-                      <h4 style="color: var(--primary-green); margin-top: 0; font-size: 1.4rem; margin-bottom: 15px;">
-                        ${data.title}
-                      </h4>
-                      <p style="color: var(--text-medium); margin-bottom: 20px; line-height: 1.6;">
-                        ${data.desc}
-                      </p>
-                      <div style="background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                        <h5 style="color: var(--primary-green); margin-top: 0; margin-bottom: 15px; font-size: 1.1rem;">Key Investment Opportunities:</h5>
-                        <ul style="list-style: none; padding: 0; margin: 0;">
-                          ${pointsList}
-                        </ul>
-                      </div>
-                    </div>
-                  `;
-                  
-                  thrustSectorDetailsPanel.style.display = 'block';
-                }
-              });
-            });
+            // Thrust sector functionality moved to the end of the document
           });
         </script>
 
@@ -3607,6 +3681,477 @@
       <div class="copyright">
         © Copyright <strong><span>DIT</span></strong>. All Rights Reserved
       </div>
+      
+    <!-- Fix for Policy Tab Buttons and Thrust Sector Buttons -->
+    <script>
+      // Execute immediately without waiting for DOMContentLoaded
+      (function() {
+        // Fix for policy tabs
+        const policyTabBtns = document.querySelectorAll('.policy-tab-btn');
+        const policyTabContents = document.querySelectorAll('.policy-tab-content');
+        
+        if (policyTabBtns.length > 0 && policyTabContents.length > 0) {
+          policyTabBtns.forEach(btn => {
+            // Remove any existing event listeners
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+            
+            // Add new event listener
+            newBtn.addEventListener('click', function(e) {
+              e.preventDefault();
+              
+              // Remove active class from all buttons and hide all contents
+              policyTabBtns.forEach(b => {
+                b.classList.remove('active');
+                b.style.color = 'var(--text-medium)';
+              });
+              policyTabContents.forEach(content => content.style.display = 'none');
+              
+              // Add active class to clicked button
+              this.classList.add('active');
+              this.style.color = 'var(--primary-green)';
+              
+              // Show corresponding content
+              const tabId = this.getAttribute('data-policy-tab');
+              const targetContent = document.querySelector(`.policy-tab-content[data-policy-tab="${tabId}"]`);
+              if (targetContent) {
+                targetContent.style.display = 'block';
+              }
+            });
+          });
+        }
+        
+        // Also fix the View All Policies button
+        const viewAllPoliciesBtn = document.getElementById('viewAllPoliciesBtn');
+        const additionalPolicies = document.getElementById('additionalPolicies');
+        
+        if (viewAllPoliciesBtn && additionalPolicies) {
+          // Remove any existing event listeners
+          const newBtn = viewAllPoliciesBtn.cloneNode(true);
+          viewAllPoliciesBtn.parentNode.replaceChild(newBtn, viewAllPoliciesBtn);
+          
+          // Add new event listener
+          newBtn.addEventListener('click', function() {
+            if (additionalPolicies.style.display === 'none') {
+              // Show additional policies
+              additionalPolicies.style.display = 'block';
+              newBtn.innerHTML = '<i class="fas fa-minus-circle" style="margin-right: 8px;"></i> Show Less';
+            } else {
+              // Hide additional policies
+              additionalPolicies.style.display = 'none';
+              newBtn.innerHTML = '<i class="fas fa-plus-circle" style="margin-right: 8px;"></i> View All Sectoral Policies';
+            }
+          });
+        }
+        
+        // Fix for thrust sector buttons
+        const thrustSectorData = {
+          tourism: {
+            title: "Green Tourism in Sikkim",
+            desc: "Tourism is a major contributor to Sikkim's economy. Rapid tourism growth has impacted the fragile ecosystem and limited carrying capacity. Sikkim is now focusing on Green Tourism for sustainable development.",
+            points: [
+              "Key strategies include: Increasing value per tourist rather than sheer numbers. Promoting longer stays. Encouraging tourism in rural areas and eco-heritage sites. Minimizing carbon footprints.",
+              "Rich in: Natural beauty and scenic Himalayan views. Biodiversity and organic farmlands. Cultural and historic heritage.",
+              "Popular for: Meetings, Incentives, Conferences, and Exhibitions (MICE). Weddings, honeymoons, and leisure travel. Adventure, heritage, cultural, and pilgrimage tourism.",
+              "Hosts include: Corporate houses, government ministries, NGOs, international organizations, and media.",
+              "Special focus on Home Stay Tourism under the Mega Homestay Scheme: Promotes eco-tourism and sustainable tourism. Supports local communities and authentic experiences."
+            ]
+          },
+          pharma: {
+            title: "Pharmaceuticals & Bio technology",
+            desc: "Sikkim has emerged as a significant pharmaceutical hub in India.",
+            points: [
+              "The state hosts over 15 major pharmaceutical companies.",
+              "Pharmaceutical manufacturing units in Sikkim contribute to approximately 20% of India's total pharmaceutical production.",
+              "The sector employs thousands of skilled workers.",
+              "Sikkim offers special incentives for pharmaceutical companies under its industrial policy.",
+              "Focus areas include generic drug manufacturing, API production, and biotechnology research.",
+              "The clean environment and pollution-free atmosphere make it ideal for pharmaceutical manufacturing."
+            ]
+          },
+          renewable: {
+            title: "Clean and Green Energy",
+            desc: "Sikkim has immense potential for clean and green energy development.",
+            points: [
+              "Hydropower Potential: Sikkim has a hydropower potential of 8,000 MW, of which only about 2,200 MW has been tapped.",
+              "Solar Energy: The state receives good solar radiation, making it suitable for solar power projects.",
+              "Wind Energy: Certain areas in Sikkim have been identified as potential sites for wind energy generation.",
+              "Biomass Energy: The state's rich forest cover provides opportunities for biomass-based power generation.",
+              "Green Hydrogen: Sikkim is exploring green hydrogen production using its renewable energy sources.",
+              "Investment opportunities exist in all these renewable energy sectors."
+            ]
+          },
+          traditional: {
+            title: "Traditional Medicine Systems",
+            desc: "Sikkim and the North Eastern Region (NER) are home to many traditional and herbal medicinal resources.",
+            points: [
+              "An Ethnomedicine and Tourism Commission (EMTC) could be autonomously set up at the regional level under PPP mode, aimed at:",
+              "Commercializing traditional medicines",
+              "Promoting medical tourism",
+              "Medical/Wellness Tourism could be built around specific themes to attract high-value tourists for longer stays.",
+              "Investments in this sector would be:",
+              "Selective",
+              "Of high visibility",
+              "Fully coordinated with private operators",
+              "With the government providing enabling infrastructure and connectivity",
+              "Four identified tourism themes for development:",
+              "Religious",
+              "Nature / Adventure / Yoga / Wellness",
+              "Business",
+              "Recreation",
+              "The State aims to target higher-end tourists with longer stays, maintaining a moderate annual traffic growth of 10%.",
+              "With the government's focus on reviving yoga, meditation, and folk healing, Sikkim can play a major role in wellness tourism"
+            ]
+          },
+          avgc: {
+            title: "AVGC-XR Sector in Sikkim",
+            desc: "(Animation, VFX, Gaming, Comics & Extended Reality)",
+            points: [
+              "The AVGC-XR sector is a major emerging growth engine of the Indian economy with the potential to generate powerful content and intellectual property (IP).",
+              "This sector has seen unprecedented growth, attracting interest from global players looking to outsource services to India.",
+              "India is becoming a leading global destination for high-end, skill-based AVGC-XR activities.",
+              "The Media & Entertainment (M&E) industry in India is projected to grow at 8.8% CAGR by 2026.",
+              "The AVGC-XR sector can help spread Indian culture globally, connect with the diaspora, and boost employment, tourism, and allied industries.",
+              "In Sikkim, the AVGC sector is still in a nascent stage, with only a few companies currently involved.",
+              "The sector's current contribution to the State GSDP is minimal, with most creators producing local content.",
+              "With the right policies and support, the following growth drivers can shape the AVGC-XR sector in Sikkim:",
+              "Creative Talent: Sikkim has a young and creatively inclined population. Talents span across oral storytelling, music, cinema, theatre, food, fashion, tourism, and sports. Students in the state show a strong interest in creative subjects, making AVGC a promising sector for future employability.",
+              "Increased Technology Penetration: Rapid growth in smartphone and internet usage post-COVID. Students are increasingly consuming online learning content. Platforms like Facebook, Twitter, and YouTube have seen explosive growth in Sikkim.",
+              "Local Content Creation: There's a growing demand for digitally created local content. Opportunities exist to develop content based on Sikkim's history, cross-border cultures (Nepal, Bhutan, China, Bangladesh), biodiversity, food, and education. Local youth have already shown excellence at national and international levels.",
+              "Emergence as an Outsourcing Hub: Sikkim has the potential to become an outsourcing destination for AVGC services. With infrastructure support and investment-friendly policies, global AVGC work can be channeled into the State."
+            ]
+          },
+          food: {
+            title: "Organic Farming and Processing in Sikkim",
+            desc: "Sikkim became India's first fully organic state in 2016.",
+            points: [
+              "The State's organic mission aims at: Long-term soil fertility preservation. Environmental and ecological protection. Promoting healthy lifestyles. Reducing health risks from chemical exposure.",
+              "Over 75,000 hectares of farmland are certified fully organic.",
+              "Sikkim's major organic produce includes: Cardamom, ginger, buckwheat, turmeric, oranges, kiwis, and more.",
+              "Focus is now shifting to: Processing of organic produce. Exporting to domestic and international markets."
+            ]
+          },
+          it: {
+            title: "IT & ITeS",
+            desc: "Information Technology and IT-enabled Services are emerging sectors in Sikkim.",
+            points: [
+              "The State Government is promoting IT and ITeS sectors through various initiatives.",
+              "Sikkim offers a peaceful environment conducive for IT operations.",
+              "The state is developing IT infrastructure including high-speed internet connectivity.",
+              "Focus areas include software development, BPO/KPO services, and IT consulting.",
+              "Special incentives are available for IT companies under the state's industrial policy.",
+              "The clean environment and quality of life make Sikkim an attractive destination for IT professionals."
+            ]
+          },
+          climate: {
+            title: "Climate Change Mitigation, Management and Studies",
+            desc: "The State Government will build low carbon and resilient cities.",
+            points: [
+              "It will increase energy efficiency and use renewable energy.",
+              "It will implement climate-smart agriculture and nurture forest landscapes.",
+              "The Government aims to strengthen disaster preparedness and mitigation measures.",
+              "Priority in areas of Research and Development on climate change and disaster mitigation and management will be encouraged."
+            ]
+          },
+          biotech: {
+            title: "Green Hydrogen",
+            desc: "Sikkim is promoting green hydrogen as a clean energy source.",
+            points: [
+              "Green hydrogen production using renewable energy sources.",
+              "Research and development in hydrogen fuel cell technology.",
+              "Applications in transportation and industrial processes.",
+              "Integration with existing renewable energy infrastructure.",
+              "Pilot projects for hydrogen-based energy storage.",
+              "Collaboration with national and international research institutions."
+            ]
+          },
+          traderoutes: {
+            title: "Trade Routes and Pilgrimage",
+            desc: "Sikkim shares three international borders — China, Nepal, and Bhutan — offering vast potential for trade with these nations and BIMSTEC countries, which would boost both economy and tourism.",
+            points: [
+              "The Indo-China Trade Route at Nathu La (Eastern Sikkim) was a landmark decision by the Government of India and commenced in 2006.",
+              "The Chewabhanjyang Pass, located in Uttaray village of Western Sikkim, has been identified as a potential trade route between India (Sikkim) and Nepal.",
+              "The State Government has initiated the setting up of an integrated check post at Chewabhanjyang.",
+              "Pilgrimage tourism is expected to attract a large number of visitors, helping establish Sikkim as part of the Buddhist / Pilgrimage circuit alongside Nepal, Bhutan, and China.",
+              "Heritage tourism like the Younghusband Expedition and Pilgrimage tourism is anticipated to draw interest from:",
+              "Scholars",
+              "Mountaineers",
+              "Expedition experts",
+              "Pilgrims",
+              "Students"
+            ]
+          },
+          education: {
+            title: "Education",
+            desc: "Sikkim is developing as an education hub in the Northeast region.",
+            points: [
+              "The state has several higher education institutions including Sikkim University and Sikkim Manipal University.",
+              "Focus on quality education with modern infrastructure and facilities.",
+              "Specialized courses in areas like hospitality, tourism, and organic farming.",
+              "Research opportunities in biodiversity, climate change, and traditional knowledge.",
+              "Vocational training programs aligned with industry requirements.",
+              "International collaborations for academic exchange and research."
+            ]
+          },
+          recreation: {
+            title: "Recreation and Entertainment: Sports, Music, and Leisure",
+            desc: "The leisure industry is a business segment focused on recreation, entertainment, sports, music, and tourism.",
+            points: [
+              "Recreation and entertainment are increasingly vital in today's environment where work-life balance plays a key role in the physical and mental well-being of individuals and society.",
+              "As per data from Statista Market Insights, World Bank, IMF, UN, Eurostat:",
+              "In 2024, the estimated consumer spending per capita on culture and recreation in India is US$12.49.",
+              "The consumer spending per capita in the hospitality and restaurants sector in India is forecasted to be US$22.15.",
+              "Sikkim can become the next hub of recreation and entertainment, taking advantage of:",
+              "Its salubrious climate",
+              "Safe environment",
+              "Hospitable people"
+            ]
+          },
+          film: {
+            title: "Films and Media in Sikkim",
+            desc: "The State has its own brief history of cinema.",
+            points: [
+              "It dates back to the Kingdom of Sikkim when Satyajit Ray, widely regarded as one of the greatest filmmakers, made a documentary titled "Sikkim" in 1971, showcasing the socio-cultural front of the Himalayan kingdom under the Monarchy.",
+              "It can be said that his work on Sikkim laid the first foundation for a new breed of digital quest and aspiring filmmakers.",
+              "Actors like Danny Denzongpa and Geetanjali Thapa and other artists have not only brought pride and fame to the state but have strengthened the bond with the film industry and become idols for others with similar passion and dreams.",
+              "There is a pool of young Sikkimese artistes who are bound to grow in both national and global shows.",
+              "Over the years, Sikkim has served as a perfect backdrop for movies and filmmakers have used this to their advantage.",
+              "Classic movies like the Dev Anand starrer Jewel Thief and modern movies like 'Uff Yeh Mohabbat', 'Yaariyan', 'Qarib Qarib Single' have all been shot around Sikkim's picturesque valleys, towns and landscape.",
+              "Therefore, there is ample scope for investment in film production, post film processing, media studios, films schools etc. in the State of Sikkim."
+            ]
+          },
+          textiles: {
+            title: "Textiles and Fashion Design",
+            desc: "The State has a rich repository of knowledge in handloom, handicraft, and textiles, deeply woven into the culture of the region.",
+            points: [
+              "The State Government aims to:",
+              "Create, support, and sustain an enabling environment for the development and growth of the handicrafts sector",
+              "Generate sustainable livelihood for people engaged in this sector across the state",
+              "Preserve and evolve traditional craft and artisanal skills, ensuring they remain an integral part of the cultural fabric of Sikkim",
+              "The government also seeks to remove constraints affecting the sector's growth trajectory through a multi-pronged approach involving:",
+              "Capacity building",
+              "Marketing",
+              "Product development",
+              "Patenting and trademarking",
+              "Price support",
+              "Branding support",
+              "Packaging"
+            ]
+          },
+          wellness: {
+            title: "Health and Wellness in Sikkim",
+            desc: "Given the clean and pollution-free environment and greeneries all around, the State Government is positioning Sikkim as the health and wellness destination.",
+            points: [
+              "The State Government is promoting the establishment of wellness centers, spas, and retreats.",
+              "Focus on traditional healing practices like Ayurveda, Yoga, and Sikkimese traditional medicine.",
+              "Development of medical tourism facilities with specialized healthcare services.",
+              "Integration of wellness with eco-tourism for a holistic experience.",
+              "Research and development in herbal and natural remedies using local biodiversity.",
+              "Training and skill development for wellness professionals."
+            ]
+          },
+          smartcities: {
+            title: "Smart Cities and Real Estate",
+            desc: "Sikkim is focusing on sustainable urban development with smart city initiatives.",
+            points: [
+              "The State Government has proposed the development of Gangtok as a smart city.",
+              "Focus on eco-friendly and energy-efficient building designs.",
+              "Integration of technology for better urban management and services.",
+              "Development of affordable housing projects.",
+              "Commercial real estate opportunities in tourism and hospitality sectors.",
+              "Infrastructure development including roads, water supply, and waste management."
+            ]
+          },
+          electronics: {
+            title: "Electronics",
+            desc: "Sikkim is promoting electronics manufacturing with special incentives.",
+            points: [
+              "Electronic component manufacturing",
+              "Consumer electronics assembly",
+              "Medical electronics production",
+              "PCB design and manufacturing",
+              "Electronic testing and calibration services",
+              "R&D in electronic systems and devices"
+            ]
+          },
+          logistics: {
+            title: "Logistics",
+            desc: "Sikkim is developing its logistics infrastructure to support industrial growth.",
+            points: [
+              "Development of multi-modal logistics parks",
+              "Cold chain facilities for agricultural and pharmaceutical products",
+              "Warehousing and distribution centers",
+              "Transportation services for industrial goods",
+              "Cross-border trade logistics",
+              "E-commerce fulfillment centers"
+            ]
+          }
+        };
+        
+        const thrustSectorItems = document.querySelectorAll('.thrust-sector-item');
+        const thrustSectorDetailsPanel = document.getElementById('thrustSectorDetails');
+        let currentlySelectedThrustSector = null;
+        
+        if (thrustSectorItems.length > 0 && thrustSectorDetailsPanel) {
+          thrustSectorItems.forEach(item => {
+            // Remove any existing event listeners
+            const newItem = item.cloneNode(true);
+            item.parentNode.replaceChild(newItem, item);
+            
+            // Add new event listener
+            newItem.addEventListener('click', function() {
+              const sector = this.getAttribute('data-thrust-sector');
+              const data = thrustSectorData[sector];
+              
+              // If clicking the same sector that's already open, close it
+              if (currentlySelectedThrustSector === sector && thrustSectorDetailsPanel.style.display === 'block') {
+                thrustSectorDetailsPanel.style.display = 'none';
+                document.querySelectorAll('.thrust-sector-item').forEach(i => {
+                  i.style.borderColor = 'rgba(76, 175, 80, 0.3)';
+                  i.style.transform = 'none';
+                });
+                currentlySelectedThrustSector = null;
+                return;
+              }
+              
+              // Reset all items
+              document.querySelectorAll('.thrust-sector-item').forEach(i => {
+                i.style.borderColor = 'rgba(76, 175, 80, 0.3)';
+                i.style.transform = 'none';
+              });
+              
+              // Highlight selected item
+              this.style.borderColor = 'var(--primary-green)';
+              this.style.transform = 'translateY(-5px)';
+              currentlySelectedThrustSector = sector;
+              
+              if (data) {
+                // Create points list
+                const pointsList = data.points.map(point => 
+                  `<li style="margin-bottom: 12px; position: relative; padding-left: 25px;">
+                     <span style="position: absolute; left: 0; color: var(--primary-green);">➤</span>
+                     ${point}
+                   </li>`
+                ).join('');
+                
+                // Update content
+                thrustSectorDetailsPanel.innerHTML = `
+                  <div style="padding: 10px;">
+                    <h4 style="color: var(--primary-green); margin-top: 0; font-size: 1.4rem; margin-bottom: 15px;">
+                      ${data.title}
+                    </h4>
+                    <p style="color: var(--text-medium); margin-bottom: 20px; line-height: 1.6;">
+                      ${data.desc}
+                    </p>
+                    <div style="background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                      <h5 style="color: var(--primary-green); margin-top: 0; margin-bottom: 15px; font-size: 1.1rem;">Key Investment Opportunities:</h5>
+                      <ul style="list-style: none; padding: 0; margin: 0;">
+                        ${pointsList}
+                      </ul>
+                    </div>
+                  </div>
+                `;
+                
+                thrustSectorDetailsPanel.style.display = 'block';
+                
+                // Scroll to the details panel
+                thrustSectorDetailsPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }
+            });
+          });
+          
+          // Fix for View More Sectors button
+          const viewMoreBtn = document.getElementById('viewMoreSectorsBtn');
+          const additionalSectors = document.getElementById('additionalSectors');
+          
+          if (viewMoreBtn && additionalSectors) {
+            // Remove any existing event listeners
+            const newViewMoreBtn = viewMoreBtn.cloneNode(true);
+            viewMoreBtn.parentNode.replaceChild(newViewMoreBtn, viewMoreBtn);
+            
+            // Add new event listener
+            newViewMoreBtn.addEventListener('click', function() {
+              if (additionalSectors.style.display === 'none') {
+                additionalSectors.style.display = 'grid';
+                this.innerHTML = '<span style="position: relative; z-index: 2;">➖ Show Less Sectors</span><span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--accent-gold) 0%, #ffb300 100%); opacity: 0; transition: opacity 0.3s ease; z-index: 1;"></span>';
+                
+                // Add event listeners to the newly visible thrust sector items
+                const newThrustSectorItems = additionalSectors.querySelectorAll('.thrust-sector-item');
+                newThrustSectorItems.forEach(item => {
+                  // Remove any existing event listeners
+                  const newItem = item.cloneNode(true);
+                  item.parentNode.replaceChild(newItem, item);
+                  
+                  // Add new event listener
+                  newItem.addEventListener('click', function() {
+                    const sector = this.getAttribute('data-thrust-sector');
+                    const data = thrustSectorData[sector];
+                    
+                    // If clicking the same sector that's already open, close it
+                    if (currentlySelectedThrustSector === sector && thrustSectorDetailsPanel.style.display === 'block') {
+                      thrustSectorDetailsPanel.style.display = 'none';
+                      document.querySelectorAll('.thrust-sector-item').forEach(i => {
+                        i.style.borderColor = 'rgba(76, 175, 80, 0.3)';
+                        i.style.transform = 'none';
+                      });
+                      currentlySelectedThrustSector = null;
+                      return;
+                    }
+                    
+                    // Reset all items
+                    document.querySelectorAll('.thrust-sector-item').forEach(i => {
+                      i.style.borderColor = 'rgba(76, 175, 80, 0.3)';
+                      i.style.transform = 'none';
+                    });
+                    
+                    // Highlight selected item
+                    this.style.borderColor = 'var(--primary-green)';
+                    this.style.transform = 'translateY(-5px)';
+                    currentlySelectedThrustSector = sector;
+                    
+                    if (data) {
+                      // Create points list
+                      const pointsList = data.points.map(point => 
+                        `<li style="margin-bottom: 12px; position: relative; padding-left: 25px;">
+                           <span style="position: absolute; left: 0; color: var(--primary-green);">➤</span>
+                           ${point}
+                         </li>`
+                      ).join('');
+                      
+                      // Update content
+                      thrustSectorDetailsPanel.innerHTML = `
+                        <div style="padding: 10px;">
+                          <h4 style="color: var(--primary-green); margin-top: 0; font-size: 1.4rem; margin-bottom: 15px;">
+                            ${data.title}
+                          </h4>
+                          <p style="color: var(--text-medium); margin-bottom: 20px; line-height: 1.6;">
+                            ${data.desc}
+                          </p>
+                          <div style="background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <h5 style="color: var(--primary-green); margin-top: 0; margin-bottom: 15px; font-size: 1.1rem;">Key Investment Opportunities:</h5>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                              ${pointsList}
+                            </ul>
+                          </div>
+                        </div>
+                      `;
+                      
+                      thrustSectorDetailsPanel.style.display = 'block';
+                      
+                      // Scroll to the details panel
+                      thrustSectorDetailsPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                  });
+                });
+              } else {
+                additionalSectors.style.display = 'none';
+                this.innerHTML = '<span style="position: relative; z-index: 2;">➕ View All 16 Sectors</span><span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--accent-gold) 0%, #ffb300 100%); opacity: 0; transition: opacity 0.3s ease; z-index: 1;"></span>';
+              }
+            });
+          }
+        }
+      })();
+    </script>
       <div class="credits">
       </div>
     </div>
