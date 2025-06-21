@@ -3,8 +3,86 @@
     <head>
         <title>youtube.com</title>
         <link rel="stylesheet" href="style.css">
+        <style>
+
+            .nav{        
+                display:flex;
+                flex-direction:row;
+                height:70px;
+                background-color:rgb(92, 34, 102);
+                padding-left:12px;
+                padding-right:12px;
+                font-family:arial;
+                align-items:center;
+                gap:100px;
+                
+            }
+            .body{
+                display:flex;
+                flex-direction:row;
+            }
+            .menu{
+                display:flex;
+                display:block;
+                flex-direction:column;
+                width:50px;
+                height:500px;
+            }
+            .content{
+                flex:1;
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                height:200px;
+
+            }
+
+            .home{ 
+                color:white;
+                font-size:18px;
+            }
+
+            .input{
+                flex:1;
+                height:40px;
+                border-radius:20px;
+                border-width:0px;
+                font-size:14px;
+                padding-left:25px;
+            }
+
+            .button2{
+                width:110px;
+                height:46px;
+                color:white;
+                font-size:17px;
+                border-width:1px;
+                border-color:white;
+                background-color: rgb(92, 34, 102);
+            }
+        </style>
     </head>
     <body>
+        <div>
+            <div class="nav"> 
+                    <div class="home">Home</div>
+                    <input class="input" type="text" placeholder="Search">
+                    <button class="button2">Download</button>
+
+            </div>
+            <div class="body">  
+                <div class="menu">
+
+                </div>
+
+                <div class="content">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                </div>
+            </div>
+        </div>
 
     </body>
 </html>
