@@ -1,88 +1,104 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>youtube.com</title>
-        <link rel="stylesheet" href="style.css">
-        <style>
-
-            .nav{        
-                display:flex;
-                flex-direction:row;
-                height:70px;
-                background-color:rgb(92, 34, 102);
-                padding-left:12px;
-                padding-right:12px;
-                font-family:arial;
-                align-items:center;
-                gap:100px;
-                
-            }
-            .body{
-                display:flex;
-                flex-direction:row;
-            }
-            .menu{
-                display:flex;
-                display:block;
-                flex-direction:column;
-                width:50px;
-                height:500px;
-            }
-            .content{
-                flex:1;
-                display:grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                height:200px;
-
-            }
-
-            .home{ 
-                color:white;
-                font-size:18px;
-            }
-
-            .input{
-                flex:1;
-                height:40px;
-                border-radius:20px;
-                border-width:0px;
-                font-size:14px;
-                padding-left:25px;
-            }
-
-            .button2{
-                width:110px;
-                height:46px;
-                color:white;
-                font-size:17px;
-                border-width:1px;
-                border-color:white;
-                background-color: rgb(92, 34, 102);
-            }
-        </style>
-    </head>
-    <body>
-        <div>
-            <div class="nav"> 
-                    <div class="home">Home</div>
-                    <input class="input" type="text" placeholder="Search">
-                    <button class="button2">Download</button>
-
+<head>
+    <title>youtube.com</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-bar-sec1">
+            <div class="header-menu">
+                <img class="hamburger-menu" src="https://supersimple.dev/exercises/youtube/icons/hamburger-menu.svg">
             </div>
-            <div class="body">  
-                <div class="menu">
-
-                </div>
-
-                <div class="content">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-
-                </div>
+            <div class="header-menu">
+            <img class="youtube-logo" src="https://supersimple.dev/exercises/youtube/icons/youtube-logo.svg">
             </div>
         </div>
+        <div class="nav-bar-sec2">
+            <div class="nav-bar-sec2-left">
+                <input class="search-box" type="text" placeholder="Search">
+                <div class="header-menu-search-button">
+                    <button class="search-button">
+                        <div class="search-button-icon">
+                            <img class="search-button-icon" src="https://supersimple.dev/exercises/youtube/icons/search.svg">
+                        </div>
+                    </button>
+                </div>
+            </div>
 
-    </body>
-</html>
+                <div class="navbar-icon">
+                    <button class="voice-search">
+                        <img class="voice-search-icon" src="https://supersimple.dev/exercises/youtube/icons/voice-search-icon.svg">
+                    </button>
+                    <div class="toolkit">
+                        Search with your voice
+                    </div>
+                </div>
+
+        </div>
+        <div class="nav-bar-sec3">
+            <div class="navbar-icon">
+                <img class="navbar-icon-img" src="https://supersimple.dev/exercises/youtube/icons/upload.svg">
+                <div class="toolkit">
+                    Create
+                </div>
+            </div>
+            <div class="navbar-icon">
+                <img class="navbar-icon-img" src="https://supersimple.dev/exercises/youtube/icons/youtube-apps.svg">
+                <div class="toolkit">
+                    YouTube apps
+                </div>
+            </div>
+            <div class="navbar-icon">
+                <img class="navbar-icon-img" src="https://supersimple.dev/exercises/youtube/icons/notifications.svg">
+                <div class="navbar-notification">
+                    <div>3</div>
+                </div>
+                <div class="toolkit">
+                    Notifications
+                </div> 
+            </div>
+            <div class="navbar-icon">
+                <img class="navbar-icon-img-pfp" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr4H9one4l6mlxmiEgLy2LBcr6wcZ5vIV7q70r_LKXDP5QMOozsRdfMUcJs64pMRLSsBRLmnjGAi142oJMKpiNgQzdkvombQIyA672SlTRIw">
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-menu">
+            <div class="sidebar-menu-contents">
+                <img class="sidebar-menu-img" src="https://supersimple.dev/exercises/youtube/icons/home.svg">
+                <p>Home</p>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <div class="sidebar-menu-contents">
+                <img class="sidebar-menu-img" src="https://supersimple.dev/exercises/youtube/icons/explore.svg">
+                <p>Explore</p>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <div class="sidebar-menu-contents">
+                <img class="sidebar-menu-img" src="https://supersimple.dev/exercises/youtube/icons/subscriptions.svg">
+                <p>Subscriptions</p>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <div class="sidebar-menu-contents">
+                <img class="sidebar-menu-img" src="	https://supersimple.dev/exercises/youtube/icons/originals.svg">
+                <p>Originals</p>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <div class="sidebar-menu-contents">
+                <img class="sidebar-menu-img" src="	https://supersimple.dev/exercises/youtube/icons/youtube-music.svg">
+                <p>YouTube Music</p>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <div class="sidebar-menu-contents">
+                <img class="sidebar-menu-img" src="https://supersimple.dev/exercises/youtube/icons/library.svg">
+                <p>Library</p>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact Us - Invest in Sikkim</title>
+  <meta content="Contact the Sikkim Investment Team for information about investment opportunities in Sikkim" name="description">
+  <meta content="Sikkim, investment, contact, business, opportunities" name="keywords">
+
+  <!-- Additional CSS Files from the new template -->
+  <link rel="stylesheet" href="https://industries.sikkim.gov.in/assets/admin/assets/css/backend-plugin.min.css">
+  <link rel="stylesheet" href="https://industries.sikkim.gov.in/assets/admin/assets/css/backend.css?v=1.0.0">
+  <link rel="stylesheet" href="https://industries.sikkim.gov.in/assets/admin/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://industries.sikkim.gov.in/assets/admin/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+  <link rel="stylesheet" href="https://industries.sikkim.gov.in/assets/admin/assets/vendor/remixicon/fonts/remixicon.css">
+  <link href="https://industries.sikkim.gov.in/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="https://industries.sikkim.gov.in/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://industries.sikkim.gov.in/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://industries.sikkim.gov.in/assets/css/style.css" rel="stylesheet">
+  <link href="https://industries.sikkim.gov.in/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+
+  <!-- Original CSS Files -->
+  <link href="https://industries.sikkim.gov.in/assets/img/favicon.png" rel="icon">
+  <link href="https://industries.sikkim.gov.in/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://industries.sikkim.gov.in/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://industries.sikkim.gov.in/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://industries.sikkim.gov.in/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-green: #2e7d32;
+      --nav-green: #28813d;
+      --light-green: #4caf50;
+      --lighter-green: #81c784;
+      --dark-green: #1b5e20;
+      --accent-gold: #ffd700;
+      --text-dark: #263238;
+      --text-medium: #455a64;
+      --text-light: #607d8b;
+      --bg-light: #f5f7fa;
+      --bg-white: #ffffff;
+    }
+    
+    html {
+      scroll-behavior: auto;
+    }
+    
+    /* Modified body styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-medium);
+      background-color: var(--bg-light);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    
+    /* Top Bar Styles - modified */
+    #topbar {
+      height: 210px;
+      background: white;
+      width: 100%;
+      position: relative;
+      z-index: 996;
+      margin-bottom: 0 !important;
+      padding: 0;
+    }
+
+    #topbar .logo img {
+      max-height: 200px;
+      margin: 5px 0;
+    }
+
+    /* Header & Navigation Styles - modified */
+    #header {
+      background-color: var(--nav-green);
+      width: 100%;
+      height: 60px;
+      padding: 0;
+      margin: 0;
+      z-index: 997;
+      position: sticky;
+      top: 0;
+      box-shadow: none;
+    }
+
+    #header .d-flex {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+    }
+
+    .navbar {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+    }
+
+    .navbar > ul > li {
+      position: relative;
+    }
+
+    .navbar > ul > li > a {
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      height: 60px;
+      color: #fff;
+      font-size: 14px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .navbar > ul > li > a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Dropdown styles */
+    .navbar .dropdown ul {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      margin: 0;
+      padding: 5px 0;
+      z-index: 99;
+      background: #ffffff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      visibility: hidden;
+      opacity: 0;
+      min-width: 250px;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      transform: translateY(10px);
+    }
+
+    .navbar .dropdown:hover > ul,
+    .navbar .dropdown.active > ul {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .navbar .dropdown ul li {
+      min-width: 250px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar .dropdown ul li:last-child {
+      border-bottom: none;
+    }
+
+    .navbar .dropdown ul a {
+      padding: 10px 20px;
+      font-size: 14px;
+      text-transform: none;
+      color: #333;
+      display: block;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: 500;
+      background: transparent;
+    }
+
+    .navbar .dropdown ul a:hover {
+      color: var(--nav-green);
+      background: #f8f9fa;
+      padding-left: 25px;
+    }
+
+    /* Dropdown arrow */
+    .navbar .dropdown > a:after {
+      content: "▼";
+      font-size: 10px;
+      margin-left: 5px;
+      position: relative;
+      top: -2px;
+    }
+
+    /* Hide mobile toggle on desktop */
+    .mobile-nav-toggle {
+      display: none;
+    }
+
+    /* Mobile navigation - Hamburger Menu */
+    @media (max-width: 991px) {
+      /* Hide or minimize topbar on mobile */
+      #topbar {
+        height: 80px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+      }
+      
+      #topbar .logo img {
+        max-height: 60px !important;
+        margin: 0;
+      }
+      
+      #header {
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+      }
+      
+      /* Mobile navigation toggle button - Force visibility */
+      .mobile-nav-toggle {
+        display: block !important;
+        position: fixed !important;
+        top: 90px !important;
+        right: 20px !important;
+        width: 50px !important;
+        height: 50px !important;
+        background: var(--nav-green) !important;
+        border: 2px solid white !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        z-index: 99999 !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+      }
+      
+      .mobile-nav-toggle:hover {
+        background: var(--dark-green) !important;
+        transform: scale(1.1) !important;
+      }
+      
+      /* Create hamburger lines */
+      .mobile-nav-toggle::before,
+      .mobile-nav-toggle::after,
+      .mobile-nav-toggle {
+        transition: all 0.3s ease !important;
+      }
+      
+      .mobile-nav-toggle::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 15px !important;
+        left: 12px !important;
+        width: 24px !important;
+        height: 3px !important;
+        background: white !important;
+        border-radius: 2px !important;
+        box-shadow: 0 8px 0 white, 0 16px 0 white !important;
+      }
+      
+      /* When menu is open, transform to X */
+      .mobile-nav-toggle.active::before {
+        top: 23px !important;
+        transform: rotate(45deg) !important;
+        box-shadow: 0 0 0 white !important;
+      }
+      
+      .mobile-nav-toggle.active::after {
+        content: '' !important;
+        position: absolute !important;
+        top: 23px !important;
+        left: 12px !important;
+        width: 24px !important;
+        height: 3px !important;
+        background: white !important;
+        border-radius: 2px !important;
+        transform: rotate(-45deg) !important;
+      }
+      
+      /* Hide main navigation by default on mobile */
+      .navbar ul {
+        display: none;
+        position: fixed;
+        top: 140px; /* Below topbar and header */
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--nav-green);
+        z-index: 9998;
+        padding: 20px 0;
+        margin: 0;
+        list-style: none;
+        flex-direction: column;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      /* Show navigation when active */
+      .navbar.mobile-nav-active ul {
+        display: flex !important;
+      }
+      
+      /* Mobile menu backdrop */
+      .navbar.mobile-nav-active::before {
+        content: '';
+        position: fixed;
+        top: 140px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9997;
+      }
+      
+      /* Mobile navigation items */
+      .navbar ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .navbar ul li:last-child {
+        border-bottom: none;
+      }
+      
+      .navbar ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 25px;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        min-height: 60px;
+        box-sizing: border-box;
+        background: transparent;
+      }
+      
+      .navbar ul li a:hover,
+      .navbar ul li a:focus {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--accent-gold);
+        padding-left: 35px;
+      }
+      
+      /* Dropdown styles for mobile */
+      .navbar .dropdown > a::after {
+        content: '+';
+        font-size: 20px;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+      }
+      
+      .navbar .dropdown.active > a::after {
+        transform: rotate(45deg);
+      }
+      
+      .navbar .dropdown ul {
+        position: static !important;
+        display: none !important;
+        background: rgba(0, 0, 0, 0.2) !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+      }
+      
+      .navbar .dropdown.active ul {
+        display: block !important;
+      }
+      
+      .navbar .dropdown ul li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(0, 0, 0, 0.1);
+      }
+      
+      .navbar .dropdown ul li:last-child {
+        border-bottom: none;
+      }
+      
+      .navbar .dropdown ul a {
+        padding: 15px 45px !important;
+        font-size: 15px !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        background: transparent !important;
+        min-height: 50px !important;
+      }
+      
+      .navbar .dropdown ul a:hover,
+      .navbar .dropdown ul a:focus {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: var(--accent-gold) !important;
+        padding-left: 55px !important;
+      }
+      
+      /* Close button animation */
+      .mobile-nav-toggle.bi-x {
+        transform: translateY(-50%) rotate(180deg);
+      }
+      
+      /* Smooth animations */
+      .navbar ul {
+        animation: slideInFromTop 0.3s ease-out;
+      }
+      
+      @keyframes slideInFromTop {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Touch-friendly improvements */
+      .navbar ul li a {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      /* Prevent body scroll when menu is open */
+      body.mobile-nav-active {
+        overflow: hidden;
+      }
+    }
+    
+    /* Breadcrumbs */
+    .breadcrumbs {
+      padding: 20px 0;
+      background-color: var(--bg-white);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin: 0;
+    }
+    
+    .breadcrumbs h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    
+    .breadcrumbs .d-flex {
+      margin: 0;
+      padding: 0;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .breadcrumbs ol {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .breadcrumbs ol li a {
+      color: var(--light-green);
+    }
+    
+    /* Main Content */
+    .inner-page {
+      padding: 60px 0;
+    }
+    
+    /* Contact Form Styles */
+    .contact-form-section {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .contact-form-section h2 {
+      color: var(--primary-green);
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .contact-form-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent-gold);
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--light-green);
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    }
+    
+    .form-select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-size: 12px;
+    }
+    
+    .form-check {
+      margin-bottom: 10px;
+    }
+    
+    .form-check-input {
+      margin-right: 8px;
+    }
+    
+    .btn-submit {
+      background-color: var(--primary-green);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-submit:hover {
+      background-color: var(--dark-green);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Contact Info Styles */
+    .contact-info-section {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+      padding: 40px;
+    }
+    
+    .contact-info-section h2 {
+      color: var(--primary-green);
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .contact-info-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent-gold);
+    }
+    
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(76, 175, 80, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .contact-icon i {
+      font-size: 20px;
+      color: var(--primary-green);
+    }
+    
+    .contact-text h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+    }
+    
+    .contact-text p {
+      margin: 0;
+      color: var(--text-medium);
+      line-height: 1.6;
+    }
+    
+    /* Links Footer */
+    .links-footer {
+      background: var(--bg-white);
+      padding: 60px 0;
+      margin-top: 40px;
+    }
+
+    .links-footer h3 {
+      color: var(--primary-green);
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .links-footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .links-footer ul li {
+      margin-bottom: 12px;
+    }
+
+    .links-footer ul li a {
+      color: var(--text-medium);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .links-footer ul li a:hover {
+      color: var(--primary-green);
+      padding-left: 5px;
+    }
+
+    .links-footer .contact-info {
+      color: var(--text-medium);
+      line-height: 1.8;
+    }
+
+    .links-footer .contact-info strong {
+      color: var(--text-dark);
+      display: inline-block;
+      min-width: 80px;
+    }
+
+    .links-footer .about-text {
+      color: var(--text-medium);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <section id="topbar" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="#" class="logo"><img src="https://industries.sikkim.gov.in/assets/img/logo.png" alt="" class="img-fluid"></a>
+      <a href="#" class="logo"><img src="logoline.png" alt="" class="img-fluid"></a>
+      <a href="#" class="logo"><img src="https://industries.sikkim.gov.in/assets/img/logo-golden.png" alt="" class="img-fluid"></a>
+    </div>
+  </section>
+
+  <!-- Original Header with New Navigation -->
+  <header id="header">
+    <div class="d-flex">
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="https://industries.sikkim.gov.in/visitors">HOME</a></li>
+          <li class="dropdown">
+            <a href="#"><span>ABOUT US</span></a>
+            <ul>
+              <li><a href="https://industries.sikkim.gov.in/visitors/orgview">Organizational Setup</a></li>
+              <li><a href="https://industries.sikkim.gov.in/visitors/dics">District Industries Center</a></li>
+              <li><a href="https://industries.sikkim.gov.in/visitors/officesofdept">Offices under Department</a></li>
+              <li><a href="https://industries.sikkim.gov.in/visitors/officerdirectories">Officer Directory</a></li>
+              <li><a href="https://industries.sikkim.gov.in/visitors/industriesandcompanies">Industries and Companies</a></li>
+              <li><a href="https://industries.sikkim.gov.in/visitors/psus">Public Sector Undertaking</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#"><span>SCHEMES AND GUIDELINES</span></a>
+            <ul>
+              <li><a href="https://industries.sikkim.gov.in/visitors/odop">ODOP</a></li>
+              <li><a href="https://industries.sikkim.gov.in/visitors/schemes?8">SC-ST Hub Scheme Guidelines</a></li>
+              <li><a href="https://industries.sikkim.gov.in/visitors/schemes?9">MSE-CDP Guidelines</a></li>
+              <li><a href="https://industries.sikkim.gov.in/visitors/schemes?17">APPLICATION/RENEWAL OF INDUSTRIAL LICENCE</a></li>
+              <li><a href="https://industries.sikkim.gov.in/visitors/schemes">View More</a></li>
+            </ul>
+          </li>
+          <li><a href="https://industries.sikkim.gov.in/visitors#contact">GRIEVANCES</a></li>
+          <li><a href="https://industries.sikkim.gov.in/visitors/rtis">RTI</a></li>
+          <li><a href="https://industries.sikkim.gov.in/visitors/events">EVENTS</a></li>
+          <li><a href="https://industries.sikkim.gov.in/visitors/awards">AWARDS & ACHIEVEMENTS</a></li>
+          <li><a href="https://industries.sikkim.gov.in/visitors/gallery">GALLERY</a></li>
+          <li><a href="index.html">INVEST IN SIKKIM</a></li>
+          <li class="dropdown">
+            <a href="#"><span>IMPORTANT LINKS</span></a>
+            <ul>
+              <li><a href="https://sikkimdesignweek.com/">Sikkim Design Week</a></li>
+              <li><a href="https://www.facebook.com/share/18ikrxFjYz/">Sikkim Design Week 2025</a></li>
+              <li><a href="https://www.nsws.gov.in/">National Single Window System</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Contact Us</h2>
+          <ol>
+            <li><a href="index.html">Invest In Sikkim</a></li>
+            <li>Contact Us</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+        <div class="row">
+          <!-- Contact Form Section -->
+          <div class="col-lg-8">
+            <div class="contact-form-section">
+              <h2>Get in Touch</h2>
+              <p class="mb-4">Fill out the form below to connect with our investment facilitation team. We'll get back to you within 24-48 hours.</p>
+              
+              <form id="investmentContactForm">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name" class="form-label">Full Name*</label>
+                      <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email" class="form-label">Email Address*</label>
+                      <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phone" class="form-label">Phone Number*</label>
+                      <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="company" class="form-label">Company/Organization</label>
+                      <input type="text" class="form-control" id="company" name="company">
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="subject" class="form-label">Subject*</label>
+                  <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="message" class="form-label">Your Message*</label>
+                  <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Investment Interest*</label>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tourism" name="interest[]" value="Tourism">
+                        <label class="form-check-label" for="tourism">Tourism & Hospitality</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="agri" name="interest[]" value="Agriculture">
+                        <label class="form-check-label" for="agri">Agri-Horti Food Processing</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pharma" name="interest[]" value="Pharmaceutical">
+                        <label class="form-check-label" for="pharma">Pharmaceutical</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="it" name="interest[]" value="IT">
+                        <label class="form-check-label" for="it">IT & ITes</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="food" name="interest[]" value="Food">
+                        <label class="form-check-label" for="food">Food</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hydro" name="interest[]" value="Hydro">
+                        <label class="form-check-label" for="hydro">Micro Hydro Power</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="arts" name="interest[]" value="Arts">
+                        <label class="form-check-label" for="arts">Arts & Crafts</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="entertainment" name="interest[]" value="Entertainment">
+                        <label class="form-check-label" for="entertainment">Film, Music & Sports</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="greenenergy" name="interest[]" value="GreenEnergy">
+                        <label class="form-check-label" for="greenenergy">Green Energy</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="other" name="interest[]" value="other">
+                        <label class="form-check-label" for="other">Other</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="district" class="form-label">Preferred District</label>
+                  <select class="form-select" id="district" name="district">
+                    <option value="">Select a district</option>
+                    <option value="Gangtok">Gangtok</option>
+                    <option value="Namchi">Namchi</option>
+                    <option value="Gyalshing">Gyalshing</option>
+                    <option value="Mangan">Mangan</option>
+                    <option value="Soreng">Soreng</option>
+                    <option value="Pakyong">Pakyong</option>
+                    <option value="Not Sure">Not Sure</option>
+                  </select>
+                </div>
+                
+                <div class="mt-4">
+                  <button type="submit" class="btn-submit">Submit Inquiry</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <!-- Contact Information Section -->
+          <div class="col-lg-4">
+            <div class="contact-info-section">
+              <h2>Contact Information</h2>
+              
+              <div class="contact-info-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h3>Address</h3>
+                  <p>Department of Commerce & Industries,<br>Government of Sikkim,<br>Gangtok - 737102</p>
+                </div>
+              </div>
+              
+              <div class="contact-info-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h3>Phone</h3>
+                  <p>+91 9593977946</p>
+                </div>
+              </div>
+              
+              <div class="contact-info-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h3>Email</h3>
+                  <p>directormsmecni@gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="contact-info-item">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-text">
+                  <h3>Working Hours</h3>
+                  <p>Monday - Friday: 10:00 AM - 5:00 PM<br>Saturday: 10:00 AM - 1:00 PM<br>Sunday: Closed</p>
+                </div>
+              </div>
+              
+              <div class="mt-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3544.1076633971424!2d88.60742911505683!3d27.33089798295116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6a56a5805eafb%3A0x73d6132c501c8f20!2sDepartment%20of%20Commerce%20%26%20Industries%2C%20Government%20of%20Sikkim!5e0!3m2!1sen!2sin!4v1651234567890!5m2!1sen!2sin" width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links Footer -->
+    <section class="links-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index#home">Home</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#investment-opportunities">Investment Opportunities</a></li>
+              <li><a href="index.html#policies-incentives">Policies & Incentives</a></li>
+              <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h3>Investment Sectors</h3>
+            <ul>
+              <li><a href="#">Hydropower & Renewable Energy</a></li>
+              <li><a href="#">Tourism & Hospitality</a></li>
+              <li><a href="#">Organic Agriculture</a></li>
+              <li><a href="#">IT & ITES</a></li>
+              <li><a href="#">Pharmaceuticals</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+              <p><strong>M Ravikumar</strong>, Director<br>
+                Department of Commerce & Industries, <br>
+              Government of Sikkim,<br>
+              Gangtok - 737102</p>
+              <p><strong>Phone:</strong>+91 9593977946</p>
+              <p><strong>Email:</strong>directormsmecni@gmail.com </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h3>About Sikkim</h3>
+            <div class="about-text">
+              <p>Sikkim is India's first organic state and one of the most peaceful regions in the country. With its breathtaking landscapes, rich biodiversity, and investor-friendly policies, Sikkim offers unique opportunities for sustainable development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Original Footer -->
+  <footer id="footer">
+    <div class="footer-top">
+    </div>
+    <div class="row2 small" style="background-color:white">
+      <div class="imagegroup2" style="animation-delay: 1s;">
+        <a href="https://www.sikkim.gov.in" target="_blank"><img src="https://industries.sikkim.gov.in/logos/sikkgov.png" alt=""></a>
+        <a href="https://pmfme.mofpi.gov.in/pmfme/#/Home-Page" target="_blank"><img src="https://industries.sikkim.gov.in/logos/pmfme.png" alt=""></a>
+        <a href="https://unnati.dpiit.gov.in//" target="_blank"><img src="https://industries.sikkim.gov.in/logos/unnati.png" alt=""></a>
+        <a href="https://pmvishwakarma.gov.in/" target="_blank"><img src="https://industries.sikkim.gov.in/logos/pfme.png" alt=""></a>
+        <a href="https://scsthub.in/" target="_blank"><img src="https://industries.sikkim.gov.in/logos/nssh.png" alt=""></a>
+        <a href="https://sfurti.msme.gov.in/SFURTI/Home.aspx" target="_blank"><img src="https://industries.sikkim.gov.in/logos/sfurti.jfif" alt=""></a>
+        <a href="https://msme.gov.in/prime-minister-employment-generation-programme-and-other-credit-support-schemes" target="_blank"><img src="https://industries.sikkim.gov.in/logos/pmegp.png" alt=""></a>
+        <a href="https://inspires.sikkim.gov.in/" target="_blank"><img src="https://industries.sikkim.gov.in/logos/inspireslogo.png" alt=""></a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        © Copyright <strong><span>DIT</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+      </div>
+    </div>
+  </footer>
+
+  <!-- Additional JS Files -->
+  <script src="https://industries.sikkim.gov.in/assets/admin/assets/js/backend-bundle.min.js"></script>
+  <script src="https://industries.sikkim.gov.in/assets/admin/assets/js/table-treeview.js"></script>
+  <script src="https://industries.sikkim.gov.in/assets/admin/assets/js/customizer.js"></script>
+  <script src="https://industries.sikkim.gov.in/assets/admin/assets/js/chart-custom.js"></script>
+  <script src="https://industries.sikkim.gov.in/assets/admin/assets/js/app.js"></script>
+  <script src="https://industries.sikkim.gov.in/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="https://industries.sikkim.gov.in/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="https://industries.sikkim.gov.in/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://industries.sikkim.gov.in/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://industries.sikkim.gov.in/assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://industries.sikkim.gov.in/assets/js/main.js"></script>
+  
+  <!-- EmailJS SDK - Updated to latest version -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your public key
+    (function(){
+      emailjs.init({
+        publicKey: 'ohAJOTrLC6dm99K4l' // Your EmailJS public key
+      });
+    })();
+
+    document.getElementById('investmentContactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Show loading state
+      const submitBtn = this.querySelector('.btn-submit');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      // Collect form data including checkboxes
+      const formData = new FormData(this);
+      const interests = [];
+      const checkboxes = this.querySelectorAll('input[name="interest[]"]:checked');
+      checkboxes.forEach(checkbox => interests.push(checkbox.value));
+      
+      // Create template parameters
+      const templateParams = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        company: formData.get('company') || 'Not specified',
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        district: formData.get('district') || 'Not specified',
+        interests: interests.length > 0 ? interests.join(', ') : 'Not specified',
+        from_name: formData.get('name'),
+        reply_to: formData.get('email')
+      };
+
+      console.log('Sending email with params:', templateParams); // Debug log
+
+      // Send the email using EmailJS
+      emailjs.send('service_lu3kvom', 'template_2r4a2wz', templateParams)
+        .then(function(response) {
+          console.log('Email sent successfully:', response);
+          alert('Thank you for your inquiry! Our team will contact you shortly.');
+          document.getElementById('investmentContactForm').reset();
+        })
+        .catch(function(error) {
+          console.error('EmailJS Error:', error);
+          alert('There was an error sending your message. Please try again later.\n\nError details: ' + (error.text || error.message || 'Unknown error'));
+        })
+        .finally(function() {
+          // Reset button state
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
+    });
+
+    // Mobile dropdown functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdowns = document.querySelectorAll('.navbar .dropdown');
+      
+      console.log('Found dropdowns:', dropdowns.length); // Debug log
+      
+      dropdowns.forEach(function(dropdown, index) {
+        const dropdownLink = dropdown.querySelector('a');
+        
+        if (dropdownLink) {
+          console.log('Setting up dropdown', index); // Debug log
+          
+          // Handle click/touch events for mobile
+          dropdownLink.addEventListener('click', function(e) {
+            console.log('Dropdown clicked, window width:', window.innerWidth); // Debug log
+            
+            // On mobile devices, prevent default link behavior and toggle dropdown
+            if (window.innerWidth <= 991) {
+              e.preventDefault();
+              e.stopPropagation();
+              
+              console.log('Mobile dropdown toggle'); // Debug log
+              
+              // Close all other dropdowns
+              dropdowns.forEach(function(otherDropdown) {
+                if (otherDropdown !== dropdown) {
+                  otherDropdown.classList.remove('active');
+                }
+              });
+              
+              // Toggle current dropdown
+              const isActive = dropdown.classList.contains('active');
+              if (isActive) {
+                dropdown.classList.remove('active');
+                console.log('Dropdown closed'); // Debug log
+              } else {
+                dropdown.classList.add('active');
+                console.log('Dropdown opened'); // Debug log
+              }
+            }
+          });
+          
+          // Add touch event for better mobile support
+          dropdownLink.addEventListener('touchstart', function(e) {
+            if (window.innerWidth <= 991) {
+              // Add a small delay to prevent conflicts with click
+              setTimeout(function() {
+                dropdownLink.click();
+              }, 10);
+            }
+          });
+        }
+      });
+      
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.navbar .dropdown')) {
+          dropdowns.forEach(function(dropdown) {
+            dropdown.classList.remove('active');
+          });
+        }
+      });
+      
+      // Close dropdowns when scrolling
+      window.addEventListener('scroll', function() {
+        dropdowns.forEach(function(dropdown) {
+          dropdown.classList.remove('active');
+        });
+      });
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 991) {
+          dropdowns.forEach(function(dropdown) {
+            dropdown.classList.remove('active');
+          });
+        }
+      });
+      
+      // Add visual feedback for debugging
+      if (window.innerWidth <= 991) {
+        console.log('Mobile mode detected');
+        document.body.style.border = '2px solid red'; // Temporary debug indicator
+        setTimeout(function() {
+          document.body.style.border = 'none';
+        }, 2000);
+      }
+    });
+  </script>
+
+  <!-- Mobile Navigation JavaScript -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navbar = document.querySelector('.navbar');
+    const body = document.body;
+    
+    if (navToggle && navbar) {
+      navToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Toggle mobile navigation
+        navbar.classList.toggle('mobile-nav-active');
+        body.classList.toggle('mobile-nav-active');
+        
+        // Toggle hamburger/close icon
+        if (navbar.classList.contains('mobile-nav-active')) {
+          navToggle.classList.add('active');
+        } else {
+          navToggle.classList.remove('active');
+          // Close all dropdowns when closing menu
+          document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+          });
+        }
+      });
+      
+      // Close menu when clicking on backdrop
+      navbar.addEventListener('click', function(e) {
+        if (e.target === navbar && navbar.classList.contains('mobile-nav-active')) {
+          navbar.classList.remove('mobile-nav-active');
+          body.classList.remove('mobile-nav-active');
+          navToggle.classList.remove('active');
+          // Close all dropdowns
+          document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+          });
+        }
+      });
+    }
+    
+    // Dropdown toggle for mobile
+    document.querySelectorAll('.navbar .dropdown > a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 991) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const parent = this.parentElement;
+          const isActive = parent.classList.contains('active');
+          
+          // Close all other dropdowns
+          document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
+            if (dropdown !== parent) {
+              dropdown.classList.remove('active');
+            }
+          });
+          
+          // Toggle current dropdown
+          if (isActive) {
+            parent.classList.remove('active');
+          } else {
+            parent.classList.add('active');
+          }
+        }
+      });
+    });
+    
+    // Close mobile menu when clicking on regular links (not dropdowns)
+    document.querySelectorAll('.navbar ul li:not(.dropdown) > a').forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 991 && navbar.classList.contains('mobile-nav-active')) {
+          navbar.classList.remove('mobile-nav-active');
+          body.classList.remove('mobile-nav-active');
+          navToggle.classList.remove('active');
+        }
+      });
+    });
+    
+    // Close mobile menu when clicking on dropdown links
+    document.querySelectorAll('.navbar .dropdown ul a').forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 991 && navbar.classList.contains('mobile-nav-active')) {
+          navbar.classList.remove('mobile-nav-active');
+          body.classList.remove('mobile-nav-active');
+          navToggle.classList.remove('active');
+          // Close all dropdowns
+          document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+          });
+        }
+      });
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 991) {
+        // Reset mobile navigation on desktop
+        navbar.classList.remove('mobile-nav-active');
+        body.classList.remove('mobile-nav-active');
+        navToggle.classList.remove('active');
+        document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
+          dropdown.classList.remove('active');
+        });
+      }
+    });
+  });
+  </script>
+</body>
+</html>

@@ -5,18 +5,139 @@
         <style>
             .a13{
                 display:flex;
+                margin-bottom:50px;
             }
             .pink{
                 width:100px;
-                height:50px;
+                height:60px;
                 display:flex;
                 align-items:center;
                 justify-content:center;
                 background-color:lightpink;
             }
             .blue{
+                display:flex;
+                flex-direction: column;
+                align-items:start;
                 width:200px;
                 background-color:lightblue;
+            }
+            .row2{
+                display:flex;
+                flex-direction: row;
+                width:100%;
+                justify-content:space-between;
+            }
+            .c13{
+                display:flex;
+                flex-direction:column;
+                border-style:solid;
+                border-width:1px;
+                border-color:rgb(238, 238, 238);
+                width:550px;
+                height:150px;
+                border-radius:5px;
+                box-shadow: 0px 1px 5px rgb(124, 124, 124);
+                font-family:arial;
+                padding-left:15px;
+                padding-right:15px;
+                padding-top:15px;
+                padding-bottom:25px;
+            }
+            .info{
+                display:flex;
+                gap:15px;
+                align-items:center;
+            }
+            .img{
+                width:60px; 
+                height:60px; 
+                border-radius:50%;
+            }
+            .info-1{
+                flex:1;
+                display:flex;
+                flex-direction:column;
+            }
+            .flex-col1{
+                width:100%;
+                margin-top:0px;
+                height:45px;
+                display:flex;
+                align-items:start;
+                justify-content:space-between;
+                
+            }
+
+            .f13{
+                margin-top:50px;
+                margin-left:15px;
+                margin-bottom: 1000px;
+                width:440px;
+                height:200px;
+                border-style:solid;
+                border-color:black;
+                border-width:1px;
+                display:flex;
+
+            }
+            .flex-item-1{
+                width:79px;
+            }
+            .flex-item-2{
+                flex:1;
+                height:100%;
+                display:flex;
+                flex-direction: column;
+
+            }
+            .flex-item-2-1{
+                flex:4;
+                width:100%;
+                display:flex;
+                font-family:arial;
+                align-items:center;
+            }
+            .flex-item-2-2{
+                flex:6;
+                width:100%;
+                display:flex;
+                align-items:center;
+                justify-content:start;;
+            }
+            .ytbox{
+                width:335px;
+                height:95px;
+                border-color:lightgray;
+                border-style:solid;
+                border-width:1px;
+                border-radius:10px;
+                display:flex;
+                flex-direction: row;
+
+
+            }
+            .yt1{
+                flex:1;
+                background-color:lightgray;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                 
+            }
+            .yt2{
+                flex:2.5;
+                display:flex;
+                align-items:center;
+                font-family:arial;
+            }
+            .pfp{
+                width:55px;
+                height:55px;
+                border-radius:50%;
+                object-fit:cover;
+                margin-left:12px;
+                margin-top: 7px;
+
             }
         </style>
     </head>
@@ -28,9 +149,75 @@
                 </div>
             </div>
             <div class="blue">
-
+                
             </div>
 
+        </div>
+
+        <div class="a13">
+            <div class="pink">
+
+            </div>
+            <div class="blue">
+                <div>
+                    row1
+                </div>
+                <div class="row2">
+                    <div style="background-color:black; color:white;">
+                        row2
+                    </div>
+                    <div style="background-color:black; color:white;">
+                        row2
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="c13">
+            <div style="height:20px; width:100%">
+                <div style="color:gray">ALL INBOXES</div>
+            </div>
+            <div class="info" style="flex:1;width:100%">
+                <!--<img class="img" style=" width:50px; height:50px;" src="Users/dece/CODE/WEB_DEV/HTML-CSS/IMG/Unknown.jpeg">-->
+                <img class="img" style=" width:60px; height:60px; border-radius:40px; object-fit:cover;" src="Unknown.jpeg">
+                <div class="info-1">
+                    <div class="flex-col1">
+                        <p style="font-size:18px;font-weight:bold;margin-bottom:0px;margin:0px;">Chewy Promotions</p>
+                        <p style="color:gray;margin:0px;">4:58 PM</p>
+                    </div>
+                    <div class="flex-col2">
+                        <p style="font-weight:bold;margin-top:0px;margin-bottom:5px;">Biggest Sales of the year!</p>
+                        <p style="color:gray;margin-top:0px;">Hey there! We're writing to tell you about our...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="f13">
+            <div class="flex-item-1">
+                <img class="pfp" src="https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg">
+            </div>
+            <div class="flex-item-2">
+                <div class="flex-item-2-1">
+                    <div>
+                    <p style="font-weight:bold;margin-bottom:0px;margin-top:0px;">supersimple.dev <span style="font-weight:normal; color:gray;">@SuperSimpleDev</span></p>
+                    <p style=" line-height:22px;margin-top:3px;margin-bottom:0px;">What is backend web development? A complete overview. New video is up!</p>
+                    </div>
+                </div>
+                <div class="flex-item-2-2">
+                    <div class="ytbox">
+                        <div class="yt1">
+
+                        </div>
+                        <div class="yt2">
+                            <div style="margin-left:12px;">
+                                <p style="color:lightgray;">youtube.com</p>
+                                <p>Backend web development - a complete overview (2021)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>

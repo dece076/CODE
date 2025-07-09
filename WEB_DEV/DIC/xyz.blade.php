@@ -1,3 +1,5 @@
+<?php
+echo '
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -68,7 +70,7 @@
     
     /* Modified body styles */
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: \'Poppins\', sans-serif;
       color: var(--text-medium);
       background-color: var(--bg-light);
       margin: 0;
@@ -92,7 +94,7 @@
     }
     
     section:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
@@ -105,7 +107,7 @@
     
     /* Section dividers */
     section:not(:last-child):after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -137,7 +139,7 @@
     }
     
     section h2:after, section h3:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -166,7 +168,7 @@
     }
     
     .section-title h2:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -427,7 +429,7 @@
       }
       
       .mobile-nav-toggle::before {
-        content: '' !important;
+        content: \'\' !important;
         position: absolute !important;
         top: 15px !important;
         left: 12px !important;
@@ -446,7 +448,7 @@
       }
       
       .mobile-nav-toggle.active::after {
-        content: '' !important;
+        content: \'\' !important;
         position: absolute !important;
         top: 23px !important;
         left: 12px !important;
@@ -482,7 +484,7 @@
       
       /* Mobile menu backdrop */
       .navbar.mobile-nav-active::before {
-        content: '';
+        content: \'\';
         position: fixed;
         top: 140px;
         left: 0;
@@ -526,7 +528,7 @@
       
       /* Dropdown styles for mobile */
       .navbar .dropdown > a::after {
-        content: '+';
+        content: \'+\';
         font-size: 20px;
         font-weight: bold;
         transition: transform 0.3s ease;
@@ -623,7 +625,7 @@
     }
     
     .breadcrumbs:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: -5px;
       left: 0;
@@ -678,7 +680,7 @@
     }
     
     .breadcrumbs ol li + li:before {
-      content: '/';
+      content: \'/\';
       margin: 0 10px;
       color: var(--text-light);
     }
@@ -701,13 +703,13 @@
     }
     
     .inner-page:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'0.02\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       pointer-events: none;
     }
     
@@ -724,7 +726,7 @@
     }
     
     .stats-section:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: -50%;
       left: -50%;
@@ -809,7 +811,7 @@
     }
     
     .card:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
@@ -839,7 +841,7 @@
     /* Removed card image hover effect */
     
     .card-img::after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -863,7 +865,7 @@
     }
     
     .card h3:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -983,13 +985,13 @@
     }
     
     .pre-footer:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       opacity: 0.1;
     }
     
@@ -1004,7 +1006,7 @@
     }
     
     .pre-footer h3:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: -10px;
       left: 0;
@@ -1057,13 +1059,13 @@
     }
     
     .feature-list li:before {
-      content: '';
+      content: \'\';
       position: absolute;
       left: 0;
       top: 5px;
       width: 20px;
       height: 20px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFD700'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23FFD700\'%3E%3Cpath d=\'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z\'/%3E%3C/svg%3E");
       background-size: contain;
       filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
     }
@@ -1085,7 +1087,7 @@
     }
     
     .footer-links h4:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -1122,7 +1124,7 @@
     }
     
     .footer-bottom:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
@@ -1155,7 +1157,7 @@
     }
     
     .why-invest-section:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: -50px;
       right: -50px;
@@ -1176,7 +1178,7 @@
     }
     
     .why-invest-section h3:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -1214,7 +1216,7 @@
       z-index: 1;
       height: 100vh;
       min-height: 600px;
-      background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+      background-image: url(\'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80\');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -1225,7 +1227,7 @@
     }
 
     .hero-banner:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
@@ -1236,13 +1238,13 @@
     }
 
     .hero-banner:after {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\' fill=\'%23ffffff\' fill-opacity=\'0.05\' fill-rule=\'evenodd\'/%3E%3C/svg%3E");
       z-index: 1;
       opacity: 0.3;
     }
@@ -1290,7 +1292,7 @@
     }
 
     .banner-content h1:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: -15px;
       left: 50%;
@@ -1327,7 +1329,7 @@
     }
 
     .banner-content .btn:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
@@ -1385,7 +1387,7 @@
     }
     
     .section-card:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       right: 0;
@@ -1458,7 +1460,7 @@
     }
 
     .policy-tab-btn:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
@@ -1470,7 +1472,7 @@
     }
 
     .policy-tab-btn:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -1546,7 +1548,7 @@
     }
 
     .thrust-sector-item::before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
@@ -1718,13 +1720,13 @@
     }
 
     .links-footer:before {
-      content: '';
+      content: \'\';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2346a049' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%2346a049\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
     .links-footer h3 {
@@ -1737,7 +1739,7 @@
     }
     
     .links-footer h3:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -2033,7 +2035,7 @@
     }
 
     .department-container h3:after {
-      content: '';
+      content: \'\';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -2131,7 +2133,7 @@
         <div class="banner-content">
           <h1>Invest in Sikkim </h1>
           <p>Unlock ₹30,000 Cr opportunities across green and future-ready sectors</p>
-          <a href="#main-content" class="btn" style="background-color: var(--primary-green); color: white; transition: all 0.3s ease; font-weight: 500; padding: 12px 28px; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: none; letter-spacing: 0.5px; text-transform: uppercase; font-size: 14px;" onmouseover="this.style.backgroundColor='var(--dark-green)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)';" onmouseout="this.style.backgroundColor='var(--primary-green)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.1)';">Get Started</a>
+          <a href="#main-content" class="btn" style="background-color: var(--primary-green); color: white; transition: all 0.3s ease; font-weight: 500; padding: 12px 28px; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: none; letter-spacing: 0.5px; text-transform: uppercase; font-size: 14px;" onmouseover="this.style.backgroundColor=\'var(--dark-green)\'; this.style.boxShadow=\'0 4px 15px rgba(0,0,0,0.2)\';" onmouseout="this.style.backgroundColor=\'var(--primary-green)\'; this.style.boxShadow=\'0 2px 10px rgba(0,0,0,0.1)\';">Get Started</a>
         </div>
       </div>
     </section>
@@ -2184,14 +2186,14 @@
         <div class="section-card" id="policies-incentives">
           <div class="section-title">
             <h2>Why Invest in Sikkim?</h2>
-            <p>Discover the unique advantages of India's first 100% organic state</p>
+            <p>Discover the unique advantages of India\'s first 100% organic state</p>
           </div>
           
           <div class="row">
             <div class="col-md-12">
-              <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">Sikkim, India's first 100% organic state and one of its most peaceful regions, offers unique investment opportunities with its strategic location, eco-friendly policies, and special economic incentives. Known for its sustainable agriculture, Sikkim is a global leader in organic spices like large cardamom and turmeric, while its hydropower and solar projects attract green energy investors.</p>
+              <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">Sikkim, India\'s first 100% organic state and one of its most peaceful regions, offers unique investment opportunities with its strategic location, eco-friendly policies, and special economic incentives. Known for its sustainable agriculture, Sikkim is a global leader in organic spices like large cardamom and turmeric, while its hydropower and solar projects attract green energy investors.</p>
               
-              <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">The state's thriving tourism sector, highlighted by UNESCO-listed Khangchendzonga National Park and eco-tourism initiatives, benefits from improved infrastructure like the upcoming Sevoke-Rangpo railway. With low crime rates, investor-friendly policies, and a focus on renewable energy and organic food processing, Sikkim is an ideal destination for businesses seeking growth in harmony with nature. Its stable governance and green economy make it a model for sustainable development in India.</p>
+              <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">The state\'s thriving tourism sector, highlighted by UNESCO-listed Khangchendzonga National Park and eco-tourism initiatives, benefits from improved infrastructure like the upcoming Sevoke-Rangpo railway. With low crime rates, investor-friendly policies, and a focus on renewable energy and organic food processing, Sikkim is an ideal destination for businesses seeking growth in harmony with nature. Its stable governance and green economy make it a model for sustainable development in India.</p>
               
               <div class="row mt-5">
                 <div class="col-md-6">
@@ -2201,7 +2203,7 @@
                       <li>Pleasant weather conditions from tropical to alpine climate</li> 
                       <li>High literacy rate of 97% which is more than the national average</li>
                       <li>Lowest crime rate in the country</li> 
-                      <li>World's first certified organic farming state</li>
+                      <li>World\'s first certified organic farming state</li>
                     </ul>
                   </div>
                 </div>
@@ -2379,7 +2381,7 @@
                   </div>
                   
                   <div class="text-center mt-4">
-                    <a href="policy.pdf" target="_blank" class="btn" style="background-color: var(--primary-green); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; font-weight: 600; font-family: 'Poppins', sans-serif; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);" onmouseover="this.style.backgroundColor='var(--dark-green)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(46, 125, 50, 0.3)';" onmouseout="this.style.backgroundColor='var(--primary-green)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(46, 125, 50, 0.2)';">
+                    <a href="policy.pdf" target="_blank" class="btn" style="background-color: var(--primary-green); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; font-weight: 600; font-family: \'Poppins\', sans-serif; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);" onmouseover="this.style.backgroundColor=\'var(--dark-green)\'; this.style.transform=\'translateY(-2px)\'; this.style.boxShadow=\'0 6px 16px rgba(46, 125, 50, 0.3)\';" onmouseout="this.style.backgroundColor=\'var(--primary-green)\'; this.style.transform=\'translateY(0)\'; this.style.boxShadow=\'0 4px 12px rgba(46, 125, 50, 0.2)\';">
                       <i class="fas fa-download" style="margin-right: 10px; font-size: 16px;"></i> Download Complete Policy
                     </a>
                   </div>
@@ -2439,7 +2441,7 @@
                     </div>
                   
                   <div class="text-center mt-4">
-                    <a href="policy.pdf" target="_blank" class="btn" style="background-color: var(--primary-green); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; font-weight: 600; font-family: 'Poppins', sans-serif; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);" onmouseover="this.style.backgroundColor='var(--dark-green)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(46, 125, 50, 0.3)';" onmouseout="this.style.backgroundColor='var(--primary-green)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(46, 125, 50, 0.2)';">
+                    <a href="policy.pdf" target="_blank" class="btn" style="background-color: var(--primary-green); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; font-weight: 600; font-family: \'Poppins\', sans-serif; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);" onmouseover="this.style.backgroundColor=\'var(--dark-green)\'; this.style.transform=\'translateY(-2px)\'; this.style.boxShadow=\'0 6px 16px rgba(46, 125, 50, 0.3)\';" onmouseout="this.style.backgroundColor=\'var(--primary-green)\'; this.style.transform=\'translateY(0)\'; this.style.boxShadow=\'0 4px 12px rgba(46, 125, 50, 0.2)\';">
                       <i class="fas fa-download" style="margin-right: 10px; font-size: 16px;"></i> Download Complete Policy
                     </a>
                   </div>
@@ -2509,83 +2511,83 @@
 
         <script>
           // Add tab functionality for policy tabs
-          document.addEventListener('DOMContentLoaded', function() {
-            const policyTabBtns = document.querySelectorAll('.policy-tab-btn');
-            const policyTabContents = document.querySelectorAll('.policy-tab-content');
+          document.addEventListener(\'DOMContentLoaded\', function() {
+            const policyTabBtns = document.querySelectorAll(\'.policy-tab-btn\');
+            const policyTabContents = document.querySelectorAll(\'.policy-tab-content\');
             
             policyTabBtns.forEach(btn => {
-              btn.addEventListener('click', function() {
+              btn.addEventListener(\'click\', function() {
                 // Remove active class from all buttons and contents
                 policyTabBtns.forEach(b => {
-                  b.classList.remove('active');
-                  b.style.color = 'var(--text-medium)';
+                  b.classList.remove(\'active\');
+                  b.style.color = \'var(--text-medium)\';
                 });
                 policyTabContents.forEach(content => {
-                  content.style.display = 'none';
+                  content.style.display = \'none\';
                 });
                 
                 // Add active class to clicked button
-                this.classList.add('active');
-                this.style.color = 'var(--primary-green)';
+                this.classList.add(\'active\');
+                this.style.color = \'var(--primary-green)\';
                 
                 // Show corresponding content
-                const tabId = this.getAttribute('data-policy-tab');
-                document.querySelector(`.policy-tab-content[data-policy-tab="${tabId}"]`).style.display = 'block';
+                const tabId = this.getAttribute(\'data-policy-tab\');
+                document.querySelector(`.policy-tab-content[data-policy-tab="${tabId}"]`).style.display = \'block\';
               });
             });
             
             // View More Sectors Button functionality
-            const viewMoreBtn = document.getElementById('viewMoreSectorsBtn');
-            const additionalSectors = document.getElementById('additionalSectors');
+            const viewMoreBtn = document.getElementById(\'viewMoreSectorsBtn\');
+            const additionalSectors = document.getElementById(\'additionalSectors\');
             let showLessBtn = null;
             
-            viewMoreBtn.addEventListener('click', function() {
-              if (additionalSectors.style.display === 'none') {
+            viewMoreBtn.addEventListener(\'click\', function() {
+              if (additionalSectors.style.display === \'none\') {
                 // Show additional sectors
-                additionalSectors.style.display = 'grid';
-                viewMoreBtn.style.display = 'none';
+                additionalSectors.style.display = \'grid\';
+                viewMoreBtn.style.display = \'none\';
                 
                 // Create "Show Less" button at the bottom
                 if (!showLessBtn) {
                   // Create a container div for centering the button
-                  const buttonContainer = document.createElement('div');
-                  buttonContainer.style.textAlign = 'center';
-                  buttonContainer.style.width = '100%';
-                  buttonContainer.style.marginTop = '20px';
+                  const buttonContainer = document.createElement(\'div\');
+                  buttonContainer.style.textAlign = \'center\';
+                  buttonContainer.style.width = \'100%\';
+                  buttonContainer.style.marginTop = \'20px\';
                   
                   // Create the button
-                  showLessBtn = document.createElement('button');
-                  showLessBtn.innerHTML = '<i class="fas fa-minus-circle" style="margin-right: 8px; font-size: 14px;"></i> Show Less';
-                  showLessBtn.style.backgroundColor = 'var(--primary-green)';
-                  showLessBtn.style.color = 'white';
-                  showLessBtn.style.border = 'none';
-                  showLessBtn.style.padding = '10px 24px';
-                  showLessBtn.style.borderRadius = '30px';
-                  showLessBtn.style.fontWeight = '600';
-                  showLessBtn.style.cursor = 'pointer';
-                  showLessBtn.style.transition = 'all 0.3s ease';
-                  showLessBtn.style.display = 'inline-block';
-                  showLessBtn.style.fontSize = '14px';
-                  showLessBtn.style.fontFamily = "'Poppins', sans-serif";
-                  showLessBtn.style.boxShadow = '0 4px 12px rgba(46, 125, 50, 0.2)';
+                  showLessBtn = document.createElement(\'button\');
+                  showLessBtn.innerHTML = \'<i class="fas fa-minus-circle" style="margin-right: 8px; font-size: 14px;"></i> Show Less\';
+                  showLessBtn.style.backgroundColor = \'var(--primary-green)\';
+                  showLessBtn.style.color = \'white\';
+                  showLessBtn.style.border = \'none\';
+                  showLessBtn.style.padding = \'10px 24px\';
+                  showLessBtn.style.borderRadius = \'30px\';
+                  showLessBtn.style.fontWeight = \'600\';
+                  showLessBtn.style.cursor = \'pointer\';
+                  showLessBtn.style.transition = \'all 0.3s ease\';
+                  showLessBtn.style.display = \'inline-block\';
+                  showLessBtn.style.fontSize = \'14px\';
+                  showLessBtn.style.fontFamily = "\'Poppins\', sans-serif";
+                  showLessBtn.style.boxShadow = \'0 4px 12px rgba(46, 125, 50, 0.2)\';
                   
                   // Add hover effect
-                  showLessBtn.addEventListener('mouseenter', function() {
-                    this.style.backgroundColor = 'var(--dark-green)';
-                    this.style.transform = 'translateY(-2px)';
-                    this.style.boxShadow = '0 6px 16px rgba(46, 125, 50, 0.3)';
+                  showLessBtn.addEventListener(\'mouseenter\', function() {
+                    this.style.backgroundColor = \'var(--dark-green)\';
+                    this.style.transform = \'translateY(-2px)\';
+                    this.style.boxShadow = \'0 6px 16px rgba(46, 125, 50, 0.3)\';
                   });
                   
-                  showLessBtn.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = 'var(--primary-green)';
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 4px 12px rgba(46, 125, 50, 0.2)';
+                  showLessBtn.addEventListener(\'mouseleave\', function() {
+                    this.style.backgroundColor = \'var(--primary-green)\';
+                    this.style.transform = \'translateY(0)\';
+                    this.style.boxShadow = \'0 4px 12px rgba(46, 125, 50, 0.2)\';
                   });
                   
                   // Add event listener to the "Show Less" button
-                  showLessBtn.addEventListener('click', function() {
-                    additionalSectors.style.display = 'none';
-                    viewMoreBtn.style.display = 'inline-block';
+                  showLessBtn.addEventListener(\'click\', function() {
+                    additionalSectors.style.display = \'none\';
+                    viewMoreBtn.style.display = \'inline-block\';
                     buttonContainer.remove();
                     showLessBtn = null;
                   });
@@ -2603,7 +2605,7 @@
             const thrustSectorData = {
               tourism: {
                 title: "Tourism & Hospitality",
-                desc: "Sikkim's tourism sector offers immense potential with its pristine landscapes, rich biodiversity, and cultural heritage.",
+                desc: "Sikkim\'s tourism sector offers immense potential with its pristine landscapes, rich biodiversity, and cultural heritage.",
                 points: [
                   "Eco-tourism and adventure tourism development",
                   "Luxury and wellness resorts with sustainable practices",
@@ -2632,7 +2634,7 @@
                   "Total hydropower potential: 8000 MW.",
                   "2300 MW already commissioned through: Independent Power Producers (IPPs), Central PSUs like NHPC, Joint Ventures.",
                   "1000 MW under construction; expected by 2027.",
-                  "Cross-Border Energy Trade possibility: Power may be exported to neighboring countries under India's 2021 guidelines.",
+                  "Cross-Border Energy Trade possibility: Power may be exported to neighboring countries under India\'s 2021 guidelines.",
                   "Focus on Small Hydro Projects: Emphasis shifting to small, mini, and micro hydro segments. Policy supports local entrepreneurship: Only local entrepreneurs allowed to develop projects up to 5 MW. Encourages community ownership and private sector participation.",
                   "Transmission and Distribution Infrastructure: Current system: 132 kV & 66 kV lines, with 220 MVA transformation capacity. Comprehensive Scheme under implementation (with Govt. of India support): Includes: 220 kV, 132 kV & 66 kV Sub-Stations and Transmission Lines. Expected completion: early 2024.",
                   "Outcome: 220 kV pooling stations for hydro power. 132 kV Sub-Stations at District HQs. 66 kV Sub-Stations at sub-divisions/load centers.",
@@ -2658,7 +2660,7 @@
                   "Business",
                   "Recreation",
                   "The State aims to target higher-end tourists with longer stays, maintaining a moderate annual traffic growth of 10%.",
-                  "With the government's focus on reviving yoga, meditation, and folk healing, Sikkim can play a major role in wellness tourism"
+                  "With the government\'s focus on reviving yoga, meditation, and folk healing, Sikkim can play a major role in wellness tourism"
                 ]
               },
               avgc: {
@@ -2671,21 +2673,21 @@
                   "The Media & Entertainment (M&E) industry in India is projected to grow at 8.8% CAGR by 2026.",
                   "The AVGC-XR sector can help spread Indian culture globally, connect with the diaspora, and boost employment, tourism, and allied industries.",
                   "In Sikkim, the AVGC sector is still in a nascent stage, with only a few companies currently involved.",
-                  "The sector's current contribution to the State GSDP is minimal, with most creators producing local content.",
+                  "The sector\'s current contribution to the State GSDP is minimal, with most creators producing local content.",
                   "With the right policies and support, the following growth drivers can shape the AVGC-XR sector in Sikkim:",
                   "Creative Talent: Sikkim has a young and creatively inclined population. Talents span across oral storytelling, music, cinema, theatre, food, fashion, tourism, and sports. Students in the state show a strong interest in creative subjects, making AVGC a promising sector for future employability.",
                   "Increased Technology Penetration: Rapid growth in smartphone and internet usage post-COVID. Students are increasingly consuming online learning content. Platforms like Facebook, Twitter, and YouTube have seen explosive growth in Sikkim.",
-                  "Local Content Creation: There's a growing demand for digitally created local content. Opportunities exist to develop content based on Sikkim's history, cross-border cultures (Nepal, Bhutan, China, Bangladesh), biodiversity, food, and education. Local youth have already shown excellence at national and international levels.",
+                  "Local Content Creation: There\'s a growing demand for digitally created local content. Opportunities exist to develop content based on Sikkim\'s history, cross-border cultures (Nepal, Bhutan, China, Bangladesh), biodiversity, food, and education. Local youth have already shown excellence at national and international levels.",
                   "Emergence as an Outsourcing Hub: Sikkim has the potential to become an outsourcing destination for AVGC services. With infrastructure support and investment-friendly policies, global AVGC work can be channeled into the State."
                 ]
               },
               food: {
                 title: "Organic Farming and Processing in Sikkim",
-                desc: "Sikkim became India's first fully organic state in 2016.",
+                desc: "Sikkim became India\'s first fully organic state in 2016.",
                 points: [
-                  "The State's organic mission aims at: Long-term soil fertility preservation. Environmental and ecological protection. Promoting healthy lifestyles. Reducing health risks from chemical exposure.",
+                  "The State\'s organic mission aims at: Long-term soil fertility preservation. Environmental and ecological protection. Promoting healthy lifestyles. Reducing health risks from chemical exposure.",
                   "Over 75,000 hectares of farmland are certified fully organic.",
-                  "Sikkim's major organic produce includes: Cardamom, ginger, buckwheat, turmeric, oranges, kiwis, and more.",
+                  "Sikkim\'s major organic produce includes: Cardamom, ginger, buckwheat, turmeric, oranges, kiwis, and more.",
                   "Focus is now shifting to: Processing of organic produce. Exporting to domestic and international markets.",
                   "The State targets US $100 million (₹820 crore) in organic exports by 2030.",
                   "High investment opportunities in: Organic food production and processing. Introduction of new crop/fruit/vegetable/flower varieties.",
@@ -2703,7 +2705,7 @@
               },
               handicrafts: {
                 title: "Handicrafts",
-                desc: "Sikkim's rich cultural heritage is reflected in its diverse handicraft traditions.",
+                desc: "Sikkim\'s rich cultural heritage is reflected in its diverse handicraft traditions.",
                 points: [
                   "Traditional Sikkimese handicraft production",
                   "Handloom and textile crafts",
@@ -2771,7 +2773,7 @@
               },
               logistics: {
                 title: "Logistics",
-                desc: "Improving logistics infrastructure is key to Sikkim's industrial development strategy.",
+                desc: "Improving logistics infrastructure is key to Sikkim\'s industrial development strategy.",
                 points: [
                   "Warehousing and storage facilities",
                   "Cold chain infrastructure for perishables",
@@ -2790,7 +2792,7 @@
                   "Actors like Danny Denzongpa and Geetanjali Thapa and other artists have not only brought pride and fame to the state but have strengthened the bond with the film industry and become idols for others with similar passion and dreams.",
                   "There is a pool of young Sikkimese artistes who are bound to grow in both national and global shows.",
                   "Over the years, Sikkim has served as a perfect backdrop for movies and filmmakers have used this to their advantage.",
-                  "Classic movies like the Dev Anand starrer Jewel Thief and modern movies like 'Uff Yeh Mohabbat', 'Yaariyan', 'Qarib Qarib Single' have all been shot around Sikkim's picturesque valleys, towns and landscape.",
+                  "Classic movies like the Dev Anand starrer Jewel Thief and modern movies like \'Uff Yeh Mohabbat\', \'Yaariyan\', \'Qarib Qarib Single\' have all been shot around Sikkim\'s picturesque valleys, towns and landscape.",
                   "Therefore, there is ample scope for investment in film production, post film processing, media studios, films schools etc. in the State of Sikkim."
                 ]
               },
@@ -2802,7 +2804,7 @@
                   "Create, support, and sustain an enabling environment for the development and growth of the handicrafts sector",
                   "Generate sustainable livelihood for people engaged in this sector across the state",
                   "Preserve and evolve traditional craft and artisanal skills, ensuring they remain an integral part of the cultural fabric of Sikkim",
-                  "The government also seeks to remove constraints affecting the sector's growth trajectory through a multi-pronged approach involving:",
+                  "The government also seeks to remove constraints affecting the sector\'s growth trajectory through a multi-pronged approach involving:",
                   "Capacity building",
                   "Marketing",
                   "Product development",
@@ -2887,7 +2889,7 @@
                 title: "Recreation and Entertainment: Sports, Music, and Leisure",
                 desc: "The leisure industry is a business segment focused on recreation, entertainment, sports, music, and tourism.",
                 points: [
-                  "Recreation and entertainment are increasingly vital in today's environment where work-life balance plays a key role in the physical and mental well-being of individuals and society.",
+                  "Recreation and entertainment are increasingly vital in today\'s environment where work-life balance plays a key role in the physical and mental well-being of individuals and society.",
                   "As per data from Statista Market Insights, World Bank, IMF, UN, Eurostat:",
                   "In 2024, the estimated consumer spending per capita on culture and recreation in India is US$12.49.",
                   "The consumer spending per capita in the hospitality and restaurants sector in India is forecasted to be US$22.15.",
@@ -2900,20 +2902,20 @@
             };
             
             let currentlySelectedThrustSector = null;
-            const thrustSectorItems = document.querySelectorAll('.thrust-sector-item');
-            const thrustSectorDetailsPanel = document.getElementById('thrustSectorDetails');
+            const thrustSectorItems = document.querySelectorAll(\'.thrust-sector-item\');
+            const thrustSectorDetailsPanel = document.getElementById(\'thrustSectorDetails\');
             
             thrustSectorItems.forEach(item => {
-              item.addEventListener('click', function() {
-                const sector = this.getAttribute('data-thrust-sector');
+              item.addEventListener(\'click\', function() {
+                const sector = this.getAttribute(\'data-thrust-sector\');
                 const data = thrustSectorData[sector];
                 
-                // If clicking the same sector that's already open, close it
-                if (currentlySelectedThrustSector === sector && thrustSectorDetailsPanel.style.display === 'block') {
-                  thrustSectorDetailsPanel.style.display = 'none';
+                // If clicking the same sector that\'s already open, close it
+                if (currentlySelectedThrustSector === sector && thrustSectorDetailsPanel.style.display === \'block\') {
+                  thrustSectorDetailsPanel.style.display = \'none\';
                   thrustSectorItems.forEach(i => {
-                    i.style.borderColor = 'rgba(76, 175, 80, 0.3)';
-                    i.style.transform = 'none';
+                    i.style.borderColor = \'rgba(76, 175, 80, 0.3)\';
+                    i.style.transform = \'none\';
                   });
                   currentlySelectedThrustSector = null;
                   return;
@@ -2921,13 +2923,13 @@
                 
                 // Reset all items
                 thrustSectorItems.forEach(i => {
-                  i.style.borderColor = 'rgba(76, 175, 80, 0.3)';
-                  i.style.transform = 'none';
+                  i.style.borderColor = \'rgba(76, 175, 80, 0.3)\';
+                  i.style.transform = \'none\';
                 });
                 
                 // Highlight selected item
-                this.style.borderColor = 'var(--primary-green)';
-                this.style.transform = 'translateY(-5px)';
+                this.style.borderColor = \'var(--primary-green)\';
+                this.style.transform = \'translateY(-5px)\';
                 currentlySelectedThrustSector = sector;
                 
                 if (data) {
@@ -2937,7 +2939,7 @@
                        <span style="position: absolute; left: 0; color: var(--primary-green);">➤</span>
                        ${point}
                      </li>`
-                  ).join('');
+                  ).join(\'\');
                   
                   // Update content
                   thrustSectorDetailsPanel.innerHTML = `
@@ -2957,7 +2959,7 @@
                     </div>
                   `;
                   
-                  thrustSectorDetailsPanel.style.display = 'block';
+                  thrustSectorDetailsPanel.style.display = \'block\';
                 }
               });
             });
@@ -2993,7 +2995,7 @@
                 <!-- Subtitle with yellow underline -->
                 <div style="margin-top: 15px; text-align: center; position: relative;">
                   <div style="color: var(--text-medium); font-size: 0.95rem; opacity: 0.9; margin-bottom: 8px;">
-                    Transformative investments shaping Sikkim's future
+                    Transformative investments shaping Sikkim\'s future
                   </div>
                   <!-- Yellow underline -->
                   <div style="margin: 0 auto; width: 120px; height: 2px; background: var(--accent-gold);"></div>
@@ -3156,12 +3158,12 @@
         let currentProjectIdx = 0;
 
         function renderLargeScaleSplit(idx) {
-          const container = document.querySelector('.carousel-split-layout');
-          const img = document.getElementById('largeScaleCarouselImg');
-          const features = document.getElementById('largeScaleProjectFeatures');
+          const container = document.querySelector(\'.carousel-split-layout\');
+          const img = document.getElementById(\'largeScaleCarouselImg\');
+          const features = document.getElementById(\'largeScaleProjectFeatures\');
           
           // Start fade out
-          container.style.opacity = '0';
+          container.style.opacity = \'0\';
           
           setTimeout(() => {
             const p = largeScaleProjects[idx];
@@ -3176,7 +3178,7 @@
                     <div style="font-size: 1.13rem; color: var(--text-medium); background: rgba(255,255,255,0.7); border-radius: 8px; padding: 12px 18px; box-shadow: 0 2px 8px rgba(44,62,80,0.04); margin-bottom: 10px;">
                       ${pt}
                     </div>
-                  `).join('')}
+                  `).join(\'\')}
                   <div style="font-size: 1.13rem; color: var(--primary-green); font-weight: 700; background: rgba(255,255,255,0.7); border-radius: 8px; padding: 12px 18px; box-shadow: 0 2px 8px rgba(44,62,80,0.04);">
                     Investment: <span style="color: var(--text-dark); font-weight: 700;">${p.investment}</span>
                   </div>
@@ -3184,38 +3186,38 @@
               </div>
             `;
 
-            img.style.backgroundImage = `url('${p.image}')`;
+            img.style.backgroundImage = `url(\'${p.image}\')`;
             
             // Fade back in
-            container.style.opacity = '1';
+            container.style.opacity = \'1\';
           }, 300);
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener(\'DOMContentLoaded\', function() {
           renderLargeScaleSplit(currentProjectIdx);
           
-          document.getElementById('carouselPrev').onclick = function() {
+          document.getElementById(\'carouselPrev\').onclick = function() {
             currentProjectIdx = (currentProjectIdx - 1 + largeScaleProjects.length) % largeScaleProjects.length;
             renderLargeScaleSplit(currentProjectIdx);
           };
           
-          document.getElementById('carouselNext').onclick = function() {
+          document.getElementById(\'carouselNext\').onclick = function() {
             currentProjectIdx = (currentProjectIdx + 1) % largeScaleProjects.length;
             renderLargeScaleSplit(currentProjectIdx);
           };
 
           // Add hover effects for buttons
-          ['carouselPrev', 'carouselNext'].forEach(id => {
+          [\'carouselPrev\', \'carouselNext\'].forEach(id => {
             const btn = document.getElementById(id);
             btn.onmouseover = () => {
-              btn.style.background = 'var(--primary-green)';
-              btn.style.color = 'white';
-              btn.style.transform = 'translateY(-50%) scale(1.1)';
+              btn.style.background = \'var(--primary-green)\';
+              btn.style.color = \'white\';
+              btn.style.transform = \'translateY(-50%) scale(1.1)\';
             };
             btn.onmouseout = () => {
-              btn.style.background = 'white';
-              btn.style.color = 'var(--primary-green)';
-              btn.style.transform = 'translateY(-50%) scale(1)';
+              btn.style.background = \'white\';
+              btn.style.color = \'var(--primary-green)\';
+              btn.style.transform = \'translateY(-50%) scale(1)\';
             };
           });
         });
@@ -3247,13 +3249,13 @@
   <div class="grid" id="projectGrid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; transition: transform 0.5s ease-in-out;"></div>
   
   <!-- Desktop Navigation Arrows -->
-  <button id="prevProjects" onclick="navigateProjects('prev')" class="desktop-nav-arrow" style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: white; border: 2px solid var(--accent-gold); color: var(--primary-green); border-radius: 50%; width: 44px; height: 44px; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(44,62,80,0.08); opacity: 0.5; transition: opacity 0.3s ease;">&lt;</button>
-  <button id="nextProjects" onclick="navigateProjects('next')" class="desktop-nav-arrow" style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: white; border: 2px solid var(--accent-gold); color: var(--primary-green); border-radius: 50%; width: 44px; height: 44px; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(44,62,80,0.08); transition: opacity 0.3s ease;">&gt;</button>
+  <button id="prevProjects" onclick="navigateProjects(\'prev\')" class="desktop-nav-arrow" style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: white; border: 2px solid var(--accent-gold); color: var(--primary-green); border-radius: 50%; width: 44px; height: 44px; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(44,62,80,0.08); opacity: 0.5; transition: opacity 0.3s ease;">&lt;</button>
+  <button id="nextProjects" onclick="navigateProjects(\'next\')" class="desktop-nav-arrow" style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: white; border: 2px solid var(--accent-gold); color: var(--primary-green); border-radius: 50%; width: 44px; height: 44px; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(44,62,80,0.08); transition: opacity 0.3s ease;">&gt;</button>
 </div>
 
 <!-- Mobile Pagination Controls -->
 <div id="mobilePagination" class="mobile-pagination" style="display: none; justify-content: center; align-items: center; gap: 15px; margin-top: 30px; padding: 20px 0;">
-  <button id="prevProjectsMobile" onclick="navigateProjects('prev')" class="mobile-nav-btn" style="background: var(--primary-green); color: white; border: none; border-radius: 8px; padding: 12px 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <button id="prevProjectsMobile" onclick="navigateProjects(\'prev\')" class="mobile-nav-btn" style="background: var(--primary-green); color: white; border: none; border-radius: 8px; padding: 12px 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
     <i class="bi bi-chevron-left"></i> Previous
   </button>
   
@@ -3264,7 +3266,7 @@
     <span id="totalPagesNum" style="color: var(--primary-green); font-weight: 600;">1</span>
   </div>
   
-  <button id="nextProjectsMobile" onclick="navigateProjects('next')" class="mobile-nav-btn" style="background: var(--primary-green); color: white; border: none; border-radius: 8px; padding: 12px 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <button id="nextProjectsMobile" onclick="navigateProjects(\'next\')" class="mobile-nav-btn" style="background: var(--primary-green); color: white; border: none; border-radius: 8px; padding: 12px 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
     Next <i class="bi bi-chevron-right"></i>
   </button>
 </div>
@@ -3455,35 +3457,35 @@
             const projectsPerPage = 8;
 
             function renderProjects(data) {
-              const grid = document.getElementById('projectGrid');
-              grid.innerHTML = '';
+              const grid = document.getElementById(\'projectGrid\');
+              grid.innerHTML = \'\';
               
               if (data.length === 0) {
-                grid.innerHTML = '<div class="col-12 text-center py-5"><h5>No projects found matching your criteria</h5></div>';
+                grid.innerHTML = \'<div class="col-12 text-center py-5"><h5>No projects found matching your criteria</h5></div>\';
                 return;
               }
 
               // Calculate total pages
               const totalPages = Math.ceil(data.length / projectsPerPage);
               
-              // Get current page's projects
+              // Get current page\'s projects
               const start = currentPage * projectsPerPage;
               const end = start + projectsPerPage;
               const currentProjects = data.slice(start, end);
               
               // Update navigation buttons
-              document.getElementById('prevProjects').style.opacity = currentPage === 0 ? '0.5' : '1';
-              document.getElementById('nextProjects').style.opacity = currentPage >= totalPages - 1 ? '0.5' : '1';
+              document.getElementById(\'prevProjects\').style.opacity = currentPage === 0 ? \'0.5\' : \'1\';
+              document.getElementById(\'nextProjects\').style.opacity = currentPage >= totalPages - 1 ? \'0.5\' : \'1\';
               
-              // Render current page's projects
+              // Render current page\'s projects
               currentProjects.forEach(p => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                const card = document.createElement(\'div\');
+                card.className = \'card\';
+                card.style.opacity = \'0\';
+                card.style.transform = \'translateY(20px)\';
+                card.style.transition = \'opacity 0.5s ease, transform 0.5s ease\';
                 card.innerHTML = `
-                  <div class="card-img" style="background-image: url('${p.image}')"></div>
+                  <div class="card-img" style="background-image: url(\'${p.image}\')"></div>
                   <div class="card-content">
                     <h3>${p.name}</h3>
                     <p><strong>Investment:</strong> ₹${p.cost} Cr</p>
@@ -3496,8 +3498,8 @@
                 
                 // Trigger animation after a small delay
                 setTimeout(() => {
-                  card.style.opacity = '1';
-                  card.style.transform = 'translateY(0)';
+                  card.style.opacity = \'1\';
+                  card.style.transform = \'translateY(0)\';
                 }, 50);
               });
             }
@@ -3506,9 +3508,9 @@
               const filteredProjects = getFilteredProjects();
               const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
               
-              if (direction === 'next' && currentPage < totalPages - 1) {
+              if (direction === \'next\' && currentPage < totalPages - 1) {
                 currentPage++;
-              } else if (direction === 'prev' && currentPage > 0) {
+              } else if (direction === \'prev\' && currentPage > 0) {
                 currentPage--;
               }
               
@@ -3516,13 +3518,13 @@
             }
 
             function getFilteredProjects() {
-              const search = document.getElementById('searchInput').value.toLowerCase();
-              const mode = document.getElementById('modeFilter').value;
+              const search = document.getElementById(\'searchInput\').value.toLowerCase();
+              const mode = document.getElementById(\'modeFilter\').value;
 
               return projects.filter(p => {
                 return (
                   (p.name.toLowerCase().includes(search) || p.location.toLowerCase().includes(search)) &&
-                  (mode === '' || p.mode === mode)
+                  (mode === \'\' || p.mode === mode)
                 );
               });
             }
@@ -3533,45 +3535,45 @@
             }
 
             function openModal(project) {
-              document.getElementById('modalTitle').textContent = project.name;
-              document.getElementById('modalLocation').textContent = project.location;
-              document.getElementById('modalCost').textContent = project.cost;
-              document.getElementById('modalMode').textContent = project.mode;
-              document.getElementById('modalEmployment').textContent = project.employment;
-              document.getElementById('modalSupport').textContent = project.support;
-              document.getElementById('modalFeatures').textContent = project.features;
-              document.getElementById('projectModal').style.display = 'flex';
+              document.getElementById(\'modalTitle\').textContent = project.name;
+              document.getElementById(\'modalLocation\').textContent = project.location;
+              document.getElementById(\'modalCost\').textContent = project.cost;
+              document.getElementById(\'modalMode\').textContent = project.mode;
+              document.getElementById(\'modalEmployment\').textContent = project.employment;
+              document.getElementById(\'modalSupport\').textContent = project.support;
+              document.getElementById(\'modalFeatures\').textContent = project.features;
+              document.getElementById(\'projectModal\').style.display = \'flex\';
             }
 
             function closeModal() {
-              document.getElementById('projectModal').style.display = 'none';
+              document.getElementById(\'projectModal\').style.display = \'none\';
             }
 
             // Initialize
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener(\'DOMContentLoaded\', function() {
               renderProjects(projects);
               
               // Add tab functionality
-              const tabBtns = document.querySelectorAll('.tab-btn');
-              const tabContents = document.querySelectorAll('.tab-content');
+              const tabBtns = document.querySelectorAll(\'.tab-btn\');
+              const tabContents = document.querySelectorAll(\'.tab-content\');
               
               tabBtns.forEach((btn, index) => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener(\'click\', function() {
                   // Remove active class from all buttons and contents
                   tabBtns.forEach(b => {
-                    b.style.background = '#e0e0e0';
-                    b.style.color = 'var(--text-dark)';
+                    b.style.background = \'#e0e0e0\';
+                    b.style.color = \'var(--text-dark)\';
                   });
                   tabContents.forEach(content => {
-                    content.style.display = 'none';
+                    content.style.display = \'none\';
                   });
                   
                   // Add active class to clicked button
-                  this.style.background = 'var(--primary-green)';
-                  this.style.color = 'white';
+                  this.style.background = \'var(--primary-green)\';
+                  this.style.color = \'white\';
                   
                   // Show corresponding content
-                  tabContents[index].style.display = 'block';
+                  tabContents[index].style.display = \'block\';
                 });
               });
             });
@@ -3609,7 +3611,7 @@
            <div class="section-card strategic-location-section" id="strategicLocationSection">
             <div class="section-title strategic-location-title">
               <h2>Strategic Location Advantage</h2>
-              <p>Sikkim's unique position offers exceptional connectivity and market access</p>
+              <p>Sikkim\'s unique position offers exceptional connectivity and market access</p>
             </div>
             
             <div style="display: flex; flex-wrap: wrap; gap: 25px;">
@@ -3801,10 +3803,10 @@
               <div class="col-lg-3 col-md-6">
                 <h3>About Sikkim</h3>
                 <div class="about-text">
-                  <p>Sikkim is India's first organic state and one of the most peaceful regions in the country. With its breathtaking landscapes, rich biodiversity, and investor-friendly policies, Sikkim offers unique opportunities for sustainable development.</p>
+                  <p>Sikkim is India\'s first organic state and one of the most peaceful regions in the country. With its breathtaking landscapes, rich biodiversity, and investor-friendly policies, Sikkim offers unique opportunities for sustainable development.</p>
                 </div>
                 <!-- Image Disclaimer -->
-                <div style="max-width: 420px; margin: 12px auto 0 auto; padding: 10px 16px; background: linear-gradient(90deg, #e8f5e9 80%, #fff8e1 100%); border-left: 5px solid #ffd700; border-radius: 10px; box-shadow: 0 1px 6px rgba(44,62,80,0.05); text-align: center; font-size: 0.97rem; color: var(--primary-green); font-family: 'Poppins', sans-serif; font-weight: 500;">
+                <div style="max-width: 420px; margin: 12px auto 0 auto; padding: 10px 16px; background: linear-gradient(90deg, #e8f5e9 80%, #fff8e1 100%); border-left: 5px solid #ffd700; border-radius: 10px; box-shadow: 0 1px 6px rgba(44,62,80,0.05); text-align: center; font-size: 0.97rem; color: var(--primary-green); font-family: \'Poppins\', sans-serif; font-weight: 500;">
                   <span style="color: var(--accent-gold); font-size: 1.1em; margin-right: 6px; vertical-align: middle;">&#9888;</span>
                   Images are for illustration purposes only.
                 </div>
@@ -3859,50 +3861,50 @@
   // District bounding boxes and centers for OpenStreetMap
   const districtMapData = {
     gangtok: {
-      bbox: '88.55,27.25,88.75,27.45',
-      center: '27.33,88.62',
+      bbox: \'88.55,27.25,88.75,27.45\',
+      center: \'27.33,88.62\',
       zoom: 12
     },
     pakyong: {
-      bbox: '88.65,27.15,88.85,27.35',
-      center: '27.25,88.75',
+      bbox: \'88.65,27.15,88.85,27.35\',
+      center: \'27.25,88.75\',
       zoom: 12
     },
     namchi: {
-      bbox: '88.30,27.10,88.45,27.35',
-      center: '27.25,88.38',
+      bbox: \'88.30,27.10,88.45,27.35\',
+      center: \'27.25,88.38\',
       zoom: 12
     },
     soreng: {
-      bbox: '88.10,27.15,88.30,27.35',
-      center: '27.25,88.20',
+      bbox: \'88.10,27.15,88.30,27.35\',
+      center: \'27.25,88.20\',
       zoom: 12
     },
     mangan: {
-      bbox: '88.40,27.55,88.70,27.85',
-      center: '27.70,88.55',
+      bbox: \'88.40,27.55,88.70,27.85\',
+      center: \'27.70,88.55\',
       zoom: 12
     },
     gyalshing: {
-      bbox: '88.10,27.30,88.35,27.55',
-      center: '27.45,88.22',
+      bbox: \'88.10,27.30,88.35,27.55\',
+      center: \'27.45,88.22\',
       zoom: 12
     }
   };
 
-  document.querySelectorAll('.district-chip').forEach(chip => {
-    chip.addEventListener('click', function() {
+  document.querySelectorAll(\'.district-chip\').forEach(chip => {
+    chip.addEventListener(\'click\', function() {
       // Remove active class from all chips
-      document.querySelectorAll('.district-chip').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll(\'.district-chip\').forEach(c => c.classList.remove(\'active\'));
       
       // Add active class to clicked chip
-      this.classList.add('active');
+      this.classList.add(\'active\');
       
-      const district = this.getAttribute('data-district');
+      const district = this.getAttribute(\'data-district\');
       const map = districtMapData[district];
       if (map) {
         // Update the OpenStreetMap iframe src
-        const iframe = document.querySelector('#sikkim-map iframe');
+        const iframe = document.querySelector(\'#sikkim-map iframe\');
         iframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=${map.bbox}&layer=mapnik&marker=${map.center}`;
       }
     });
@@ -3912,119 +3914,119 @@
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add(\'visible\');
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
   
   // Observe the strategic location section
-  observer.observe(document.getElementById('strategicLocationSection'));
+  observer.observe(document.getElementById(\'strategicLocationSection\'));
   </script>
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener(\'DOMContentLoaded\', function() {
     // Mobile navigation toggle
-    const navToggle = document.querySelector('.mobile-nav-toggle');
-    const navbar = document.querySelector('.navbar');
+    const navToggle = document.querySelector(\'.mobile-nav-toggle\');
+    const navbar = document.querySelector(\'.navbar\');
     const body = document.body;
     
     if (navToggle && navbar) {
-      navToggle.addEventListener('click', function(e) {
+      navToggle.addEventListener(\'click\', function(e) {
         e.preventDefault();
         e.stopPropagation();
         
         // Toggle mobile navigation
-        navbar.classList.toggle('mobile-nav-active');
-        body.classList.toggle('mobile-nav-active');
+        navbar.classList.toggle(\'mobile-nav-active\');
+        body.classList.toggle(\'mobile-nav-active\');
         
         // Toggle hamburger/close icon
-        if (navbar.classList.contains('mobile-nav-active')) {
-          navToggle.classList.add('active');
+        if (navbar.classList.contains(\'mobile-nav-active\')) {
+          navToggle.classList.add(\'active\');
         } else {
-          navToggle.classList.remove('active');
+          navToggle.classList.remove(\'active\');
           // Close all dropdowns when closing menu
-          document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
-            dropdown.classList.remove('active');
+          document.querySelectorAll(\'.navbar .dropdown\').forEach(dropdown => {
+            dropdown.classList.remove(\'active\');
           });
         }
       });
       
       // Close menu when clicking on backdrop
-      navbar.addEventListener('click', function(e) {
-        if (e.target === navbar && navbar.classList.contains('mobile-nav-active')) {
-          navbar.classList.remove('mobile-nav-active');
-          body.classList.remove('mobile-nav-active');
-          navToggle.classList.remove('active');
+      navbar.addEventListener(\'click\', function(e) {
+        if (e.target === navbar && navbar.classList.contains(\'mobile-nav-active\')) {
+          navbar.classList.remove(\'mobile-nav-active\');
+          body.classList.remove(\'mobile-nav-active\');
+          navToggle.classList.remove(\'active\');
           // Close all dropdowns
-          document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
-            dropdown.classList.remove('active');
+          document.querySelectorAll(\'.navbar .dropdown\').forEach(dropdown => {
+            dropdown.classList.remove(\'active\');
           });
         }
       });
     }
     
     // Dropdown toggle for mobile
-    document.querySelectorAll('.navbar .dropdown > a').forEach(link => {
-      link.addEventListener('click', function(e) {
+    document.querySelectorAll(\'.navbar .dropdown > a\').forEach(link => {
+      link.addEventListener(\'click\', function(e) {
         if (window.innerWidth <= 991) {
           e.preventDefault();
           e.stopPropagation();
           
           const parent = this.parentElement;
-          const isActive = parent.classList.contains('active');
+          const isActive = parent.classList.contains(\'active\');
           
           // Close all other dropdowns
-          document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
+          document.querySelectorAll(\'.navbar .dropdown\').forEach(dropdown => {
             if (dropdown !== parent) {
-              dropdown.classList.remove('active');
+              dropdown.classList.remove(\'active\');
             }
           });
           
           // Toggle current dropdown
           if (isActive) {
-            parent.classList.remove('active');
+            parent.classList.remove(\'active\');
           } else {
-            parent.classList.add('active');
+            parent.classList.add(\'active\');
           }
         }
       });
     });
     
     // Close mobile menu when clicking on regular links (not dropdowns)
-    document.querySelectorAll('.navbar ul li:not(.dropdown) > a').forEach(link => {
-      link.addEventListener('click', function() {
-        if (window.innerWidth <= 991 && navbar.classList.contains('mobile-nav-active')) {
-          navbar.classList.remove('mobile-nav-active');
-          body.classList.remove('mobile-nav-active');
-          navToggle.classList.remove('active');
+    document.querySelectorAll(\'.navbar ul li:not(.dropdown) > a\').forEach(link => {
+      link.addEventListener(\'click\', function() {
+        if (window.innerWidth <= 991 && navbar.classList.contains(\'mobile-nav-active\')) {
+          navbar.classList.remove(\'mobile-nav-active\');
+          body.classList.remove(\'mobile-nav-active\');
+          navToggle.classList.remove(\'active\');
         }
       });
     });
     
     // Close mobile menu when clicking on dropdown links
-    document.querySelectorAll('.navbar .dropdown ul a').forEach(link => {
-      link.addEventListener('click', function() {
-        if (window.innerWidth <= 991 && navbar.classList.contains('mobile-nav-active')) {
-          navbar.classList.remove('mobile-nav-active');
-          body.classList.remove('mobile-nav-active');
-          navToggle.classList.remove('active');
+    document.querySelectorAll(\'.navbar .dropdown ul a\').forEach(link => {
+      link.addEventListener(\'click\', function() {
+        if (window.innerWidth <= 991 && navbar.classList.contains(\'mobile-nav-active\')) {
+          navbar.classList.remove(\'mobile-nav-active\');
+          body.classList.remove(\'mobile-nav-active\');
+          navToggle.classList.remove(\'active\');
           // Close all dropdowns
-          document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
-            dropdown.classList.remove('active');
+          document.querySelectorAll(\'.navbar .dropdown\').forEach(dropdown => {
+            dropdown.classList.remove(\'active\');
           });
         }
       });
     });
     
     // Handle window resize
-    window.addEventListener('resize', function() {
+    window.addEventListener(\'resize\', function() {
       if (window.innerWidth > 991) {
         // Reset mobile navigation on desktop
-        navbar.classList.remove('mobile-nav-active');
-        body.classList.remove('mobile-nav-active');
-        navToggle.classList.remove('active');
-        document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
-          dropdown.classList.remove('active');
+        navbar.classList.remove(\'mobile-nav-active\');
+        body.classList.remove(\'mobile-nav-active\');
+        navToggle.classList.remove(\'active\');
+        document.querySelectorAll(\'.navbar .dropdown\').forEach(dropdown => {
+          dropdown.classList.remove(\'active\');
         });
       }
     });
@@ -4032,3 +4034,5 @@
   </script>
 </body>
 </html>
+';
+?>
