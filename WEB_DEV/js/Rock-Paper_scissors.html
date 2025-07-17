@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <title>rps</title>
+</head>
+<body>
+    <div>Rock Paper Scissors</div>
+    <button onclick="userMove='rock'; randomN=Math.random();
+        if (randomN<0.33){
+            compMove = 'rock';
+            alert(`Computer chooses ${compMove}, Draw`);
+        }
+        else if (randomN<0.66){
+            compMove = 'scissors';
+            alert(`Computer chooses ${compMove}, you win`);
+        }
+        else{
+            compMove = 'paper';
+            alert(`Computer chooses ${compMove}, you lose`);
+        }
+    ">Rock</button>
+    <button onclick="userMove='scissors'; randomN=Math.random();
+    if (randomN<0.33){
+        compMove = 'rock';
+        alert(`Computer chooses ${compMove}, you lose`);
+    }
+    else if (randomN<0.66){
+        compMove = 'scissors';
+        alert(`Computer chooses ${compMove}, Draw`);
+    }
+    else{
+        compMove = 'paper';
+        alert(`Computer chooses ${compMove}, you Win`);
+    }">Paper</button>
+    <button onclick="userMove='rock'; randomN=Math.random();
+    if (randomN<0.33){
+        compMove = 'rock';
+        alert(`Computer chooses ${compMove}, you Win`);
+    }
+    else if (randomN<0.66){
+        compMove = 'scissors';
+        alert(`Computer chooses ${compMove}, you lose`);
+    }
+    else{
+        compMove = 'paper';
+        alert(`Computer chooses ${compMove}, Draw`);
+    }">Scissors</button>
+    <script>
+        let userMove='';
+        let randomN=0.0;
+        let compMove='';
+    </script>
+</body>

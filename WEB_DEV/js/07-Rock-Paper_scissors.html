@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>rps</title>
+</head>
+<body>
+    <div>Rock Paper Scissors</div>
+    <button onclick="userMove='rock'; rpsdecision();"">Rock</button>
+    <button onclick="userMove='scissors'; rpsdecision();">Paper</button>
+
+    <button onclick="userMove='rock'; rpsdecision();">Scissors</button>
+
+    <script>
+        function rpsdecision(){
+            randomN=Math.random();
+            if (randomN<0.33){
+                compMove = 'rock';
+            }
+            else if (randomN<0.66){
+                compMove = 'scissors';
+            }
+            else{
+                compMove = 'paper';               
+            }
+
+            if (userMove === compMove){
+                alert(`Computer chooses ${compMove}, Draw`);
+            }
+            else if ((compMove === 'rock' && userMove === 'paper')|| (compMove === 'paper' && userMove === 'scissors')||(compMove === 'scissors' && userMove === 'rock')){
+                alert(`Computer chooses ${compMove}, You win`);
+            }
+            else {
+                alert(`Computer chooses ${compMove}, You Lose`);
+            }
+        }
+        let userMove='';
+        let randomN=0.0;
+        let compMove='';
+    </script>
+</body>
