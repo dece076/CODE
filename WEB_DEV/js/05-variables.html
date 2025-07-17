@@ -6,10 +6,10 @@
     </head>
     <body>
         <button onclick="console.log(`Cart Quantity: ${cartQty}`)">Show Quantity</button>
-        <button onclick="cartQty += 1;">Add to Cart</button>
-        <button onclick="cartQty += 2;">+2</button>
-        <button onclick="cartQty += 3;">+3</button>
-        <button onclick="cartQty = 0;">Reset cart</button>
+        <button onclick=" cartQty > 10 ? alert('The cart is full') : cartQty += 1;">Add to Cart</button>
+        <button onclick="cartQty > 10 ? alert('Cart Qty is full') : cartQty += 2;">+2</button>
+        <button onclick="cartQty > 10 ? alert('Cart Qty is full') : cartQty += 3;">+3</button>
+        <button onclick="cartQty = 0;">Reset cart</button>ß
         <script>
             let cartQty = 0;
 
