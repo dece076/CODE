@@ -7,7 +7,11 @@
     <button onclick="userMove='rock'; rpsdecision();"">Rock</button>
     <button onclick="userMove='scissors'; rpsdecision();">Paper</button>
     <button onclick="userMove='rock'; rpsdecision();">Scissors</button>
-    <button onclick="record.wins=0;record.loses=0;record.draw=0;">Reset</button>
+    <button onclick="localStorage.removeItem('record'); record = {
+        wins: 0,
+        loses: 0,
+        draw: 0
+    };">Reset</button>
 
     <script>
         function rpsdecision(){
@@ -21,6 +25,7 @@
             else{
                 compMove = 'paper';               
             }
+
 
             if (userMove === compMove){
                 record.draw += 1;
@@ -41,15 +46,16 @@
                 Wins : ${record.wins}, Losses : ${record.loses}, draw : ${record.draw}`);
                 
             }
+            localStorage.setItem('record', JSON.stringify(record));
             
         }
         let userMove='';
         let randomN=0.0;
         let compMove='';
-        const record = {
-            wins : 0,
-            loses : 0,
-            draw : 0
-        }
+        let record = JSON.parse(localStorage.getItem('record')) || {
+                wins: 0,
+                loses: 0,
+                draw: 0
+            };
     </script>
 </body>
