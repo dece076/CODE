@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calc</title>
+        <style>
+            .main{
+                width:220px;
+                height:370px;
+                border-style:solid;
+                border-width:1px;
+                border-color:black;
+                border-radius:5px;
+                position:relative;
+            }
+            .buttons-section{
+                position:absolute;
+                padding:10px;
+                bottom:0px;
+                left:0px;
+                right:0px;
+                top:100px;
+                background-color:lightgray;
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+            }
+            .button{
+                border-radius:50%;
+                border-width:0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="buttons-section">
+                <button class="button" onclick="calculation = calculation + '1';c();">1</button>
+                <button class="button" onclick="calculation = calculation + '2';c();">2</button>
+                <button class="button" onclick="calculation = calculation + '3';c();">3</button>
+                <button class="button" onclick="calculation = calculation + ' + ';c();">+</button>
+                <button class="button" onclick="calculation = eval(calculation); console.log(calculation);">=</button>
+            </div>
+        </div>
+
+
+        <script>
+            let calculation = localStorage.getItem('calc')|| '';
+            function c(){
+                localStorage.setItem('calc', calculation);
+            }
+        </script>
+
+    </body>
+</html>

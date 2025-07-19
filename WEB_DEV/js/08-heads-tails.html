@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>boolean</title>
+    </head>
+    <body>
+        <button onclick=" userMove = 'heads'; eval1(userMove);">heads</button>
+        <button onclick=" userMove = 'tails'; eval1(userMove);">tails</button>
+        <script>
+            let userMove = '';
+            let compMove = '';
+            let score = JSON.parse(localStorage.getItem('score'))||{
+                userScore : 0,
+                compScore : 0
+            };
+
+            function eval1(userMove){
+                let randomN = Math.random();
+                compMove = (randomN < 0.5 ? 'heads' : 'tails');
+                if (compMove === userMove){
+                    score.userScore += 1;
+                }
+                else {
+                    score.compScore += 1;
+                }
+                localStorage.setItem('score', JSON.stringify(score));
+                alert(`user : ${score.userScore} and comp : ${score.compScore}`) 
+            }
+        </script>
+    </body>
+</html>
