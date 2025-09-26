@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Amazon-Bag</title>
+    </head>
+    <body>
+        <button class="qty" onclick="showQty();">Show Quantity</button>
+        <button class="add" onclick="addToCart();">Add to Cart</button>
+        <button class="plusTwo" onclick="addToCart2();">+2</button>
+        <button class="plusThree" onclick="addToCart3();">+3</button>
+        <button class="plusFour" onclick="addToCart4();">+4</button>
+        <button class="plusFive" onclick="addToCart5();">+5</button>
+        <button class="remove" onclick="remove();">Remove from cart</button>
+        <button class="minusTwo" onclick="remove2();">-2</button>
+        <button class="minusThree" onclick="remove3()"">-3</button>
+        <button class="reset" onclick="reset();">Reset</button>
+        <p></p>
+        <script>
+            let para = document.querySelector('p');
+            let qty=Number(localStorage.getItem('qty')) || 0;
+            function addToCart(){
+                qty+=1;
+                localStorage.setItem('qty',String(qty));
+            }
+            function showQty(){
+                para.innerHTML=`Cart Quantity : ${qty}`;
+            }
+
+            function addToCart2(){
+                qty+=2;
+                localStorage.setItem('qty',String(qty));
+            }
+
+            function addToCart3(){
+                qty+=3;
+                localStorage.setItem('qty',String(qty));
+            }
+
+            function addToCart4(){
+                qty+=4;
+                localStorage.setItem('qty',String(qty));
+            }
+
+            function addToCart5(){
+                qty+=5;
+                localStorage.setItem('qty',String(qty));
+            }
+
+            function remove(){
+                qty-=1;
+                localStorage.setItem('qty',String(qty));
+            }
+
+            function remove2(){
+                qty-=2;
+                localStorage.setItem('qty',String(qty));
+            }
+
+            function remove3(){
+                qty-=3;
+                localStorage.setItem('qty',String(qty));
+            }
+
+            function reset(){
+                qty=0;
+                localStorage.removeItem('qty');
+            }
+        </script>
+    </body>
+</html>

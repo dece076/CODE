@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>head-tail-game</title>
+        <style>
+            .main{
+                height:100px;
+                width:100px;
+                display:flex;
+                flex-direction:column;
+                gap:10px;
+                
+            }
+            .button-classifier{
+                flex:1;
+                display:flex;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div style="height:20px;">
+                Head-Tail Game
+            </div>
+            <div class=button-classifier>
+                <div style="flex:1; padding:10px;">
+                    <button onclick="usermove='head'; fun1();">Head</button>
+                </div>
+                <div style="flex:1; padding:10px;">
+                    <button onclick="usermove='tail'; fun1();">Tail</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let usermove='';
+            let scorex = JSON.parse(localStorage.getItem("scorex")) || {
+                    wins : 0,
+                    losses : 0
+                } ;
+            function fun1(){
+                let compmove = Math.random()<0.5 ? 'head' : 'tail';
+                if (usermove===compmove){
+                    scorex.wins += 1;
+                }
+                else {
+                    scorex.losses +=1;
+                }
+                let str = JSON.stringify(scorex);
+                alert(str);
+                localStorage.setItem("scorex", str);
+            }
+        </script>
+    </body>
+</html>

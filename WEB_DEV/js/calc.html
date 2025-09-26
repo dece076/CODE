@@ -1,51 +1,100 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>calc</title>
+        <title>Calculator</title>
         <style>
             .main{
-                width:220px;
-                height:370px;
-                border-style:solid;
-                border-width:1px;
-                border-color:black;
-                border-radius:5px;
+                width:328px;
+                height:480px;
+                border-radius:10px;
+                background-color:lightgray;
+            }
+            .calc-screen{
+                width:100%;
+                height:150px;
+                border-top-left-radius:10px;
+                border-top-right-radius:10px;
+                background-color: lightgray;
                 position:relative;
             }
-            .buttons-section{
-                position:absolute;
+            .calc-buttons{
                 padding:10px;
-                bottom:0px;
-                left:0px;
-                right:0px;
-                top:100px;
-                background-color:lightgray;
-                display:grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+                border-bottom-left-radius:10px;
+                border-bottom-right-radius:10px;
 
             }
-            .button{
+            button{
+                height:70px;
+                width:70px;
                 border-radius:50%;
-                border-width:0px;
+                border-style:none;
+                margin-right:4px;
+                margin-bottom:4px;
+            }
+            .calc-screen-display-text{
+                width:300px;
+                padding-top:100px;
+                padding-left:15px;
+                font-family:'Times New Roman', Times, serif;
+                font-size:30px;
+                word-wrap: break-word;
+                background-color:lightgray;
+                border-style:none;
+                border-radius:10px;
             }
         </style>
     </head>
     <body>
         <div class="main">
-            <div class="buttons-section">
-                <button class="button" onclick="calculation = calculation + '1';">1</button>
-                <button class="button" onclick="calculation = calculation + '2';">2</button>
-                <button class="button" onclick="calculation = calculation + '3';">3</button>
-                <button class="button" onclick="calculation = calculation + ' + ';">+</button>
-                <button class="button" onclick="calculation = eval(calculation); console.log(calculation);">=</button>
+            <div class="calc-screen">
+                <div class="calc-screen-display">
+                    <input type="text" class="calc-screen-display-text" id="firstid"></input>
+                </div>
+            </div>
+            <div class="calc-buttons">
+                <button onclick="append('7')">7</button>
+                <button onclick="append('8')"><div>8</div></button>
+                <button onclick="append('9')"><div>9</div></button>
+                <button onclick="append('ac')"><div>ac</div></button>
+                <button onclick="append('4')"><div>4</div></button>
+                <button onclick="append('5')"><div>5</div></button>
+                <button onclick="append('6')"><div>6</div></button>
+                <button onclick="append('*')"><div>x</div></button>
+                <button onclick="append('1')"><div>1</div></button>
+                <button onclick="append('2')"><div>2</div></button>
+                <button onclick="append('3')"><div>3</div></button>
+                <button onclick="append('-')"><div>-</div></button>
+                <button onclick="append('.')"><div>.</div></button>
+                <button onclick="append('0')"><div>0</div></button>
+                <button onclick="append('=')"><div>=</div></button>
+                <button onclick="append('+')"><div>+</div></button>
+
             </div>
         </div>
-
-
         <script>
-            let calculation = '';
-        </script>
+            let displayData = ' ';
 
+            let calcEqn = localStorage.getItem("lastEqn")||'';
+            document.getElementById("firstid").value=calcEqn;
+            function append(value){
+                if(value==='='){
+                    let sol = eval(calcEqn);
+                    localStorage.setItem("lastEqn", calcEqn);
+                    document.querySelector('.calc-screen-display-text').value=sol;
+                }
+                else if(value==='ac'){
+                    document.querySelector('.calc-screen-display-text').value = '';
+                    calcEqn = '';
+                    localStorage.setItem("lastEqn", calcEqn);
+                }
+                else{
+                    calcEqn +=value;
+                    document.querySelector('.calc-screen-display-text').value=calcEqn;
+                    localStorage.setItem("lastEqn", calcEqn);
+                }
+
+     
+            }
+        </script>
     </body>
-</html>
+</html> 

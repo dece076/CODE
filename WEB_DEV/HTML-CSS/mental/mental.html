@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindfulChat - Mental Health Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Color palette with psychological reasoning */
+        :root {
+            --serene-blue: #a0c1d1;  /* Calming, associated with peace and stability */
+            --soft-green: #b5c8b3;   /* Renewal, harmony, and balance */
+            --warm-white: #f8f7f2;   /* Soft, comforting, non-clinical */
+            --gentle-gray: #e8e8e8;  /* Neutral, reduces visual stress */
+            --subtle-teal: #7a9e9f;  /* Clarity and refreshment */
+            --soft-lavender: #d1cfe2; /* Relaxation and mindfulness */
+            --coral-accent: #f4a688;  /* Warmth and compassion */
+            --text-color: #4a4a4a;    /* Reduced contrast for less eye strain */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--warm-white);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, var(--serene-blue), var(--soft-lavender));
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* Main content area */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero h2 {
+            color: var(--subtle-teal);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-color);
+        }
+
+        /* Chat container */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex: 1;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--soft-green), var(--subtle-teal));
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .chat-messages {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-height: 400px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 1rem;
+            border-radius: 18px;
+            line-height: 1.4;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bot-message {
+            background-color: var(--gentle-gray);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .user-message {
+            background-color: var(--serene-blue);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 1rem;
+            background-color: var(--warm-white);
+            border-top: 1px solid var(--gentle-gray);
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .chat-input button {
+            background-color: var(--coral-accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-left: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-input button:hover {
+            background-color: var(--subtle-teal);
+        }
+
+        /* Resources section */
+        .resources {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .resources h3 {
+            color: var(--subtle-teal);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .resource-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .resource-card {
+            background-color: var(--warm-white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-card i {
+            font-size: 2.5rem;
+            color: var(--subtle-teal);
+            margin-bottom: 1rem;
+        }
+
+        .resource-card h4 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-card p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        /* Emergency section */
+        .emergency {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .emergency h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .emergency p {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .emergency-button {
+            display: inline-block;
+            background-color: white;
+            color: #ff6b6b;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .emergency-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--serene-blue), var(--soft-lavender));
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .message {
+                max-width: 90%;
+            }
+            
+            .resource-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-brain"></i>
+            <h1>MindfulChat</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2>Your compassionate mental health companion</h2>
+            <p>MindfulChat is here to listen, support, and provide resources when you need them most. Everything you share is confidential.</p>
+        </section>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <i class="fas fa-hands-helping"></i> MindfulChat Support Bot
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Hi there. I'm here to listen and support you. How are you feeling today?
+                </div>
+                <div class="message bot-message">
+                    Remember, this is a safe space to share what's on your mind without judgment.
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message here..." autocomplete="off">
+                <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <section class="resources">
+            <h3>Mental Health Resources</h3>
+            <div class="resource-cards">
+                <div class="resource-card">
+                    <i class="fas fa-book"></i>
+                    <h4>Self-Care Guide</h4>
+                    <p>Practical techniques for managing stress and anxiety in daily life</p>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h4>Professional Help</h4>
+                    <p>Find licensed therapists and counselors in your area</p>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Support Groups</h4>
+                    <p>Connect with others who understand what you're going through</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="emergency">
+            <h3>Immediate Support</h3>
+            <p>If you're in crisis or having thoughts of self-harm, please contact these resources immediately</p>
+            <a href="#" class="emergency-button">Crisis Resources</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>MindfulChat &copy; 2023 | All conversations are confidential and anonymous</p>
+        <p>This is not a replacement for professional help. If you're in crisis, please contact emergency services.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chatMessages');
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendButton');
+            
+            // Predefined bot responses for different keywords
+            const botResponses = {
+                'sad': "I'm sorry you're feeling sad. It's okay to feel this way. Would you like to talk about what's making you feel this way?",
+                'anxious': "Anxiety can be really challenging. Have you tried any breathing exercises? I can guide you through one if you'd like.",
+                'stress': "Stress can feel overwhelming. Remember to take things one step at a time. What's causing you stress right now?",
+                'lonely': "Feeling lonely is difficult. Remember that you matter and there are people who care about you. Would you like to explore ways to connect with others?",
+                'happy': "I'm glad to hear you're feeling happy! Celebrating positive moments is important. Would you like to share what's making you feel this way?",
+                'tired': "It's understandable to feel tired. Are you getting enough rest? Remember that self-care is important.",
+                'default': "Thank you for sharing. I'm here to listen. How has that been affecting you?"
+            };
+            
+            // Common suicide-related keywords (triggers for crisis resources)
+            const crisisKeywords = ['suicide', 'kill myself', 'end it all', 'want to die', 'not want to live'];
+            
+            // Function to add a message to the chat
+            function addMessage(message, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+                messageDiv.textContent = message;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Function to handle user message
+            function handleUserMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+                
+                addMessage(message, true);
+                userInput.value = '';
+                
+                // Check for crisis keywords first
+                const hasCrisisKeyword = crisisKeywords.some(keyword => 
+                    message.toLowerCase().includes(keyword)
+                );
+                
+                if (hasCrisisKeyword) {
+                    // Immediate crisis response
+                    setTimeout(() => {
+                        addMessage("I'm concerned about what you're sharing. Your life is valuable and worth protecting.");
+                    }, 800);
+                    
+                    setTimeout(() => {
+                        addMessage("Please reach out to the National Suicide Prevention Lifeline at 988 or contact emergency services at 911. You don't have to go through this alone.");
+                    }, 1600);
+                    
+                    setTimeout(() => {
+                        addMessage("Would you like me to help you connect with these resources?");
+                    }, 2400);
+                    
+                    return;
+                }
+                
+                // Check for other keywords and respond appropriately
+                setTimeout(() => {
+                    let responded = false;
+                    
+                    for (const [keyword, response] of Object.entries(botResponses)) {
+                        if (message.toLowerCase().includes(keyword)) {
+                            addMessage(response);
+                            responded = true;
+                            break;
+                        }
+                    }
+                    
+                    if (!responded) {
+                        addMessage(botResponses['default']);
+                    }
+                }, 800);
+            }
+              
+            // Event listeners
+            sendButton.addEventListener('click', handleUserMessage);
+            
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    handleUserMessage();
+                }
+            });
+            
+            // Initial focus on input
+            userInput.focus();
+        });
+    </script>
+</body>
+</html>
