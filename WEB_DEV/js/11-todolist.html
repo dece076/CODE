@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>todolist</title>
+    </head>
+    <body>
+        <input type="text" id="input" placeholder="Todo name">
+        <button id="add-button" class="add-button" onclick="addvalue();">Add</button>
+        <div id="display"></div>
+        <script>
+            let x = document.getElementById("");
+            let arr=[];
+            function addvalue(){
+                let x = document.getElementById("input");
+                arr.push(x.value);
+                let str='';
+                for (let i=0;i<arr.length;i++){
+                    str +=`${i+1}.`+arr[i] +"<br>";
+                }
+                let y=document.getElementById("display");
+                y.innerHTML = str;
+            }
+            
+            
+        </script>
+    </body>
+</html> 
