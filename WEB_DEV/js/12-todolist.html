@@ -21,10 +21,11 @@
             }
             function render(){
                 let str='';
-                for (let i=0;i<arr.length;i++){
-                    str +=`${i+1}.`+arr[i] + `<button onclick="arr.splice(${i},1);render();">Delete</button>`+"<br>";
-                }
-                document.getElementById("display").innerHTML = str;
+                arr.forEach(function(value,index){
+                    str +=value+ `<button onclick="arr.splice(${index},1);render();">Delete</button>`+"<br>";
+                    document.getElementById("display").innerHTML = str;
+                });
+                
             }
                 
             

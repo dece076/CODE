@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <button id="btn" onclick="toggleAction();">Add to cart</button>
+        <div id="displayMsg"></div>
+        <script>
+            let x;
+            toggleAction = function(){
+                clearTimeout(x);
+                document.getElementById('displayMsg').innerHTML = 'Added';
+                x=setTimeout(function(){
+                    document.getElementById('displayMsg').innerHTML = '';
+                },3000)
+            }
+        </script>
+    </body>
+</html>

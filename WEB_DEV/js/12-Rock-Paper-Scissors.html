@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<head>
+    <title>rps</title>
+    <style>
+        .main-div{
+            height:500px;
+            width:500px;
+            background-color:lightblue;
+          
+        }
+        h1{
+            padding-top:30px;
+            font-family:arial;
+            text-align: center;
+        }
+        button{
+            height:100px;
+            width:100px;
+            border-width:2px;
+            border-color:maroon;
+            border-style:solid;
+            border-radius:5px;
+            background-color:white;
+        }
+        .resetBtn{
+            display:block;
+            margin: 20px auto 0 auto;
+            height:40px;
+            width:120px;
+            border-width:2px;
+            border-color:maroon;
+            border-style:solid;
+            border-radius:5px;
+            color:white;
+            background-color:maroon;
+        }
+        .autoPlay{
+            display:block;
+            margin: 20px auto 0 auto;
+            height:40px;
+            width:120px;
+            border-width:2px;
+            border-color:maroon;
+            border-style:solid;
+            border-radius:5px;
+            color:white;
+            background-color:maroon;
+        }
+        .buttons{
+            padding-top:10px;
+            margin-top:0px;
+            display:flex;
+            justify-content:space-between;
+            padding-left:50px;
+            padding-right:50px;
+            padding-bottom: 20px;
+        }
+        .js-score{
+            font-family:arial;
+            font-size: 30px;
+            font-weight:bold;
+            color:maroon;
+            text-align:center;    
+        }
+        .winLoseMessage{
+            font-family:arial;
+            font-weight: bold;
+            font-size: 30px;
+            color:maroon;
+            text-align:center;  
+        }
+        img{
+            height:90px;
+            width:90px;
+            object-fit:cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <h1>Rock Paper Scissors</h1>
+        <div class="buttons">
+            <div>
+                <button onclick="userMove='rock'; rpsdecision();"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAq1ENPsv-JJO13vbQqdC6tebabcW7kdwMzra26Qck69DdFEAoNjJaWr6jbz7Wi5uxxkw&usqp=CAU"></button>
+            </div>
+            <div>
+                <button onclick="userMove='scissors'; rpsdecision();"><img src="https://cdn-icons-png.flaticon.com/128/12355/12355903.png"></button> 
+            </div>
+            <div>     
+                <button onclick="userMove='paper'; rpsdecision();"><img src="https://cdn-icons-png.flaticon.com/128/9534/9534501.png"></button>
+            </div>
+        </div>
+        <div class="winLoseMessage"></div>
+        <div class="js-score">
+            Wins : 0, Losses : 0, draw : 0    
+        </div>
+        <button class="resetBtn" onclick="reset()">Reset</button>
+        <button class="autoPlay" id='autoPlayBtn' onclick="toggleAction();">Auto Play</button>
+    </div>
+    <script>
+        display();
+        function reset(){
+            localStorage.removeItem('record');
+            record={
+                wins : 0,
+                losses : 0,
+                draw : 0
+            }
+            localStorage.setItem('record',JSON.stringify(record));
+            display();
+        }
+        function display(){
+            let btn_display = document.querySelector('.js-score');
+            let recordStr = JSON.parse(localStorage.getItem('record'));
+            btn_display.innerHTML = `Wins : ${recordStr.wins}, Loses : ${recordStr.losses}, Ties : ${recordStr.draw} `;
+        }
+        function randomNumber(){
+            return Math.random();
+        }
+        let isclicked = true;
+        let autoPlayID;
+        function toggleAction(){
+            if (isclicked){
+                isclicked=!isclicked;
+                autoPlayID=setInterval(autoPlay,1000);
+                document.getElementById('autoPlayBtn').innerText='Stop Autoplay';
+
+            }
+            else{
+                clearInterval(autoPlayID);
+                isclicked=!isclicked;
+                document.getElementById('autoPlayBtn').innerText='Autoplay';
+            }
+            
+        }
+        function autoPlay(){
+            let autoNum = randomNumber();
+            if (autoNum<0.33){
+                userMove = 'rock';
+            }
+            else if (autoNum<0.66){
+                userMove = 'scissors';
+            }
+            else{
+                userMove = 'paper';               
+            }
+            rpsdecision();
+        }
+        function rpsdecision(){
+            randomN=Math.random();
+            if (randomN<0.33){
+                compMove = 'rock';
+            }
+            else if (randomN<0.66){
+                compMove = 'scissors';
+            }
+            else{
+                compMove = 'paper';               
+            }
+
+            if (userMove === compMove){
+                record.draw += 1;
+                document.querySelector('.winLoseMessage').innerHTML = `Computer chooses ${compMove} <br> Draw`;
+                
+
+            }
+            else if ((compMove === 'rock' && userMove === 'paper')|| (compMove === 'paper' && userMove === 'scissors')||(compMove === 'scissors' && userMove === 'rock')){
+                record.wins +=1;
+                document.querySelector('.winLoseMessage').innerHTML = `Computer chooses ${compMove} <br> You Win`;
+              
+            }
+            else {
+                record.losses += 1;
+                document.querySelector('.winLoseMessage').innerHTML = `Computer chooses ${compMove} <br> You Lose`;
+                
+            }
+            
+            localStorage.setItem('record',JSON.stringify(record));
+            display();
+
+            
+        }
+        let userMove='';
+        let randomN=0.0;
+        let compMove='';
+        let record = JSON.parse(localStorage.getItem('record')) || {
+            wins : 0,
+            losses : 0,
+            draw : 0
+        }
+
+
+    </script>
+</body>
