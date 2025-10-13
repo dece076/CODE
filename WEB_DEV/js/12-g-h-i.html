@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>App</title>
+    </head>
+    <body>
+        <button id='add' ">Add</button>
+        <button id='sub' ">Remove</button>
+        <script>
+
+            let msg=2;
+            setInterval(()=>{
+                if (document.title==='App'&&msg>0){
+                    document.title=`(${msg}) new Messages`;
+                }
+                else{
+                    document.title='App';
+                }
+            },2000);
+
+            document.getElementById('add').addEventListener('click', ()=>{
+                msg++;
+
+            })
+            document.getElementById('sub').addEventListener('click', ()=>{
+                msg--;
+            })
+
+
+       
+                
+
+        </script>
+    </body>
+</html>
