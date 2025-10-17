@@ -26,7 +26,7 @@ products.forEach((product)=>{
             $${(product.priceCents/100).toFixed(2) }
           </div>
 
-          <div class="product-quantity-container">
+          <div class="product-quantity-container js-quantity-selector-${product.id}">
             <select>
               <option selected value="1">1</option>
               <option value="2">2</option>
@@ -64,6 +64,8 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML;
 document.querySelectorAll('.js-add-to-cart').forEach((btn)=>{
         btn.addEventListener('click', ()=>{
                 const productId = btn.dataset.productId;
+                let q = document.querySelector(`.js-quantity-selector-${productId} select`).value;
+                q=parseInt(q);
                 let matchingItem;
                 cart.forEach((cartItem)=>{
                         if(cartItem.productId===productId){
@@ -72,13 +74,13 @@ document.querySelectorAll('.js-add-to-cart').forEach((btn)=>{
                     }
                 );
                 if (matchingItem){
-                    matchingItem.quantity+=1;
+                    matchingItem.quantity+=q;
                 }
                 else{
                     cart.push(
                         {
                             productId:productId,
-                            quantity:1
+                            quantity:q
                         }
                     );
                     
@@ -91,6 +93,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((btn)=>{
 
                 );
                 document.querySelector('.js-cart-quantity').innerHTML = totalCart;
+                console.log(cart);
 
 
             }
