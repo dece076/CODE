@@ -1,7 +1,8 @@
 
+import {cart, addToCart, addedToCart, updateCartValue } from "../data/cart.js";
+import {products} from "../data/products.js";
 
 let productsHTML ='';
-
 products.forEach((product)=>{
         
         productsHTML +=`<div class="product-container">
@@ -43,7 +44,7 @@ products.forEach((product)=>{
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart js-added-to-cart${product.id}">
             <img src="images/icons/checkmark.png">
             Added
           </div>
@@ -58,44 +59,15 @@ products.forEach((product)=>{
 console.log(productsHTML);
 
 
-
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
 document.querySelectorAll('.js-add-to-cart').forEach((btn)=>{
         btn.addEventListener('click', ()=>{
                 const productId = btn.dataset.productId;
-                let q = document.querySelector(`.js-quantity-selector-${productId} select`).value;
-                q=parseInt(q);
-                let matchingItem;
-                cart.forEach((cartItem)=>{
-                        if(cartItem.productId===productId){
-                            matchingItem=cartItem;
-                        }
-                    }
-                );
-                if (matchingItem){
-                    matchingItem.quantity+=q;
-                }
-                else{
-                    cart.push(
-                        {
-                            productId:productId,
-                            quantity:q
-                        }
-                    );
-                    
-                }
-                let totalCart=0;
-                cart.forEach((cartItem)=>{
-                        totalCart+=cartItem.quantity;
-                        
-                    }
-
-                );
-                document.querySelector('.js-cart-quantity').innerHTML = totalCart;
-                console.log(cart);
-
-
+                let q = Number(document.querySelector(`.js-quantity-selector-${productId} select`).value);
+                addToCart(productId,q);
+                addedToCart(productId);//this button doesn't funtion properly
+                updateCartValue();
             }
     
         )
