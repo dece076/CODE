@@ -2,7 +2,8 @@
 import {cart, addToCart, addedToCart, updateCartValue } from "../data/cart.js";
 import {products} from "../data/products.js";
 
-let productsHTML ='';
+//let productsHTML =JSON.parse(localStorage.getItem("all-products"))||'';
+let productsHTML='';
 products.forEach((product)=>{
         
         productsHTML +=`<div class="product-container">
@@ -55,12 +56,12 @@ products.forEach((product)=>{
         </div>`;
     }
 );
-
+//localStorage.setItem("all-products",productsHTML);
 console.log(productsHTML);
 
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
-
+updateCartValue();
 document.querySelectorAll('.js-add-to-cart').forEach((btn)=>{
         btn.addEventListener('click', ()=>{
                 const productId = btn.dataset.productId;
@@ -69,9 +70,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((btn)=>{
                 addedToCart(productId);//this button doesn't funtion properly
                 updateCartValue();
             }
-    
         )
-
     }
 );
 
