@@ -110,3 +110,6 @@ export function updateDeliveryOptionId(productId,deliveryOptionId){
     console.log('ok');
     localStorage.setItem("cart",JSON.stringify(cart));
 }
+export function updateOrderSummary(){
+    
+}
