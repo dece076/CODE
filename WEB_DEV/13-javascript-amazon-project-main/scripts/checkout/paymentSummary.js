@@ -19,6 +19,7 @@ export function renderPaymentSummary(){
         let semiPriceUsd= cartItem.quantity*matching.priceCents;
         priceUsd=priceUsd+ Number((semiPriceUsd/100).toFixed(2));
     });
+    let shipping = Number((deliveryPriceCents/100).toFixed(2));
     
         let paymentSummary=`<div class="payment-summary">
         <div class="payment-summary-title">
@@ -32,7 +33,7 @@ export function renderPaymentSummary(){
 
         <div class="payment-summary-row">
         <div>Shipping &amp; handling:</div>
-        <div class="payment-summary-money">$${Number((deliveryPriceCents/100).toFixed(2))}</div>
+        <div class="payment-summary-money">$${shipping}</div>
         </div>
 
         <div class="payment-summary-row subtotal-row">
@@ -47,7 +48,7 @@ export function renderPaymentSummary(){
 
         <div class="payment-summary-row total-row">
         <div>Order total:</div>
-        <div class="payment-summary-money">$${Number(priceUsd+(0.1*priceUsd)).toFixed(2)}</div>
+        <div class="payment-summary-money">$${Number(shipping+priceUsd+(0.1*priceUsd)).toFixed(2)}</div>
         </div>
 
         <button class="place-order-button button-primary">

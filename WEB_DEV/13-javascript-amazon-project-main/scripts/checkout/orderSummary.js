@@ -103,7 +103,7 @@ export function renderOrderSummary(){
     eachRadio.addEventListener('click',()=>{
       const {productId,deliveryOptionId} = eachRadio.dataset;
       updateDeliveryOptionId(productId,deliveryOptionId);
-      renderOrderSummary()
+      renderOrderSummary();
       renderPaymentSummary(deliveryOptionId);
     })
   })
@@ -113,7 +113,7 @@ export function renderOrderSummary(){
       let x=btn.dataset.productId;
       removeFromCart(x);
       btn.closest('.cart-item-container').remove();
-      console.log(cart);
+      renderPaymentSummary();
       }
       );
     }
