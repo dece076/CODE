@@ -1,3 +1,5 @@
+//import { isWeekend } from "./cart.js";
+
 export const deliveryOptions = [{
     id : '1',
     deliveryDays : 7,
@@ -21,3 +23,5 @@ export function getDeliveryOptionObj(cartItem){
     })
     return deliveryOptionObj.priceCents;
 }
+
+

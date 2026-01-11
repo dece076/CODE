@@ -1,3 +1,5 @@
+import { renderCheckoutHeader } from "../scripts/checkout/checkoutheader.js";
+import dayjs from "https://cdn.jsdelivr.net/npm/dayjs@1/+esm";
 export let cart =JSON.parse(localStorage.getItem('cart')) || [{
     productId : 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
     quantity : 6,
@@ -7,7 +9,15 @@ export let cart =JSON.parse(localStorage.getItem('cart')) || [{
     quantity : 3,
     deliveryOptionId: '3'
 }];
- 
+
+export function totalCartQty(){
+    let totalQty=0;
+    cart.forEach((cartItem)=>{
+        totalQty=totalQty+cartItem.quantity;
+    });
+    return totalQty;
+}
+
 export function addToCart(productId,q){
     let matchingItem;
     cart.forEach((cartItem)=>{
@@ -47,10 +57,10 @@ export function updateCartItem(pId,qty){
     updateCartValue();
 }
 
-const checkoutHeader = document.querySelector('.js-checkout-header-middle-section .return-to-home-link');
+/*const checkoutHeader = document.querySelector('.js-checkout-header-middle-section .return-to-home-link');
   if (checkoutHeader) {
       checkoutHeader.textContent = 2;
-  }
+  }*/
 
 export function updateCartValue(){
     let totalCart=0;
@@ -65,19 +75,23 @@ export function updateCartValue(){
         }
     );
     localStorage.setItem('totalCart',JSON.stringify(totalCart));
-    updateCheckoutCart();
+    renderCheckoutHeader();
   }
   
 export function addedToCart(productId){
+    console.log('as');
     let addedBtn=document.querySelector(`.js-added-to-cart${productId}`);
     addedBtn.style.opacity='1';
     let timeoutId;
-    if(addedBtn.timepoutId){
+    if(addedBtn.timeoutId){
       clearTimeout(addedBtn.timeoutId);
     }
     timeoutId=setTimeout(()=>{
-      addedBtn.style.opacity='0';
+      addedBtn.style.let 
+      x=dayjs().format("dddd");
+    console.log(x);opacity='0';
     },1000);
+    console.log('as');
   }
   
 export function removeFromCart(x){
@@ -92,13 +106,7 @@ export function removeFromCart(x){
     localStorage.setItem("cart",JSON.stringify(cart));
     updateCartValue();
 }
-export function updateCheckoutCart(){
-    let x=document.querySelector(`.return-to-home-link`);
-    if (x){
-        x.innerHTML=Number(JSON.parse(localStorage.getItem('totalCart')))+` items`;
-    }
-    console.log('hi');
-}
+
 export function updateDeliveryOptionId(productId,deliveryOptionId){
     let matchingItem;
     cart.forEach((cartItem)=>{
@@ -110,6 +118,21 @@ export function updateDeliveryOptionId(productId,deliveryOptionId){
     console.log('ok');
     localStorage.setItem("cart",JSON.stringify(cart));
 }
-export function updateOrderSummary(){
-    
+
+
+export function isWeekend(day){
+    return (day===0||day===6);
 }
+export function deliveryDays(x){
+    let date = dayjs();
+    let newDate = 0;
+    while (newDate<x){
+        date=date.add(1,"day");
+        if (!isWeekend(date.day())){
+                newDate++;
+        }
+    }
+    return date.format("dddd, DD MMMM");
+}
+
+  

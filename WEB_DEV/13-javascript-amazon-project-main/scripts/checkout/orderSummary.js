@@ -1,11 +1,9 @@
-import { addToCart, updateDeliveryOptionId,cart,removeFromCart, updateCartItem, updateCartValue } from "../../data/cart.js";
+import { addToCart,deliveryDays, updateDeliveryOptionId,cart,removeFromCart, updateCartItem, updateCartValue } from "../../data/cart.js";
 import { products } from "../../data/products.js";
 import {deliveryOptions} from "../../data/delveryOptions.js";
 import dayjs from "https://cdn.jsdelivr.net/npm/dayjs@1/+esm";
 import { renderPaymentSummary } from "./paymentSummary.js";
-function deliverydays(x){
-  return dayjs().add(x,"day").format("dddd, MMMM D");
-}
+
 export function renderOrderSummary(){
   let cartHTML='';
   cart.forEach((cartItem)=>{
@@ -24,7 +22,7 @@ export function renderOrderSummary(){
       
       cartHTML += `<div class="cart-item-container">
               <div class="delivery-date">
-                Delivery date: ${deliverydays(deliveryOptionObj.deliveryDays)}
+                Delivery date: ${deliveryDays(deliveryOptionObj.deliveryDays)}
               </div>
 
               <div class="cart-item-details-grid">
@@ -85,7 +83,7 @@ export function renderOrderSummary(){
               name="delivery-option-${matching.id}">
               <div>
                 <div class="delivery-option-date">
-                  ${deliverydays(deliveryOptionItem.deliveryDays)}
+                  ${deliveryDays(deliveryOptionItem.deliveryDays)}
                 </div>
                 <div class="delivery-option-price">
                   ${priceUSD} Shipping
@@ -120,30 +118,41 @@ export function renderOrderSummary(){
   );
 
   document.querySelectorAll('.js-update-quantity-link').forEach((btn)=>{
+    
     btn.addEventListener(('click'),()=>{
+
+      const pId=btn.dataset.productId;
+        //worked console.log(dataId);
+        //<input type="radio" name=productId
       let updateParent=btn.closest('.cart-item-container');
       let updateBtn=updateParent.querySelector('.js-select-options');
-      let pId=btn.dataset.productId;
-      if (btn.innerHTML==='Update'){
+      //let pId=btn.dataset.productId;
+      function ifUpdateclicked(){if (btn.innerHTML==='Update'){
         updateBtn.style.display='inline';
-        btn.innerHTML='save';
+        btn.innerHTML='Save';
         updateBtn.value=Number(updateParent.querySelector('.quantity-label').innerHTML);
+       // qtyLabel=updateBtn.value;
         //updateCartItem(pId,qtyLabel);
+        console.log('des');
+       
       }
-      else{
+      else
+      {
         updateBtn.style.display='none';
         btn.innerHTML='Update';
         let updateQty=Number(updateBtn.value);
         
         updateCartItem(pId,updateQty);
         updateCartValue();
-      }
-
+      }}
+      ifUpdateclicked();
     });
   }
   );
   updateCartValue();
 }
+
+
 
 
 //learnt about mvc model to generate view-view-controller....mvc is fundamental, regenerating html using render, learnt more about data attributes [it is used for event listeners]
