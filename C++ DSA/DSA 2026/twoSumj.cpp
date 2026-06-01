@@ -22,6 +22,7 @@ nums[0] + nums[1] = 2 + 7 = 9
 
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 vector<int> twoSum(vector<int>& nums, int target) {
@@ -36,7 +37,7 @@ vector<int> twoSum(vector<int>& nums, int target) {
             break;
         }
         else{
-            mp.insert({nums[i],i});
+            mp[nums[i]]=i;
         }
 
     }
